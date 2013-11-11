@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3D202D71831134E00B8C3CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D61831134E00B8C3CA /* Cocoa.framework */; };
+		C3D202D91831134E00B8C3CA /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D81831134E00B8C3CA /* SpriteKit.framework */; };
+		C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3D202E11831134E00B8C3CA /* InfoPlist.strings */; };
+		C3D202E51831134E00B8C3CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D202E41831134E00B8C3CA /* main.m */; };
+		C3D202E91831134E00B8C3CA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C3D202E71831134E00B8C3CA /* Credits.rtf */; };
+		C3D202EB1831134E00B8C3CA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D202EA1831134E00B8C3CA /* MainMenu.xib */; };
+		C3D202ED1831134F00B8C3CA /* DMMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D202EC1831134E00B8C3CA /* DMMyScene.m */; };
+		C3D202F01831134F00B8C3CA /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */; };
+		C3D202F31831134F00B8C3CA /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D202F21831134F00B8C3CA /* Spaceship.png */; };
+		C3D202F51831134F00B8C3CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D202F41831134F00B8C3CA /* Images.xcassets */; };
+		C3D202FC1831134F00B8C3CA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202FB1831134F00B8C3CA /* XCTest.framework */; };
+		C3D202FD1831134F00B8C3CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D61831134E00B8C3CA /* Cocoa.framework */; };
+		C3D203051831134F00B8C3CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3D203031831134F00B8C3CA /* InfoPlist.strings */; };
+		C3D203071831134F00B8C3CA /* DaftManTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D203061831134F00B8C3CA /* DaftManTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3D202FE1831134F00B8C3CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D202CB1831134E00B8C3CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3D202D21831134E00B8C3CA;
+			remoteInfo = DaftMan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3D202D31831134E00B8C3CA /* DaftMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaftMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D202D61831134E00B8C3CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C3D202D81831134E00B8C3CA /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		C3D202DB1831134E00B8C3CA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C3D202DC1831134E00B8C3CA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3D202DD1831134E00B8C3CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3D202E01831134E00B8C3CA /* DaftMan-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DaftMan-Info.plist"; sourceTree = "<group>"; };
+		C3D202E21831134E00B8C3CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3D202E41831134E00B8C3CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3D202E61831134E00B8C3CA /* DaftMan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DaftMan-Prefix.pch"; sourceTree = "<group>"; };
+		C3D202E81831134E00B8C3CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C3D202EA1831134E00B8C3CA /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		C3D202EC1831134E00B8C3CA /* DMMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMyScene.m; sourceTree = "<group>"; };
+		C3D202EE1831134F00B8C3CA /* DMMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMyScene.h; sourceTree = "<group>"; };
+		C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
+		C3D202F11831134F00B8C3CA /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
+		C3D202F21831134F00B8C3CA /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		C3D202F41831134F00B8C3CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3D202FA1831134F00B8C3CA /* DaftManTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaftManTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D202FB1831134F00B8C3CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3D203021831134F00B8C3CA /* DaftManTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DaftManTests-Info.plist"; sourceTree = "<group>"; };
+		C3D203041831134F00B8C3CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3D203061831134F00B8C3CA /* DaftManTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaftManTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3D202D01831134E00B8C3CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D202D91831134E00B8C3CA /* SpriteKit.framework in Frameworks */,
+				C3D202D71831134E00B8C3CA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D202F71831134F00B8C3CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D202FD1831134F00B8C3CA /* Cocoa.framework in Frameworks */,
+				C3D202FC1831134F00B8C3CA /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3D202CA1831134E00B8C3CA = {
+			isa = PBXGroup;
+			children = (
+				C3D202DE1831134E00B8C3CA /* DaftMan */,
+				C3D203001831134F00B8C3CA /* DaftManTests */,
+				C3D202D51831134E00B8C3CA /* Frameworks */,
+				C3D202D41831134E00B8C3CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3D202D41831134E00B8C3CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3D202D31831134E00B8C3CA /* DaftMan.app */,
+				C3D202FA1831134F00B8C3CA /* DaftManTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3D202D51831134E00B8C3CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3D202D61831134E00B8C3CA /* Cocoa.framework */,
+				C3D202D81831134E00B8C3CA /* SpriteKit.framework */,
+				C3D202FB1831134F00B8C3CA /* XCTest.framework */,
+				C3D202DA1831134E00B8C3CA /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3D202DA1831134E00B8C3CA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3D202DB1831134E00B8C3CA /* AppKit.framework */,
+				C3D202DC1831134E00B8C3CA /* CoreData.framework */,
+				C3D202DD1831134E00B8C3CA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C3D202DE1831134E00B8C3CA /* DaftMan */ = {
+			isa = PBXGroup;
+			children = (
+				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
+				C3D202EC1831134E00B8C3CA /* DMMyScene.m */,
+				C3D202EE1831134F00B8C3CA /* DMMyScene.h */,
+				C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */,
+				C3D202F11831134F00B8C3CA /* DMAppDelegate.h */,
+				C3D202F21831134F00B8C3CA /* Spaceship.png */,
+				C3D202F41831134F00B8C3CA /* Images.xcassets */,
+				C3D202DF1831134E00B8C3CA /* Supporting Files */,
+			);
+			path = DaftMan;
+			sourceTree = "<group>";
+		};
+		C3D202DF1831134E00B8C3CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3D202E01831134E00B8C3CA /* DaftMan-Info.plist */,
+				C3D202E11831134E00B8C3CA /* InfoPlist.strings */,
+				C3D202E41831134E00B8C3CA /* main.m */,
+				C3D202E61831134E00B8C3CA /* DaftMan-Prefix.pch */,
+				C3D202E71831134E00B8C3CA /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3D203001831134F00B8C3CA /* DaftManTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3D203061831134F00B8C3CA /* DaftManTests.m */,
+				C3D203011831134F00B8C3CA /* Supporting Files */,
+			);
+			path = DaftManTests;
+			sourceTree = "<group>";
+		};
+		C3D203011831134F00B8C3CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3D203021831134F00B8C3CA /* DaftManTests-Info.plist */,
+				C3D203031831134F00B8C3CA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3D202D21831134E00B8C3CA /* DaftMan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D2030A1831134F00B8C3CA /* Build configuration list for PBXNativeTarget "DaftMan" */;
+			buildPhases = (
+				C3D202CF1831134E00B8C3CA /* Sources */,
+				C3D202D01831134E00B8C3CA /* Frameworks */,
+				C3D202D11831134E00B8C3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaftMan;
+			productName = DaftMan;
+			productReference = C3D202D31831134E00B8C3CA /* DaftMan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3D202F91831134F00B8C3CA /* DaftManTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3D2030D1831134F00B8C3CA /* Build configuration list for PBXNativeTarget "DaftManTests" */;
+			buildPhases = (
+				C3D202F61831134F00B8C3CA /* Sources */,
+				C3D202F71831134F00B8C3CA /* Frameworks */,
+				C3D202F81831134F00B8C3CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3D202FF1831134F00B8C3CA /* PBXTargetDependency */,
+			);
+			name = DaftManTests;
+			productName = DaftManTests;
+			productReference = C3D202FA1831134F00B8C3CA /* DaftManTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3D202CB1831134E00B8C3CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DM;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Tanner Smith";
+				TargetAttributes = {
+					C3D202F91831134F00B8C3CA = {
+						TestTargetID = C3D202D21831134E00B8C3CA;
+					};
+				};
+			};
+			buildConfigurationList = C3D202CE1831134E00B8C3CA /* Build configuration list for PBXProject "DaftMan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3D202CA1831134E00B8C3CA;
+			productRefGroup = C3D202D41831134E00B8C3CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3D202D21831134E00B8C3CA /* DaftMan */,
+				C3D202F91831134F00B8C3CA /* DaftManTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3D202D11831134E00B8C3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D202F31831134F00B8C3CA /* Spaceship.png in Resources */,
+				C3D202F51831134F00B8C3CA /* Images.xcassets in Resources */,
+				C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */,
+				C3D202E91831134E00B8C3CA /* Credits.rtf in Resources */,
+				C3D202EB1831134E00B8C3CA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D202F81831134F00B8C3CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D203051831134F00B8C3CA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3D202CF1831134E00B8C3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D202F01831134F00B8C3CA /* DMAppDelegate.m in Sources */,
+				C3D202E51831134E00B8C3CA /* main.m in Sources */,
+				C3D202ED1831134F00B8C3CA /* DMMyScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3D202F61831134F00B8C3CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3D203071831134F00B8C3CA /* DaftManTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3D202FF1831134F00B8C3CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3D202D21831134E00B8C3CA /* DaftMan */;
+			targetProxy = C3D202FE1831134F00B8C3CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3D202E11831134E00B8C3CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3D202E21831134E00B8C3CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3D202E71831134E00B8C3CA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3D202E81831134E00B8C3CA /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C3D203031831134F00B8C3CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3D203041831134F00B8C3CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3D203081831134F00B8C3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C3D203091831134F00B8C3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C3D2030B1831134F00B8C3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DaftMan/DaftMan-Prefix.pch";
+				INFOPLIST_FILE = "DaftMan/DaftMan-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3D2030C1831134F00B8C3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DaftMan/DaftMan-Prefix.pch";
+				INFOPLIST_FILE = "DaftMan/DaftMan-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C3D2030E1831134F00B8C3CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DaftMan.app/Contents/MacOS/DaftMan";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DaftMan/DaftMan-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DaftManTests/DaftManTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C3D2030F1831134F00B8C3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DaftMan.app/Contents/MacOS/DaftMan";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DaftMan/DaftMan-Prefix.pch";
+				INFOPLIST_FILE = "DaftManTests/DaftManTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3D202CE1831134E00B8C3CA /* Build configuration list for PBXProject "DaftMan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D203081831134F00B8C3CA /* Debug */,
+				C3D203091831134F00B8C3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3D2030A1831134F00B8C3CA /* Build configuration list for PBXNativeTarget "DaftMan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D2030B1831134F00B8C3CA /* Debug */,
+				C3D2030C1831134F00B8C3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3D2030D1831134F00B8C3CA /* Build configuration list for PBXNativeTarget "DaftManTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3D2030E1831134F00B8C3CA /* Debug */,
+				C3D2030F1831134F00B8C3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3D202CB1831134E00B8C3CA /* Project object */;
+}
