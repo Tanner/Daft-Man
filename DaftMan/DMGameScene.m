@@ -49,6 +49,7 @@
         DMBro *bro = [[DMBro alloc] init];
         bro.name = @"bro";
         bro.position = broStart;
+        bro.delegate = self;
         
         [self addChild:bro];
     }
@@ -123,6 +124,63 @@
     }
     
     [super keyUp:theEvent];
+}
+
+#pragma mark -
+#pragma mark DMMovingSpriteDelegate
+
+- (CGPoint)autoCorrectedPoint:(CGPoint)point sprite:(SKSpriteNode *)sprite {
+    CGPoint oldPoint = sprite.position;
+    CGPoint correctedPoint = point;
+    
+    CGRect spriteFrame = sprite.frame;
+    
+    __block DMWall *collisionWall = nil;
+    
+    [self enumerateChildNodesWithName:@"wall" usingBlock:^(SKNode *node, BOOL *stop) {
+        DMWall *wall = (DMWall *) node;
+        
+        if (CGRectIntersectsRect(wall.frame, sprite.frame)) {
+            *stop = YES;
+            
+            collisionWall = wall;
+        }
+    }];
+    
+    
+    CGRect wallFrame = collisionWall.frame;
+    
+    CGRect intersectRect = CGRectIntersection(spriteFrame, wallFrame);
+    
+    int maxIntersect = 5;
+    
+    if (correctedPoint.x != oldPoint.x) {
+        if (intersectRect.size.height > maxIntersect) {
+            return oldPoint;
+        }
+        
+        int sign = 1;
+        if (spriteFrame.origin.y < wallFrame.origin.y) {
+            sign *= -1;
+        }
+        
+        correctedPoint = CGPointMake(correctedPoint.x, correctedPoint.y + sign * intersectRect.size.height);
+    }
+    
+    else if(correctedPoint.y != oldPoint.y) {
+        if (intersectRect.size.width > maxIntersect) {
+            return oldPoint;
+        }
+        
+        int sign = 1;
+        if (spriteFrame.origin.x < wallFrame.origin.x) {
+            sign *= -1;
+        }
+        
+        correctedPoint = CGPointMake(correctedPoint.x + sign * intersectRect.size.width, correctedPoint.y);
+    }
+    
+    return correctedPoint;
 }
 
 @end

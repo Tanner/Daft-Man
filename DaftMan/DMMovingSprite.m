@@ -13,6 +13,7 @@
 @synthesize direction, distanceToMove;
 @synthesize health, immunity;
 @synthesize moveTime;
+@synthesize delegate;
 
 @synthesize upWalkTextures, downWalkTextures, leftWalkTextures, rightWalkTextures;
 @synthesize upWalkAnimation, downWalkAnimation, leftWalkAnimation, rightWalkAnimation;
@@ -74,7 +75,13 @@
 }
 
 - (void)act {
-    self.position = CGPointMake(self.position.x + distanceToMove.x, self.position.y + distanceToMove.y);
+    CGPoint newPosition = CGPointMake(self.position.x + distanceToMove.x, self.position.y + distanceToMove.y);
+    
+    newPosition = [delegate autoCorrectedPoint:newPosition sprite:self];
+    
+//    if ([delegate canMoveToPoint:newPosition sprite:self]) {
+        self.position = newPosition;
+//    }
 }
 
 - (void)loadTexturesFromAtlasNamed:(NSString *)atlasName count:(int)count {

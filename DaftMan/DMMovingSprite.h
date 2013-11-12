@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "DMMovingSpriteDelegate.h"
+
 @interface DMMovingSprite : SKSpriteNode
 
 typedef enum movingSpriteDirection {
@@ -25,6 +27,8 @@ typedef enum movingSpriteDirection {
 @property (nonatomic, assign) int immunity;
 
 @property (nonatomic, assign) NSTimeInterval moveTime;
+
+@property (nonatomic, assign) id <DMMovingSpriteDelegate> delegate;
 
 @property (nonatomic, retain) NSArray *upWalkTextures;
 @property (nonatomic, retain) NSArray *downWalkTextures;

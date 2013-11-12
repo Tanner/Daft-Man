@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C32F535A1832CBAE00C56076 /* DMMovingSpriteDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMovingSpriteDelegate.h; sourceTree = "<group>"; };
 		C38ADA701831BBA8006E960D /* DMTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTile.h; sourceTree = "<group>"; };
 		C38ADA711831BBA8006E960D /* DMTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTile.m; sourceTree = "<group>"; };
 		C38ADA731831BCE5006E960D /* DMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWall.h; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 			children = (
 				C38ADA89183278C6006E960D /* DMMovingSprite.h */,
 				C38ADA8A183278C6006E960D /* DMMovingSprite.m */,
+				C32F535A1832CBAE00C56076 /* DMMovingSpriteDelegate.h */,
 				C38ADA84183277D5006E960D /* DMBro.h */,
 				C38ADA85183277D5006E960D /* DMBro.m */,
 			);

@@ -8,8 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "DMMovingSpriteDelegate.h"
 #import "DMBro.h"
 
-@interface DMGameScene : SKScene
+@interface DMGameScene : SKScene <DMMovingSpriteDelegate>
 
 @end
