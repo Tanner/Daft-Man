@@ -7,7 +7,7 @@
 //
 
 #import "DMAppDelegate.h"
-#import "DMMyScene.h"
+#import "DMGameScene.h"
 
 @implementation DMAppDelegate
 
@@ -16,7 +16,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     /* Pick a size for the scene */
-    SKScene *scene = [DMMyScene sceneWithSize:CGSizeMake(1024, 768)];
+    SKScene *scene = [DMGameScene sceneWithSize:CGSizeMake(1024, 768)];
 
     /* Set the scale mode to scale to fit the window */
     scene.scaleMode = SKSceneScaleModeAspectFit;

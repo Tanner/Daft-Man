@@ -13,7 +13,7 @@
 		C3D202E51831134E00B8C3CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D202E41831134E00B8C3CA /* main.m */; };
 		C3D202E91831134E00B8C3CA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C3D202E71831134E00B8C3CA /* Credits.rtf */; };
 		C3D202EB1831134E00B8C3CA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D202EA1831134E00B8C3CA /* MainMenu.xib */; };
-		C3D202ED1831134F00B8C3CA /* DMMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D202EC1831134E00B8C3CA /* DMMyScene.m */; };
+		C3D202ED1831134F00B8C3CA /* DMGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D202EC1831134E00B8C3CA /* DMGameScene.m */; };
 		C3D202F01831134F00B8C3CA /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */; };
 		C3D202F31831134F00B8C3CA /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D202F21831134F00B8C3CA /* Spaceship.png */; };
 		C3D202F51831134F00B8C3CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3D202F41831134F00B8C3CA /* Images.xcassets */; };
@@ -46,8 +46,8 @@
 		C3D202E61831134E00B8C3CA /* DaftMan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DaftMan-Prefix.pch"; sourceTree = "<group>"; };
 		C3D202E81831134E00B8C3CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		C3D202EA1831134E00B8C3CA /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		C3D202EC1831134E00B8C3CA /* DMMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMyScene.m; sourceTree = "<group>"; };
-		C3D202EE1831134F00B8C3CA /* DMMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMyScene.h; sourceTree = "<group>"; };
+		C3D202EC1831134E00B8C3CA /* DMGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMGameScene.m; sourceTree = "<group>"; };
+		C3D202EE1831134F00B8C3CA /* DMGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMGameScene.h; sourceTree = "<group>"; };
 		C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
 		C3D202F11831134F00B8C3CA /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
 		C3D202F21831134F00B8C3CA /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
-				C3D202EC1831134E00B8C3CA /* DMMyScene.m */,
-				C3D202EE1831134F00B8C3CA /* DMMyScene.h */,
+				C3D202EC1831134E00B8C3CA /* DMGameScene.m */,
+				C3D202EE1831134F00B8C3CA /* DMGameScene.h */,
 				C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */,
 				C3D202F11831134F00B8C3CA /* DMAppDelegate.h */,
 				C3D202F21831134F00B8C3CA /* Spaceship.png */,
@@ -267,7 +267,7 @@
 			files = (
 				C3D202F01831134F00B8C3CA /* DMAppDelegate.m in Sources */,
 				C3D202E51831134E00B8C3CA /* main.m in Sources */,
-				C3D202ED1831134F00B8C3CA /* DMMyScene.m in Sources */,
+				C3D202ED1831134F00B8C3CA /* DMGameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +472,7 @@
 				C3D2030C1831134F00B8C3CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3D2030D1831134F00B8C3CA /* Build configuration list for PBXNativeTarget "DaftManTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +481,7 @@
 				C3D2030F1831134F00B8C3CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
