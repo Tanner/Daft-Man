@@ -10,4 +10,6 @@
 
 @interface DMGameScene : SKScene
 
+@property (nonatomic, retain) NSMutableArray *tiles;
+
 @end

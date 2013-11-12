@@ -13,12 +13,9 @@
 
 @synthesize window = _window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    /* Pick a size for the scene */
-    SKScene *scene = [DMGameScene sceneWithSize:CGSizeMake(1024, 768)];
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {    
+    SKScene *scene = [DMGameScene sceneWithSize:CGSizeMake(16 * 32, 100 + 12 * 32)];
 
-    /* Set the scale mode to scale to fit the window */
     scene.scaleMode = SKSceneScaleModeAspectFit;
 
     [self.skView presentScene:scene];

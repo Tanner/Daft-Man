@@ -8,44 +8,57 @@
 
 #import "DMGameScene.h"
 
+#import "DMWall.h"
+#import "DMGrass.h"
+
 @implementation DMGameScene
 
--(id)initWithSize:(CGSize)size {    
+@synthesize tiles;
+
+#define NUM_TILES_WIDTH 17
+#define NUM_TILES_HEIGHT 13
+
+#define OFFSET_X -16
+#define OFFSET_Y -16
+
+- (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
-        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        tiles = [[NSMutableArray alloc] init];
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
+        for (int r = 0; r < NUM_TILES_HEIGHT; r++) {
+            NSMutableArray *row = [[NSMutableArray alloc] init];
+            
+            [tiles addObject:row];
+            
+            for (int c = 0; c < NUM_TILES_WIDTH; c++) {
+                DMTile *sprite;
+                
+                if (r == 0 || c == 0 || r == NUM_TILES_HEIGHT - 1 || c == NUM_TILES_WIDTH - 1) {
+                    sprite = [[DMWall alloc] init];
+                } else {
+                    sprite = [[DMGrass alloc] init];
+                }
+                
+                if (sprite == nil) continue;
+                [sprite setRow:r setColumn:c];
+
+                [row addObject:sprite];
+                [self addChild:sprite];
+            }
+        }
         
-        [self addChild:myLabel];
+        [tiles enumerateObjectsUsingBlock:^(NSMutableArray *row, NSUInteger idx, BOOL *stop) {
+            [row enumerateObjectsUsingBlock:^(DMTile *tile, NSUInteger idx, BOOL *stop) {
+                tile.position = CGPointMake(tile.position.x + OFFSET_X, tile.position.y + OFFSET_Y);
+            }];
+        }];
     }
     return self;
 }
 
--(void)mouseDown:(NSEvent *)theEvent {
-     /* Called when a mouse click occurs */
-    
-    CGPoint location = [theEvent locationInNode:self];
-    
-    SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-    
-    sprite.position = location;
-    sprite.scale = 0.5;
-    
-    SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-    
-    [sprite runAction:[SKAction repeatActionForever:action]];
-    
-    [self addChild:sprite];
-}
-
--(void)update:(CFTimeInterval)currentTime {
+- (void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
 
