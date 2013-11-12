@@ -95,15 +95,15 @@
     NSString *leftString = [NSString stringWithFormat:formatString, @"left"];
     NSString *rightString = [NSString stringWithFormat:formatString, @"right"];
     
-    self.upWalkTextures = [self textureGroupFromAtlas:atlas prefix:upString count:count];
-    self.downWalkTextures = [self textureGroupFromAtlas:atlas prefix:downString count:count];
-    self.leftWalkTextures = [self textureGroupFromAtlas:atlas prefix:leftString count:count];
-    self.rightWalkTextures = [self textureGroupFromAtlas:atlas prefix:rightString count:count];
+    upWalkTextures = [self textureGroupFromAtlas:atlas prefix:upString count:count];
+    downWalkTextures = [self textureGroupFromAtlas:atlas prefix:downString count:count];
+    leftWalkTextures = [self textureGroupFromAtlas:atlas prefix:leftString count:count];
+    rightWalkTextures = [self textureGroupFromAtlas:atlas prefix:rightString count:count];
     
-    self.upWalkAnimation = [SKAction animateWithTextures:self.upWalkTextures timePerFrame:self.moveTime / 3];
-    self.downWalkAnimation = [SKAction animateWithTextures:self.downWalkTextures timePerFrame:self.moveTime / 3];
-    self.leftWalkAnimation = [SKAction animateWithTextures:self.leftWalkTextures timePerFrame:self.moveTime / 3];
-    self.rightWalkAnimation = [SKAction animateWithTextures:self.rightWalkTextures timePerFrame:self.moveTime / 3];
+    upWalkAnimation = [SKAction animateWithTextures:self.upWalkTextures timePerFrame:self.moveTime / 3];
+    downWalkAnimation = [SKAction animateWithTextures:self.downWalkTextures timePerFrame:self.moveTime / 3];
+    leftWalkAnimation = [SKAction animateWithTextures:self.leftWalkTextures timePerFrame:self.moveTime / 3];
+    rightWalkAnimation = [SKAction animateWithTextures:self.rightWalkTextures timePerFrame:self.moveTime / 3];
 }
 
 - (NSArray *)textureGroupFromAtlas:(SKTextureAtlas *)atlas prefix:(NSString *)prefix count:(int)count {
