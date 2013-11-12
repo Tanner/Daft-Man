@@ -38,7 +38,6 @@
                     sprite = [[DMGrass alloc] init];
                 }
                 
-                if (sprite == nil) continue;
                 [sprite setRow:r setColumn:c];
 
                 [row addObject:sprite];
