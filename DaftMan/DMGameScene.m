@@ -34,6 +34,8 @@
                 
                 if (r == 0 || c == 0 || r == NUM_TILES_HEIGHT - 1 || c == NUM_TILES_WIDTH - 1) {
                     sprite = [[DMWall alloc] init];
+                } else if (r % 2 == 0 && c % 2 == 0) {
+                    sprite = [[DMWall alloc] init];
                 } else {
                     sprite = [[DMGrass alloc] init];
                 }
