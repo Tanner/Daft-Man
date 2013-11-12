@@ -15,8 +15,6 @@
     BOOL keyDown;
 }
 
-@synthesize tiles, bro;
-
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
 
@@ -24,13 +22,9 @@
     if (self = [super initWithSize:size]) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        tiles = [[NSMutableArray alloc] init];
+        CGPoint broStart;
         
         for (int r = 0; r < NUM_TILES_HEIGHT; r++) {
-            NSMutableArray *row = [[NSMutableArray alloc] init];
-            
-            [tiles addObject:row];
-            
             for (int c = 0; c < NUM_TILES_WIDTH; c++) {
                 DMTile *sprite;
                 
@@ -44,13 +38,17 @@
                 
                 [sprite setRow:r setColumn:c];
 
-                [row addObject:sprite];
+                if (r == 1 && c == 1) {
+                    broStart = sprite.position;
+                }
+                
                 [self addChild:sprite];
             }
         }
         
-        bro = [[DMBro alloc] init];
-        bro.position = ((SKSpriteNode *) tiles[1][1]).position;
+        DMBro *bro = [[DMBro alloc] init];
+        bro.name = @"bro";
+        bro.position = broStart;
         
         [self addChild:bro];
     }
@@ -59,6 +57,8 @@
 }
 
 - (void)update:(CFTimeInterval)currentTime {
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
+    
     [bro act];
 }
 
@@ -67,6 +67,7 @@
         return;
     }
     
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
     
     switch (theEvent.keyCode) {
         case 126:
@@ -91,6 +92,7 @@
         return;
     }
     
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
     BOOL stop = NO;
     
     switch (theEvent.keyCode) {
