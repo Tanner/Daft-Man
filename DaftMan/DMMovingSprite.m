@@ -10,27 +10,24 @@
 
 @implementation DMMovingSprite
 
-@synthesize direction;
+@synthesize direction, distanceToMove;
 @synthesize health, immunity;
 @synthesize moveTime;
 
 @synthesize upWalkTextures, downWalkTextures, leftWalkTextures, rightWalkTextures;
 @synthesize upWalkAnimation, downWalkAnimation, leftWalkAnimation, rightWalkAnimation;
 
-@synthesize moveUpAction, moveDownAction, moveLeftAction, moveRightAction;
-@synthesize moveUpGroupAction, moveDownGroupAction, moveLeftGroupAction, moveRightGroupAction;
+#define TIME_PER_FRAME (1.0 / 5)
 
 - (id)initWithHealth:(int)aHealth moveTime:(NSTimeInterval)aMoveTime atlasName:(NSString *)atlasName {
     if (self = [super init]) {
         direction = STOP;
-                
+        distanceToMove = CGPointMake(0, 0);
+
         health = aHealth;
         moveTime = aMoveTime;
         
-        [self setUpMoveActionsWithMoveDistance:32];
         [self loadTexturesFromAtlasNamed:atlasName count:3];
-        
-        [self setUpGroupedMoveActions];
         
         self.texture = upWalkTextures[0];
         self.size = ((SKTexture *) upWalkTextures[0]).size;
@@ -42,47 +39,42 @@
 }
 
 - (void)moveUp {
-    [self runAction:moveUpGroupAction];
+    [self runAction:upWalkAnimation];
     
+    distanceToMove = CGPointMake(0, 1);
     direction = UP;
 }
 
 - (void)moveDown {
-    [self runAction:moveDownGroupAction];
-
+    [self runAction:downWalkAnimation];
+    
+    distanceToMove = CGPointMake(0, -1);
     direction = DOWN;
 }
 
 - (void)moveLeft {
-    [self runAction:moveLeftGroupAction];
-
+    [self runAction:leftWalkAnimation];
+    
+    distanceToMove = CGPointMake(-1, 0);
     direction = LEFT;
 }
 
 - (void)moveRight {
-    [self runAction:moveRightGroupAction];
+    [self runAction:rightWalkAnimation];
 
+    distanceToMove = CGPointMake(1, 0);
     direction = RIGHT;
 }
 
 - (void)stop {
     [self removeAllActions];
     
+    distanceToMove = CGPointMake(0, 0);
     direction = STOP;
 }
 
-- (void)setUpMoveActionsWithMoveDistance:(CGFloat)distance {
-    moveUpAction = [SKAction moveByX:0 y:distance duration:moveTime];
-    moveDownAction = [SKAction moveByX:0 y:-distance duration:moveTime];
-    moveLeftAction = [SKAction moveByX:-distance y:0 duration:moveTime];
-    moveRightAction = [SKAction moveByX:distance y:0 duration:moveTime];
-}
-
-- (void)setUpGroupedMoveActions {
-    moveUpGroupAction = [SKAction group:@[moveUpAction, upWalkAnimation]];
-    moveDownGroupAction = [SKAction group:@[moveDownAction, downWalkAnimation]];
-    moveLeftGroupAction = [SKAction group:@[moveLeftAction, leftWalkAnimation]];
-    moveRightGroupAction = [SKAction group:@[moveRightAction, rightWalkAnimation]];
+- (void)act {
+    self.position = CGPointMake(self.position.x + distanceToMove.x, self.position.y + distanceToMove.y);
 }
 
 - (void)loadTexturesFromAtlasNamed:(NSString *)atlasName count:(int)count {
@@ -100,10 +92,15 @@
     leftWalkTextures = [self textureGroupFromAtlas:atlas prefix:leftString count:count];
     rightWalkTextures = [self textureGroupFromAtlas:atlas prefix:rightString count:count];
     
-    upWalkAnimation = [SKAction animateWithTextures:self.upWalkTextures timePerFrame:self.moveTime / 3];
-    downWalkAnimation = [SKAction animateWithTextures:self.downWalkTextures timePerFrame:self.moveTime / 3];
-    leftWalkAnimation = [SKAction animateWithTextures:self.leftWalkTextures timePerFrame:self.moveTime / 3];
-    rightWalkAnimation = [SKAction animateWithTextures:self.rightWalkTextures timePerFrame:self.moveTime / 3];
+    upWalkAnimation = [SKAction animateWithTextures:self.upWalkTextures timePerFrame:TIME_PER_FRAME];
+    downWalkAnimation = [SKAction animateWithTextures:self.downWalkTextures timePerFrame:TIME_PER_FRAME];
+    leftWalkAnimation = [SKAction animateWithTextures:self.leftWalkTextures timePerFrame:TIME_PER_FRAME];
+    rightWalkAnimation = [SKAction animateWithTextures:self.rightWalkTextures timePerFrame:TIME_PER_FRAME];
+    
+    upWalkAnimation = [SKAction repeatActionForever:upWalkAnimation];
+    downWalkAnimation = [SKAction repeatActionForever:downWalkAnimation];
+    leftWalkAnimation = [SKAction repeatActionForever:leftWalkAnimation];
+    rightWalkAnimation = [SKAction repeatActionForever:rightWalkAnimation];
 }
 
 - (NSArray *)textureGroupFromAtlas:(SKTextureAtlas *)atlas prefix:(NSString *)prefix count:(int)count {

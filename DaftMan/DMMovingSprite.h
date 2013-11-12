@@ -19,6 +19,7 @@ typedef enum movingSpriteDirection {
 } MovingSpriteDirection;
 
 @property (nonatomic, assign) MovingSpriteDirection direction;
+@property (nonatomic, assign) CGPoint distanceToMove;
 
 @property (nonatomic, assign) int health;
 @property (nonatomic, assign) int immunity;
@@ -35,16 +36,6 @@ typedef enum movingSpriteDirection {
 @property (nonatomic, retain) SKAction *leftWalkAnimation;
 @property (nonatomic, retain) SKAction *rightWalkAnimation;
 
-@property (nonatomic, retain) SKAction *moveUpAction;
-@property (nonatomic, retain) SKAction *moveDownAction;
-@property (nonatomic, retain) SKAction *moveLeftAction;
-@property (nonatomic, retain) SKAction *moveRightAction;
-
-@property (nonatomic, retain) SKAction *moveUpGroupAction;
-@property (nonatomic, retain) SKAction *moveLeftGroupAction;
-@property (nonatomic, retain) SKAction *moveDownGroupAction;
-@property (nonatomic, retain) SKAction *moveRightGroupAction;
-
 - (id)initWithHealth:(int)aHealth moveTime:(NSTimeInterval)aMoveTime atlasName:(NSString *)atlasName;
 
 - (void)moveUp;
@@ -52,5 +43,6 @@ typedef enum movingSpriteDirection {
 - (void)moveLeft;
 - (void)moveRight;
 - (void)stop;
+- (void)act;
 
 @end

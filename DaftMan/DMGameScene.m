@@ -11,7 +11,9 @@
 #import "DMWall.h"
 #import "DMGrass.h"
 
-@implementation DMGameScene
+@implementation DMGameScene {
+    BOOL keyDown;
+}
 
 @synthesize tiles, bro;
 
@@ -57,10 +59,15 @@
 }
 
 - (void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+    [bro act];
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
+    if (theEvent.isARepeat) {
+        return;
+    }
+    
+    
     switch (theEvent.keyCode) {
         case 126:
             [bro moveUp];
@@ -75,10 +82,45 @@
             [bro moveRight];
             break;
     }
+    
+    [super keyDown:theEvent];
 }
 
 - (void)keyUp:(NSEvent *)theEvent {
-//    [bro stop];
+    if (theEvent.isARepeat) {
+        return;
+    }
+    
+    BOOL stop = NO;
+    
+    switch (theEvent.keyCode) {
+        case 126:
+            if ([bro direction] == UP) {
+                stop = YES;
+            }
+            break;
+        case 125:
+            if ([bro direction] == DOWN) {
+                stop = YES;
+            }
+            break;
+        case 123:
+            if ([bro direction] == LEFT) {
+                stop = YES;
+            }
+            break;
+        case 124:
+            if ([bro direction] == RIGHT) {
+                stop = YES;
+            }
+            break;
+    }
+    
+    if (stop) {
+        [bro stop];
+    }
+    
+    [super keyUp:theEvent];
 }
 
 @end
