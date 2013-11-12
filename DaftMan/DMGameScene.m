@@ -47,7 +47,6 @@
         }
         
         DMBro *bro = [[DMBro alloc] init];
-        bro.name = @"bro";
         bro.position = broStart;
         bro.delegate = self;
         

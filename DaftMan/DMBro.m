@@ -12,7 +12,7 @@
 
 - (id)init {    
     if (self = [super initWithHealth:3 moveTime:1 atlasName:@"bro"]) {
-        
+        self.name = @"bro";
     }
     
     return self;
