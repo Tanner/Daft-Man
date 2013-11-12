@@ -60,4 +60,25 @@
     /* Called before each frame is rendered */
 }
 
+- (void)keyDown:(NSEvent *)theEvent {
+    switch (theEvent.keyCode) {
+        case 126:
+            [bro moveUp];
+            break;
+        case 125:
+            [bro moveDown];
+            break;
+        case 123:
+            [bro moveLeft];
+            break;
+        case 124:
+            [bro moveRight];
+            break;
+    }
+}
+
+- (void)keyUp:(NSEvent *)theEvent {
+//    [bro stop];
+}
+
 @end
