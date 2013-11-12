@@ -13,7 +13,7 @@
 
 @implementation DMGameScene
 
-@synthesize tiles;
+@synthesize tiles, bro;
 
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
@@ -46,6 +46,11 @@
                 [self addChild:sprite];
             }
         }
+        
+        bro = [[DMBro alloc] init];
+        bro.position = ((SKSpriteNode *) tiles[1][1]).position;
+        
+        [self addChild:bro];
     }
     
     return self;

@@ -8,8 +8,12 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "DMBro.h"
+
 @interface DMGameScene : SKScene
 
 @property (nonatomic, retain) NSMutableArray *tiles;
+
+@property (nonatomic, retain) DMBro *bro;
 
 @end
