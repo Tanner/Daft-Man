@@ -12,6 +12,9 @@
 
 @synthesize row, column;
 
+#define OFFSET_X -16
+#define OFFSET_Y -16
+
 - (id)initWithImageNamed:(NSString *)name {
     if (self = [super initWithImageNamed:name]) {
         [self setAnchorPoint:CGPointMake(0, 0)];
@@ -32,7 +35,7 @@
     column = aColumn;
     row = aRow;
     
-    super.position = CGPointMake(column * super.size.width, row * super.size.height);
+    super.position = CGPointMake(column * super.size.width + OFFSET_X, row * super.size.height + OFFSET_Y);
 }
 
 - (BOOL)isImpassable {

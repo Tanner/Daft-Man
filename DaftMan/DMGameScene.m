@@ -18,9 +18,6 @@
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
 
-#define OFFSET_X -16
-#define OFFSET_Y -16
-
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
@@ -48,13 +45,8 @@
                 [self addChild:sprite];
             }
         }
-        
-        [tiles enumerateObjectsUsingBlock:^(NSMutableArray *row, NSUInteger idx, BOOL *stop) {
-            [row enumerateObjectsUsingBlock:^(DMTile *tile, NSUInteger idx, BOOL *stop) {
-                tile.position = CGPointMake(tile.position.x + OFFSET_X, tile.position.y + OFFSET_Y);
-            }];
-        }];
     }
+    
     return self;
 }
 
