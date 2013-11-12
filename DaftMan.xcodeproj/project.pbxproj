@@ -113,6 +113,16 @@
 			name = Tile;
 			sourceTree = "<group>";
 		};
+		C38ADA83183275A3006E960D /* Sprite */ = {
+			isa = PBXGroup;
+			children = (
+				C38ADA6F1831BB7F006E960D /* Tile */,
+				C38ADA80183274F1006E960D /* DMPrize.h */,
+				C38ADA81183274F1006E960D /* DMPrize.m */,
+			);
+			name = Sprite;
+			sourceTree = "<group>";
+		};
 		C3D202CA1831134E00B8C3CA = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +166,7 @@
 		C3D202DE1831134E00B8C3CA /* DaftMan */ = {
 			isa = PBXGroup;
 			children = (
-				C38ADA6F1831BB7F006E960D /* Tile */,
-				C38ADA80183274F1006E960D /* DMPrize.h */,
-				C38ADA81183274F1006E960D /* DMPrize.m */,
+				C38ADA83183275A3006E960D /* Sprite */,
 				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
 				C3D202EC1831134E00B8C3CA /* DMGameScene.m */,
 				C3D202EE1831134F00B8C3CA /* DMGameScene.h */,
