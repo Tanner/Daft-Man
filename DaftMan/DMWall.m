@@ -11,6 +11,7 @@
 @implementation DMWall
 
 - (id)init {
+    // TODO: Wall.png is only 30x30
     if (self = [super initWithImageNamed:@"wall.png"]) {
         [self setSize:CGSizeMake(32, 32)];
     }
