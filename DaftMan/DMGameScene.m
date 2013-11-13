@@ -8,6 +8,7 @@
 
 #import "DMGameScene.h"
 
+#import "DMBrick.h"
 #import "DMWall.h"
 #import "DMGrass.h"
 #import "DMBomb.h"
@@ -19,6 +20,8 @@
 
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
+
+#define BOMB_DISTANCE 2
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -117,10 +120,36 @@
     DMTile *tile = [self tileForPoint:bomb.position];
     
     [self addFireToTile:tile];
-    [self addFireToTile:tile.northTile];
-    [self addFireToTile:tile.southTile];
-    [self addFireToTile:tile.eastTile];
-    [self addFireToTile:tile.westTile];
+    
+    [self spreadFireFromTile:tile distance:BOMB_DISTANCE usingBlock:^DMTile *(DMTile *currentTile) {
+        return currentTile.northTile;
+    }];
+    
+    [self spreadFireFromTile:tile distance:BOMB_DISTANCE usingBlock:^DMTile *(DMTile *currentTile) {
+        return currentTile.southTile;
+    }];
+    
+    [self spreadFireFromTile:tile distance:BOMB_DISTANCE usingBlock:^DMTile *(DMTile *currentTile) {
+        return currentTile.eastTile;
+    }];
+    
+    [self spreadFireFromTile:tile distance:BOMB_DISTANCE usingBlock:^DMTile *(DMTile *currentTile) {
+        return currentTile.westTile;
+    }];
+}
+
+- (void)spreadFireFromTile:(DMTile *)tile distance:(int)distance usingBlock:(DMTile *(^)(DMTile *currentTile))nextTile {
+    DMTile *nextTileToBurn = nextTile(tile);
+    
+    if ([tile isKindOfClass:[DMGrass class]]) {
+        [self addFireToTile:nextTileToBurn];
+        
+        distance--;
+        
+        if (distance > 0) {
+            [self spreadFireFromTile:nextTileToBurn distance:distance usingBlock:nextTile];
+        }
+    }
 }
 
 - (void)addFireToTile:(DMTile *)tile {
