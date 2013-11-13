@@ -83,21 +83,26 @@
         
         [self addChild:items];
         
+        SKNode *movingSprites = [[SKNode alloc] init];
+        movingSprites.name = @"moving-sprites";
+        movingSprites.zPosition = 1;
+        
         DMBro *bro = [[DMBro alloc] init];
         bro.position = broStart;
-        bro.zPosition = 1;
         bro.delegate = self;
         
         bombPlaced = NO;
         
-        [self addChild:bro];
+        [movingSprites addChild:bro];
+        
+        [self addChild:movingSprites];
     }
     
     return self;
 }
 
 - (void)update:(CFTimeInterval)currentTime {
-    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
     
     [bro act];
 }
@@ -132,14 +137,13 @@
     
     bombPlaced = YES;
     
-    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
     
     DMBomb *bomb = [[DMBomb alloc] initWithBoom:^(DMBomb *bomb) {
         [self boom:bomb];
     }];
     
     bomb.position = [self tileForPoint:bro.position].position;
-    bomb.zPosition = bro.zPosition - 1;
     
     [self addChild:bomb];
 }
@@ -234,7 +238,7 @@
         return;
     }
     
-    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
         
     switch (theEvent.keyCode) {
         case 126:
@@ -264,7 +268,7 @@
         return;
     }
     
-    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
     BOOL stop = NO;
     
     switch (theEvent.keyCode) {
