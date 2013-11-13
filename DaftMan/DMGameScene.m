@@ -63,6 +63,23 @@
     [bro act];
 }
 
+- (void)addBomb {
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
+    
+    DMBomb *bomb = [[DMBomb alloc] initWithBoom:^(DMBomb *bomb) {
+        [self boom:bomb];
+    }];
+    
+    bomb.position = bro.position;
+    
+    [self addChild:bomb];
+}
+
+- (void)boom:(DMBomb *)bomb {
+    [bomb removeFromParent];
+    NSLog(@"Boom!");
+}
+
 - (void)keyDown:(NSEvent *)theEvent {
     if (theEvent.isARepeat) {
         return;
@@ -84,14 +101,7 @@
             [bro moveRight];
             break;
         case 49: {
-            DMBomb *bomb = [[DMBomb alloc] initWithBoom:^(DMBomb *bomb) {
-                [self boom:bomb];
-            }];
-            
-            bomb.position = bro.position;
-            
-            [self addChild:bomb];
-            
+            [self addBomb];
             break;
         }
     }
@@ -135,11 +145,6 @@
     }
     
     [super keyUp:theEvent];
-}
-
-- (void)boom:(DMBomb *)bomb {
-    [bomb removeFromParent];
-    NSLog(@"Boom!");
 }
 
 #pragma mark -
