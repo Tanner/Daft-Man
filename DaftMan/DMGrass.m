@@ -21,6 +21,8 @@
     yellow = [NSColor colorWithRed:0.78 green:0.68 blue:0.21 alpha:1.0];
     
     if (self = [super initWithColor:red size:CGSizeMake(32, 32)]) {
+        self.name = @"grass";
+        
         SKAction *changeToRed = [SKAction colorizeWithColor:red colorBlendFactor:0 duration:0];
         SKAction *changeToGreen = [SKAction colorizeWithColor:green colorBlendFactor:0 duration:0];
         SKAction *changeToBlue = [SKAction colorizeWithColor:blue colorBlendFactor:0 duration:0];

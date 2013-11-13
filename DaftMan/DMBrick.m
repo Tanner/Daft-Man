@@ -15,6 +15,8 @@
 - (id)init {
     // TODO: Brick.png is only 30x30
     if (self = [super initWithImageNamed:@"brick.png"]) {
+        self.name = @"brick";
+        
         [self setSize:CGSizeMake(32, 32)];
     }
     
