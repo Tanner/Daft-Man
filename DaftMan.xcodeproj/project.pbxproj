@@ -10,6 +10,9 @@
 		C32F535D1832EC4F00C56076 /* DMBomb.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F535C1832EC4F00C56076 /* DMBomb.m */; };
 		C32F53601832EC9700C56076 /* bomb-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C32F535E1832EC9700C56076 /* bomb-1.png */; };
 		C32F53611832EC9700C56076 /* bomb-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C32F535F1832EC9700C56076 /* bomb-2.png */; };
+		C3383229183331040082F702 /* fire-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3383227183331040082F702 /* fire-1.png */; };
+		C338322A183331040082F702 /* fire-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C3383228183331040082F702 /* fire-2.png */; };
+		C338322D183331220082F702 /* DMFire.m in Sources */ = {isa = PBXBuildFile; fileRef = C338322C183331220082F702 /* DMFire.m */; };
 		C38ADA721831BBA8006E960D /* DMTile.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA711831BBA8006E960D /* DMTile.m */; };
 		C38ADA751831BCE5006E960D /* DMWall.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA741831BCE5006E960D /* DMWall.m */; };
 		C38ADA771831BFFE006E960D /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C38ADA761831BFFE006E960D /* wall.png */; };
@@ -51,6 +54,10 @@
 		C32F535C1832EC4F00C56076 /* DMBomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBomb.m; sourceTree = "<group>"; };
 		C32F535E1832EC9700C56076 /* bomb-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-1.png"; sourceTree = "<group>"; };
 		C32F535F1832EC9700C56076 /* bomb-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-2.png"; sourceTree = "<group>"; };
+		C3383227183331040082F702 /* fire-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-1.png"; sourceTree = "<group>"; };
+		C3383228183331040082F702 /* fire-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-2.png"; sourceTree = "<group>"; };
+		C338322B183331220082F702 /* DMFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFire.h; sourceTree = "<group>"; };
+		C338322C183331220082F702 /* DMFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFire.m; sourceTree = "<group>"; };
 		C38ADA701831BBA8006E960D /* DMTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTile.h; sourceTree = "<group>"; };
 		C38ADA711831BBA8006E960D /* DMTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTile.m; sourceTree = "<group>"; };
 		C38ADA731831BCE5006E960D /* DMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWall.h; sourceTree = "<group>"; };
@@ -136,6 +143,8 @@
 				C38ADA6F1831BB7F006E960D /* Tile */,
 				C32F535B1832EC4F00C56076 /* DMBomb.h */,
 				C32F535C1832EC4F00C56076 /* DMBomb.m */,
+				C338322B183331220082F702 /* DMFire.h */,
+				C338322C183331220082F702 /* DMFire.m */,
 				C38ADA80183274F1006E960D /* DMPrize.h */,
 				C38ADA81183274F1006E960D /* DMPrize.m */,
 			);
@@ -206,6 +215,8 @@
 				C38ADA871832786E006E960D /* bro.atlas */,
 				C32F535E1832EC9700C56076 /* bomb-1.png */,
 				C32F535F1832EC9700C56076 /* bomb-2.png */,
+				C3383227183331040082F702 /* fire-1.png */,
+				C3383228183331040082F702 /* fire-2.png */,
 				C38ADA761831BFFE006E960D /* wall.png */,
 				C38ADA7E18327413006E960D /* brick.png */,
 				C3D202F41831134F00B8C3CA /* Images.xcassets */,
@@ -327,6 +338,8 @@
 				C32F53601832EC9700C56076 /* bomb-1.png in Resources */,
 				C3D202E91831134E00B8C3CA /* Credits.rtf in Resources */,
 				C38ADA881832786E006E960D /* bro.atlas in Resources */,
+				C338322A183331040082F702 /* fire-2.png in Resources */,
+				C3383229183331040082F702 /* fire-1.png in Resources */,
 				C3D202EB1831134E00B8C3CA /* MainMenu.xib in Resources */,
 				C38ADA7F18327413006E960D /* brick.png in Resources */,
 			);
@@ -353,6 +366,7 @@
 				C3D202E51831134E00B8C3CA /* main.m in Sources */,
 				C38ADA721831BBA8006E960D /* DMTile.m in Sources */,
 				C38ADA7A1831C426006E960D /* DMGrass.m in Sources */,
+				C338322D183331220082F702 /* DMFire.m in Sources */,
 				C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */,
 				C38ADA7D183273A2006E960D /* DMBrick.m in Sources */,
 				C38ADA751831BCE5006E960D /* DMWall.m in Sources */,

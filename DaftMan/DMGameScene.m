@@ -11,6 +11,7 @@
 #import "DMWall.h"
 #import "DMGrass.h"
 #import "DMBomb.h"
+#import "DMFire.h"
 
 @implementation DMGameScene {
     BOOL keyDown;
