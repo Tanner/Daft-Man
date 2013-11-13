@@ -10,6 +10,7 @@
 
 #import "DMRupee.h"
 #import "DMStar.h"
+#import "DMHeart.h"
 
 @implementation DMBrick
 
@@ -36,7 +37,7 @@
 
 - (id)initWithRandomPrize {
     if (self = [self init]) {
-        PrizeType prizeType = arc4random() % 2;
+        PrizeType prizeType = arc4random() % 3;
         
         switch (prizeType) {
             case RUPEE:
@@ -44,6 +45,9 @@
                 break;
             case STAR:
                 prize = [[DMStar alloc] init];
+                break;
+            case HEART:
+                prize = [[DMHeart alloc] init];
                 break;
         }
     }

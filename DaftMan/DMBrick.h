@@ -12,7 +12,8 @@
 
 typedef enum prizeTypes {
     RUPEE,
-    STAR
+    STAR,
+    HEART
 } PrizeType;
 
 @property (nonatomic, retain) SKSpriteNode *prize;
