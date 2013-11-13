@@ -49,6 +49,7 @@
         
         DMBro *bro = [[DMBro alloc] init];
         bro.position = broStart;
+        bro.zPosition = 1;
         bro.delegate = self;
         
         [self addChild:bro];
@@ -71,6 +72,7 @@
     }];
     
     bomb.position = bro.position;
+    bomb.zPosition = bro.zPosition - 1;
     
     [self addChild:bomb];
 }
