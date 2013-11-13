@@ -174,6 +174,12 @@
     if ([tile isKindOfClass:[DMGrass class]]) {
         [self addFireToTile:nextTileToBurn];
         
+        [self enumerateChildNodesWithName:@"//ground/brick" usingBlock:^(SKNode *node, BOOL *stop) {
+            if (CGPointEqualToPoint(node.position, nextTileToBurn.position)) {
+                [node removeFromParent];
+            }
+        }];
+        
         distance--;
         
         if (distance > 0) {
