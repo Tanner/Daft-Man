@@ -109,7 +109,7 @@
     for (int i = 0; i < bricksInLevel; i++) {
         int index = arc4random() % ([grass count] + 1);
         
-        DMBrick *brick = [[DMBrick alloc] init];
+        DMBrick *brick = [[DMBrick alloc] initWithRandomPrize];
         
         brick.position = ((SKNode *) [grass objectAtIndex:index]).position;
         
@@ -176,7 +176,7 @@
         
         [self enumerateChildNodesWithName:@"//ground/brick" usingBlock:^(SKNode *node, BOOL *stop) {
             if (CGPointEqualToPoint(node.position, nextTileToBurn.position)) {
-                [node removeFromParent];
+                [((DMBrick *)node) destroy];
             }
         }];
         

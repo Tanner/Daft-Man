@@ -8,6 +8,9 @@
 
 #import "DMBrick.h"
 
+#import "DMRupee.h"
+#import "DMStar.h"
+
 @implementation DMBrick
 
 @synthesize prize;
@@ -29,6 +32,35 @@
     }
     
     return self;
+}
+
+- (id)initWithRandomPrize {
+    if (self = [self init]) {
+        PrizeType prizeType = arc4random() % 2;
+        
+        switch (prizeType) {
+            case RUPEE:
+                prize = [[DMRupee alloc] init];
+                break;
+            case STAR:
+                prize = [[DMStar alloc] init];
+                break;
+        }
+    }
+    
+    return self;
+}
+
+- (void)destroy {
+    if (prize) {
+        SKNode *parent = [self parent];
+
+        prize.position = self.position;
+        
+        [parent addChild:prize];
+    }
+    
+    [self removeFromParent];
 }
 
 - (BOOL)isImpassable {

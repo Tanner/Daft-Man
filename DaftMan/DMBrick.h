@@ -10,6 +10,16 @@
 
 @interface DMBrick : DMTile
 
+typedef enum prizeTypes {
+    RUPEE,
+    STAR
+} PrizeType;
+
 @property (nonatomic, retain) SKSpriteNode *prize;
+
+- (id)initWithPrize:(SKSpriteNode *)aPrize;
+- (id)initWithRandomPrize;
+
+- (void)destroy;
 
 @end
