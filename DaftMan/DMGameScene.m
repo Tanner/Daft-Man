@@ -16,7 +16,7 @@
 
 @implementation DMGameScene
 
-@synthesize bombPlaced;
+@synthesize bombPlaced, bricksInLevel;
 
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
@@ -40,9 +40,9 @@
             for (int c = 0; c < NUM_TILES_WIDTH; c++) {
                 DMTile *sprite;
                 
-                if (r == 0 || c == 0 || r == NUM_TILES_HEIGHT - 1 || c == NUM_TILES_WIDTH - 1) {
-                    sprite = [[DMWall alloc] init];
-                } else if (r % 2 == 0 && c % 2 == 0) {
+                BOOL borderWall = (r == 0 || c == 0 || r == NUM_TILES_HEIGHT - 1 || c == NUM_TILES_WIDTH - 1);
+                
+                if ((r % 2 == 0 && c % 2 == 0) || borderWall) {
                     sprite = [[DMWall alloc] init];
                 } else {
                     sprite = [[DMGrass alloc] init];
@@ -73,6 +73,11 @@
             }
         }
         
+        [self addChild:ground];
+        
+        bricksInLevel = 5;
+        [self addBricks];
+        
         DMBro *bro = [[DMBro alloc] init];
         bro.position = broStart;
         bro.zPosition = 1;
@@ -80,7 +85,6 @@
         
         bombPlaced = NO;
         
-        [self addChild:ground];
         [self addChild:bro];
     }
     
@@ -91,6 +95,26 @@
     DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
     
     [bro act];
+}
+
+- (void)addBricks {
+    SKNode *ground = [self childNodeWithName:@"ground"];
+    
+    __block NSMutableArray *grass = [[NSMutableArray alloc] init];
+    
+    [self enumerateChildNodesWithName:@"//ground/grass" usingBlock:^(SKNode *node, BOOL *stop) {
+        [grass addObject:node];
+    }];
+    
+    for (int i = 0; i < bricksInLevel; i++) {
+        int index = arc4random() % ([grass count] + 1);
+        
+        DMBrick *brick = [[DMBrick alloc] init];
+        
+        brick.position = ((SKNode *) [grass objectAtIndex:index]).position;
+        
+        [ground addChild:brick];
+    }
 }
 
 #pragma mark -
@@ -264,22 +288,25 @@
     
     CGRect spriteFrame = sprite.frame;
     
-    __block DMWall *collisionWall = nil;
+    __block DMTile *collisionTile = nil;
     
-    [self enumerateChildNodesWithName:@"//ground/wall" usingBlock:^(SKNode *node, BOOL *stop) {
-        DMWall *wall = (DMWall *) node;
-        
-        if (CGRectIntersectsRect(wall.frame, sprite.frame)) {
-            *stop = YES;
+    [self enumerateChildNodesWithName:@"//ground/*" usingBlock:^(SKNode *node, BOOL *stop) {
+        if ([node isKindOfClass:[DMTile class]]) {
+            DMTile *tile = (DMTile *) node;
             
-            collisionWall = wall;
+            if ([tile isImpassable]) {
+                if (CGRectIntersectsRect(tile.frame, sprite.frame)) {
+                    *stop = YES;
+                    
+                    collisionTile = tile;
+                }
+            }
         }
     }];
     
+    CGRect tileFrame = collisionTile.frame;
     
-    CGRect wallFrame = collisionWall.frame;
-    
-    CGRect intersectRect = CGRectIntersection(spriteFrame, wallFrame);
+    CGRect intersectRect = CGRectIntersection(spriteFrame, tileFrame);
     
     int maxIntersect = 5;
     
@@ -289,7 +316,7 @@
         }
         
         int sign = 1;
-        if (spriteFrame.origin.y < wallFrame.origin.y) {
+        if (spriteFrame.origin.y < tileFrame.origin.y) {
             sign *= -1;
         }
         
@@ -302,7 +329,7 @@
         }
         
         int sign = 1;
-        if (spriteFrame.origin.x < wallFrame.origin.x) {
+        if (spriteFrame.origin.x < tileFrame.origin.x) {
             sign *= -1;
         }
         

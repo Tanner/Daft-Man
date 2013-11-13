@@ -15,4 +15,6 @@
 
 @property (nonatomic, assign) BOOL bombPlaced;
 
+@property (nonatomic, assign) int bricksInLevel;
+
 @end

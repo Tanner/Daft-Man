@@ -31,6 +31,10 @@
     return self;
 }
 
+- (BOOL)isImpassable {
+    return YES;
+}
+
 - (BOOL)isDestructible {
     return YES;
 }
