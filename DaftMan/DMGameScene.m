@@ -93,6 +93,9 @@
     [bro act];
 }
 
+#pragma mark -
+#pragma mark Bomb Handling
+
 - (void)addBomb {
     if (bombPlaced) {
         return;
@@ -138,6 +141,9 @@
     }];
 }
 
+#pragma mark -
+#pragma mark Fire Handling
+
 - (void)spreadFireFromTile:(DMTile *)tile distance:(int)distance usingBlock:(DMTile *(^)(DMTile *currentTile))nextTile {
     DMTile *nextTileToBurn = nextTile(tile);
     
@@ -160,6 +166,9 @@
     }
 }
 
+#pragma mark -
+#pragma mark Tile Helper Methods
+
 - (DMTile *)tileForPoint:(CGPoint)point {
     __block DMTile *tile = nil;
     
@@ -173,6 +182,9 @@
     
     return tile;
 }
+
+#pragma mark -
+#pragma mark Key Event Handling
 
 - (void)keyDown:(NSEvent *)theEvent {
     if (theEvent.isARepeat) {
