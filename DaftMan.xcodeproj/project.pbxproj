@@ -13,13 +13,16 @@
 		C3383229183331040082F702 /* fire-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3383227183331040082F702 /* fire-1.png */; };
 		C338322A183331040082F702 /* fire-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C3383228183331040082F702 /* fire-2.png */; };
 		C338322D183331220082F702 /* DMFire.m in Sources */ = {isa = PBXBuildFile; fileRef = C338322C183331220082F702 /* DMFire.m */; };
+		C338322F18343A680082F702 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = C338322E18343A680082F702 /* star.png */; };
+		C338323118343A6E0082F702 /* rupee-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C338323018343A6E0082F702 /* rupee-yellow.png */; };
+		C338323418343A990082F702 /* DMRupee.m in Sources */ = {isa = PBXBuildFile; fileRef = C338323318343A990082F702 /* DMRupee.m */; };
+		C338323718343BCB0082F702 /* DMStar.m in Sources */ = {isa = PBXBuildFile; fileRef = C338323618343BCB0082F702 /* DMStar.m */; };
 		C38ADA721831BBA8006E960D /* DMTile.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA711831BBA8006E960D /* DMTile.m */; };
 		C38ADA751831BCE5006E960D /* DMWall.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA741831BCE5006E960D /* DMWall.m */; };
 		C38ADA771831BFFE006E960D /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C38ADA761831BFFE006E960D /* wall.png */; };
 		C38ADA7A1831C426006E960D /* DMGrass.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA791831C426006E960D /* DMGrass.m */; };
 		C38ADA7D183273A2006E960D /* DMBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA7C183273A2006E960D /* DMBrick.m */; };
 		C38ADA7F18327413006E960D /* brick.png in Resources */ = {isa = PBXBuildFile; fileRef = C38ADA7E18327413006E960D /* brick.png */; };
-		C38ADA82183274F1006E960D /* DMPrize.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA81183274F1006E960D /* DMPrize.m */; };
 		C38ADA86183277D5006E960D /* DMBro.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA85183277D5006E960D /* DMBro.m */; };
 		C38ADA881832786E006E960D /* bro.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C38ADA871832786E006E960D /* bro.atlas */; };
 		C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA8A183278C6006E960D /* DMMovingSprite.m */; };
@@ -58,6 +61,12 @@
 		C3383228183331040082F702 /* fire-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-2.png"; sourceTree = "<group>"; };
 		C338322B183331220082F702 /* DMFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFire.h; sourceTree = "<group>"; };
 		C338322C183331220082F702 /* DMFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFire.m; sourceTree = "<group>"; };
+		C338322E18343A680082F702 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		C338323018343A6E0082F702 /* rupee-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rupee-yellow.png"; sourceTree = "<group>"; };
+		C338323218343A990082F702 /* DMRupee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRupee.h; sourceTree = "<group>"; };
+		C338323318343A990082F702 /* DMRupee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMRupee.m; sourceTree = "<group>"; };
+		C338323518343BCB0082F702 /* DMStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMStar.h; sourceTree = "<group>"; };
+		C338323618343BCB0082F702 /* DMStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMStar.m; sourceTree = "<group>"; };
 		C38ADA701831BBA8006E960D /* DMTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTile.h; sourceTree = "<group>"; };
 		C38ADA711831BBA8006E960D /* DMTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTile.m; sourceTree = "<group>"; };
 		C38ADA731831BCE5006E960D /* DMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWall.h; sourceTree = "<group>"; };
@@ -68,8 +77,6 @@
 		C38ADA7B183273A2006E960D /* DMBrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBrick.h; sourceTree = "<group>"; };
 		C38ADA7C183273A2006E960D /* DMBrick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBrick.m; sourceTree = "<group>"; };
 		C38ADA7E18327413006E960D /* brick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick.png; sourceTree = "<group>"; };
-		C38ADA80183274F1006E960D /* DMPrize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPrize.h; sourceTree = "<group>"; };
-		C38ADA81183274F1006E960D /* DMPrize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPrize.m; sourceTree = "<group>"; };
 		C38ADA84183277D5006E960D /* DMBro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBro.h; sourceTree = "<group>"; };
 		C38ADA85183277D5006E960D /* DMBro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBro.m; sourceTree = "<group>"; };
 		C38ADA871832786E006E960D /* bro.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bro.atlas; sourceTree = "<group>"; };
@@ -145,8 +152,10 @@
 				C32F535C1832EC4F00C56076 /* DMBomb.m */,
 				C338322B183331220082F702 /* DMFire.h */,
 				C338322C183331220082F702 /* DMFire.m */,
-				C38ADA80183274F1006E960D /* DMPrize.h */,
-				C38ADA81183274F1006E960D /* DMPrize.m */,
+				C338323218343A990082F702 /* DMRupee.h */,
+				C338323318343A990082F702 /* DMRupee.m */,
+				C338323518343BCB0082F702 /* DMStar.h */,
+				C338323618343BCB0082F702 /* DMStar.m */,
 			);
 			name = Sprite;
 			sourceTree = "<group>";
@@ -217,6 +226,8 @@
 				C32F535F1832EC9700C56076 /* bomb-2.png */,
 				C3383227183331040082F702 /* fire-1.png */,
 				C3383228183331040082F702 /* fire-2.png */,
+				C338322E18343A680082F702 /* star.png */,
+				C338323018343A6E0082F702 /* rupee-yellow.png */,
 				C38ADA761831BFFE006E960D /* wall.png */,
 				C38ADA7E18327413006E960D /* brick.png */,
 				C3D202F41831134F00B8C3CA /* Images.xcassets */,
@@ -332,10 +343,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D202F51831134F00B8C3CA /* Images.xcassets in Resources */,
+				C338323118343A6E0082F702 /* rupee-yellow.png in Resources */,
 				C32F53611832EC9700C56076 /* bomb-2.png in Resources */,
 				C38ADA771831BFFE006E960D /* wall.png in Resources */,
 				C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */,
 				C32F53601832EC9700C56076 /* bomb-1.png in Resources */,
+				C338322F18343A680082F702 /* star.png in Resources */,
 				C3D202E91831134E00B8C3CA /* Credits.rtf in Resources */,
 				C38ADA881832786E006E960D /* bro.atlas in Resources */,
 				C338322A183331040082F702 /* fire-2.png in Resources */,
@@ -366,12 +379,13 @@
 				C3D202E51831134E00B8C3CA /* main.m in Sources */,
 				C38ADA721831BBA8006E960D /* DMTile.m in Sources */,
 				C38ADA7A1831C426006E960D /* DMGrass.m in Sources */,
+				C338323418343A990082F702 /* DMRupee.m in Sources */,
 				C338322D183331220082F702 /* DMFire.m in Sources */,
 				C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */,
 				C38ADA7D183273A2006E960D /* DMBrick.m in Sources */,
 				C38ADA751831BCE5006E960D /* DMWall.m in Sources */,
+				C338323718343BCB0082F702 /* DMStar.m in Sources */,
 				C3D202ED1831134F00B8C3CA /* DMGameScene.m in Sources */,
-				C38ADA82183274F1006E960D /* DMPrize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

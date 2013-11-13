@@ -23,7 +23,7 @@
     return self;
 }
 
-- (id)initWithPrize:(DMPrize *)aPrize {
+- (id)initWithPrize:(SKSpriteNode *)aPrize {
     if (self = [self init]) {
         prize = aPrize;
     }

@@ -8,10 +8,8 @@
 
 #import "DMTile.h"
 
-#import "DMPrize.h"
-
 @interface DMBrick : DMTile
 
-@property (nonatomic, retain) DMPrize *prize;
+@property (nonatomic, retain) SKSpriteNode *prize;
 
 @end
