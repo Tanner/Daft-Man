@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Tanner Smith. All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
+#import "DMItem.h"
 
-@interface DMStar : SKSpriteNode
+@interface DMStar : DMItem
 
 @end

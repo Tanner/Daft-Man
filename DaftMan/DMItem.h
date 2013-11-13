@@ -1,13 +1,13 @@
 //
-//  DMHeart.h
+//  DMItem.h
 //  DaftMan
 //
 //  Created by Tanner Smith on 11/13/13.
 //  Copyright (c) 2013 Tanner Smith. All rights reserved.
 //
 
-#import "DMItem.h"
+#import <SpriteKit/SpriteKit.h>
 
-@interface DMHeart : DMItem
+@interface DMItem : SKSpriteNode
 
 @end

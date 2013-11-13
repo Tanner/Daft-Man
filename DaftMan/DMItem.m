@@ -1,5 +1,5 @@
 //
-//  DMRupee.h
+//  DMItem.m
 //  DaftMan
 //
 //  Created by Tanner Smith on 11/13/13.
@@ -8,10 +8,12 @@
 
 #import "DMItem.h"
 
-@interface DMRupee : DMItem
+#import "DMMovingSprite.h"
 
-@property (nonatomic, assign) int value;
+@implementation DMItem
 
-- (id)initWithValue:(int)aValue;
+- (void)pickedUpBy:(DMMovingSprite *)movingSprite {
+    [self removeFromParent];
+}
 
 @end

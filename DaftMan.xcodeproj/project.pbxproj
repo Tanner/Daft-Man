@@ -19,6 +19,7 @@
 		C338323718343BCB0082F702 /* DMStar.m in Sources */ = {isa = PBXBuildFile; fileRef = C338323618343BCB0082F702 /* DMStar.m */; };
 		C338323918343FD90082F702 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = C338323818343FD90082F702 /* heart.png */; };
 		C338323C18343FE50082F702 /* DMHeart.m in Sources */ = {isa = PBXBuildFile; fileRef = C338323B18343FE50082F702 /* DMHeart.m */; };
+		C338323F1834451F0082F702 /* DMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C338323E1834451F0082F702 /* DMItem.m */; };
 		C38ADA721831BBA8006E960D /* DMTile.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA711831BBA8006E960D /* DMTile.m */; };
 		C38ADA751831BCE5006E960D /* DMWall.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA741831BCE5006E960D /* DMWall.m */; };
 		C38ADA771831BFFE006E960D /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C38ADA761831BFFE006E960D /* wall.png */; };
@@ -72,6 +73,8 @@
 		C338323818343FD90082F702 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C338323A18343FE50082F702 /* DMHeart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHeart.h; sourceTree = "<group>"; };
 		C338323B18343FE50082F702 /* DMHeart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHeart.m; sourceTree = "<group>"; };
+		C338323D1834451F0082F702 /* DMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMItem.h; sourceTree = "<group>"; };
+		C338323E1834451F0082F702 /* DMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMItem.m; sourceTree = "<group>"; };
 		C38ADA701831BBA8006E960D /* DMTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTile.h; sourceTree = "<group>"; };
 		C38ADA711831BBA8006E960D /* DMTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTile.m; sourceTree = "<group>"; };
 		C38ADA731831BCE5006E960D /* DMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWall.h; sourceTree = "<group>"; };
@@ -133,6 +136,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3383240183445230082F702 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				C338323D1834451F0082F702 /* DMItem.h */,
+				C338323E1834451F0082F702 /* DMItem.m */,
+				C338323218343A990082F702 /* DMRupee.h */,
+				C338323318343A990082F702 /* DMRupee.m */,
+				C338323518343BCB0082F702 /* DMStar.h */,
+				C338323618343BCB0082F702 /* DMStar.m */,
+				C338323A18343FE50082F702 /* DMHeart.h */,
+				C338323B18343FE50082F702 /* DMHeart.m */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
 		C38ADA6F1831BB7F006E960D /* Tile */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,16 +171,11 @@
 			children = (
 				C38ADA8C183278E6006E960D /* Moving Sprite */,
 				C38ADA6F1831BB7F006E960D /* Tile */,
+				C3383240183445230082F702 /* Item */,
 				C32F535B1832EC4F00C56076 /* DMBomb.h */,
 				C32F535C1832EC4F00C56076 /* DMBomb.m */,
 				C338322B183331220082F702 /* DMFire.h */,
 				C338322C183331220082F702 /* DMFire.m */,
-				C338323218343A990082F702 /* DMRupee.h */,
-				C338323318343A990082F702 /* DMRupee.m */,
-				C338323518343BCB0082F702 /* DMStar.h */,
-				C338323618343BCB0082F702 /* DMStar.m */,
-				C338323A18343FE50082F702 /* DMHeart.h */,
-				C338323B18343FE50082F702 /* DMHeart.m */,
 			);
 			name = Sprite;
 			sourceTree = "<group>";
@@ -391,6 +404,7 @@
 				C38ADA7A1831C426006E960D /* DMGrass.m in Sources */,
 				C338323418343A990082F702 /* DMRupee.m in Sources */,
 				C338322D183331220082F702 /* DMFire.m in Sources */,
+				C338323F1834451F0082F702 /* DMItem.m in Sources */,
 				C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */,
 				C38ADA7D183273A2006E960D /* DMBrick.m in Sources */,
 				C38ADA751831BCE5006E960D /* DMWall.m in Sources */,
