@@ -28,8 +28,9 @@
         SKNode *ground = [[SKNode alloc] init];
         ground.name = @"ground";
         
+        NSMutableArray *row = [[NSMutableArray alloc] init];
+        
         for (int r = 0; r < NUM_TILES_HEIGHT; r++) {
-            NSMutableArray *row = [[NSMutableArray alloc] init];
             DMTile *previousTile = nil;
             
             for (int c = 0; c < NUM_TILES_WIDTH; c++) {
@@ -43,11 +44,11 @@
                     sprite = [[DMGrass alloc] init];
                 }
                 
-                if (row) {
-                    DMTile *aboveTile = [row objectAtIndex:c];
+                if (row && [row count] >= NUM_TILES_WIDTH) {
+                    DMTile *tile = [row objectAtIndex:c];
                     
-                    sprite.northTile = aboveTile;
-                    aboveTile.southTile = sprite;
+                    sprite.southTile = tile;
+                    tile.northTile = sprite;
                 }
                 
                 if (previousTile) {
@@ -63,6 +64,7 @@
                 
                 [ground addChild:sprite];
                 
+                row[c] = sprite;
                 previousTile = sprite;
             }
         }
@@ -99,10 +101,23 @@
 }
 
 - (void)boom:(DMBomb *)bomb {
-    [self tileForPoint:bomb.position];
+    DMTile *tile = [self tileForPoint:bomb.position];
+    
+    [self addFireToTile:tile];
+    [self addFireToTile:tile.northTile];
+    [self addFireToTile:tile.southTile];
+    [self addFireToTile:tile.eastTile];
+    [self addFireToTile:tile.westTile];
     
     [bomb removeFromParent];
-    NSLog(@"Boom!");
+}
+
+- (void)addFireToTile:(DMTile *)tile {
+    if (tile && [tile isKindOfClass:[DMGrass class]]) {
+        DMFire *fire = [[DMFire alloc] initAtPosition:tile.position];
+        
+        [self addChild:fire];
+    }
 }
 
 - (DMTile *)tileForPoint:(CGPoint)point {
