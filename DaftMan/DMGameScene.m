@@ -213,7 +213,7 @@
     
     __block DMWall *collisionWall = nil;
     
-    [self enumerateChildNodesWithName:@"wall" usingBlock:^(SKNode *node, BOOL *stop) {
+    [self enumerateChildNodesWithName:@"//ground/wall" usingBlock:^(SKNode *node, BOOL *stop) {
         DMWall *wall = (DMWall *) node;
         
         if (CGRectIntersectsRect(wall.frame, sprite.frame)) {
