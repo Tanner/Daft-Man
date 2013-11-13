@@ -10,6 +10,7 @@
 
 #import "DMWall.h"
 #import "DMGrass.h"
+#import "DMBomb.h"
 
 @implementation DMGameScene {
     BOOL keyDown;
@@ -68,7 +69,7 @@
     }
     
     DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
-    
+        
     switch (theEvent.keyCode) {
         case 126:
             [bro moveUp];
@@ -82,6 +83,17 @@
         case 124:
             [bro moveRight];
             break;
+        case 49: {
+            DMBomb *bomb = [[DMBomb alloc] initWithBoom:^(DMBomb *bomb) {
+                [self boom:bomb];
+            }];
+            
+            bomb.position = bro.position;
+            
+            [self addChild:bomb];
+            
+            break;
+        }
     }
     
     [super keyDown:theEvent];
@@ -123,6 +135,11 @@
     }
     
     [super keyUp:theEvent];
+}
+
+- (void)boom:(DMBomb *)bomb {
+    [bomb removeFromParent];
+    NSLog(@"Boom!");
 }
 
 #pragma mark -
