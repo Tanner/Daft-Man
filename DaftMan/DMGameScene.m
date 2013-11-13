@@ -112,6 +112,8 @@
 - (void)boom:(DMBomb *)bomb {
     bombPlaced = NO;
     
+    [bomb removeFromParent];
+    
     DMTile *tile = [self tileForPoint:bomb.position];
     
     [self addFireToTile:tile];
@@ -119,8 +121,6 @@
     [self addFireToTile:tile.southTile];
     [self addFireToTile:tile.eastTile];
     [self addFireToTile:tile.westTile];
-    
-    [bomb removeFromParent];
 }
 
 - (void)addFireToTile:(DMTile *)tile {
