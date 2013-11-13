@@ -15,6 +15,8 @@
 
 @implementation DMGameScene
 
+@synthesize bombPlaced;
+
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
 
@@ -73,6 +75,8 @@
         bro.zPosition = 1;
         bro.delegate = self;
         
+        bombPlaced = NO;
+        
         [self addChild:ground];
         [self addChild:bro];
     }
@@ -87,6 +91,12 @@
 }
 
 - (void)addBomb {
+    if (bombPlaced) {
+        return;
+    }
+    
+    bombPlaced = YES;
+    
     DMBro *bro = (DMBro *) [self childNodeWithName:@"bro"];
     
     DMBomb *bomb = [[DMBomb alloc] initWithBoom:^(DMBomb *bomb) {
@@ -100,6 +110,8 @@
 }
 
 - (void)boom:(DMBomb *)bomb {
+    bombPlaced = NO;
+    
     DMTile *tile = [self tileForPoint:bomb.position];
     
     [self addFireToTile:tile];

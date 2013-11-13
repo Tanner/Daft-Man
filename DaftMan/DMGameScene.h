@@ -13,4 +13,6 @@
 
 @interface DMGameScene : SKScene <DMMovingSpriteDelegate>
 
+@property (nonatomic, assign) BOOL bombPlaced;
+
 @end
