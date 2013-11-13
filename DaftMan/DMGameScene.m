@@ -210,9 +210,10 @@
             [self addBomb];
             break;
         }
+        default:
+            [super keyDown:theEvent];
+            break;
     }
-    
-    [super keyDown:theEvent];
 }
 
 - (void)keyUp:(NSEvent *)theEvent {
@@ -244,13 +245,14 @@
                 stop = YES;
             }
             break;
+        default:
+            [super keyUp:theEvent];
+            break;
     }
     
     if (stop) {
         [bro stop];
     }
-    
-    [super keyUp:theEvent];
 }
 
 #pragma mark -
