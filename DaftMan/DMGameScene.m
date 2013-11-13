@@ -13,9 +13,7 @@
 #import "DMBomb.h"
 #import "DMFire.h"
 
-@implementation DMGameScene {
-    BOOL keyDown;
-}
+@implementation DMGameScene
 
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
