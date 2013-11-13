@@ -340,9 +340,7 @@
         }
         
         correctedPoint = CGPointMake(correctedPoint.x, correctedPoint.y + sign * intersectRect.size.height);
-    }
-    
-    else if(correctedPoint.y != oldPoint.y) {
+    } else if (correctedPoint.y != oldPoint.y) {
         if (intersectRect.size.width > maxIntersect) {
             return oldPoint;
         }
