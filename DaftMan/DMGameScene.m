@@ -95,7 +95,7 @@
         [self boom:bomb];
     }];
     
-    bomb.position = bro.position;
+    bomb.position = [self tileForPoint:bro.position].position;
     bomb.zPosition = bro.zPosition - 1;
     
     [self addChild:bomb];
