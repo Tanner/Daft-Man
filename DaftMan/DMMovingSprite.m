@@ -32,8 +32,6 @@
         
         self.texture = upWalkTextures[0];
         self.size = ((SKTexture *) upWalkTextures[0]).size;
-        
-        [self setAnchorPoint:CGPointMake(0, 0)];
     }
     
     return self;
