@@ -58,10 +58,11 @@
 - (void)destroy {
     if (prize) {
         SKNode *parent = [self parent];
+        SKNode *items = [[parent parent] childNodeWithName:@"//items"];
 
         prize.position = self.position;
         
-        [parent addChild:prize];
+        [items addChild:prize];
     }
     
     [self removeFromParent];

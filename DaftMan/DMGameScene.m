@@ -78,6 +78,11 @@
         bricksInLevel = 5;
         [self addBricks];
         
+        SKNode *items = [[SKNode alloc] init];
+        items.name = @"items";
+        
+        [self addChild:items];
+        
         DMBro *bro = [[DMBro alloc] init];
         bro.position = broStart;
         bro.zPosition = 1;
