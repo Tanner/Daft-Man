@@ -13,6 +13,11 @@
 @property (nonatomic, assign, readonly) int row;
 @property (nonatomic, assign, readonly) int column;
 
+@property (nonatomic, retain) DMTile *northTile;
+@property (nonatomic, retain) DMTile *southTile;
+@property (nonatomic, retain) DMTile *eastTile;
+@property (nonatomic, retain) DMTile *westTile;
+
 - (void)setRow:(int)row setColumn:(int)column;
 
 - (BOOL)isImpassable;

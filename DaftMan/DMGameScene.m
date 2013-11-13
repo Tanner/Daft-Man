@@ -29,6 +29,9 @@
         ground.name = @"ground";
         
         for (int r = 0; r < NUM_TILES_HEIGHT; r++) {
+            NSMutableArray *row = [[NSMutableArray alloc] init];
+            DMTile *previousTile = nil;
+            
             for (int c = 0; c < NUM_TILES_WIDTH; c++) {
                 DMTile *sprite;
                 
@@ -40,6 +43,18 @@
                     sprite = [[DMGrass alloc] init];
                 }
                 
+                if (row) {
+                    DMTile *aboveTile = [row objectAtIndex:c];
+                    
+                    sprite.northTile = aboveTile;
+                    aboveTile.southTile = sprite;
+                }
+                
+                if (previousTile) {
+                    sprite.eastTile = previousTile;
+                    previousTile.westTile = sprite;
+                }
+                
                 [sprite setRow:r setColumn:c];
 
                 if (r == 1 && c == 1) {
@@ -47,6 +62,8 @@
                 }
                 
                 [ground addChild:sprite];
+                
+                previousTile = sprite;
             }
         }
         

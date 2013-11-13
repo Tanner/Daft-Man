@@ -11,6 +11,7 @@
 @implementation DMTile
 
 @synthesize row, column;
+@synthesize northTile, southTile, eastTile, westTile;
 
 #define OFFSET_X -16
 #define OFFSET_Y -16
