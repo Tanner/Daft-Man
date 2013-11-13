@@ -25,6 +25,9 @@
         
         CGPoint broStart;
         
+        SKNode *ground = [[SKNode alloc] init];
+        ground.name = @"ground";
+        
         for (int r = 0; r < NUM_TILES_HEIGHT; r++) {
             for (int c = 0; c < NUM_TILES_WIDTH; c++) {
                 DMTile *sprite;
@@ -43,7 +46,7 @@
                     broStart = sprite.position;
                 }
                 
-                [self addChild:sprite];
+                [ground addChild:sprite];
             }
         }
         
@@ -52,6 +55,7 @@
         bro.zPosition = 1;
         bro.delegate = self;
         
+        [self addChild:ground];
         [self addChild:bro];
     }
     
@@ -78,8 +82,24 @@
 }
 
 - (void)boom:(DMBomb *)bomb {
+    [self tileForPoint:bomb.position];
+    
     [bomb removeFromParent];
     NSLog(@"Boom!");
+}
+
+- (DMTile *)tileForPoint:(CGPoint)point {
+    __block DMTile *tile = nil;
+    
+    [self enumerateChildNodesWithName:@"//ground/*" usingBlock:^(SKNode *node, BOOL *stop) {
+        if (CGRectContainsPoint(node.frame, point)) {
+            tile = (DMTile *) node;
+            
+            *stop = YES;
+        }
+    }];
+    
+    return tile;
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
