@@ -29,4 +29,9 @@
     return self;
 }
 
+- (void)pickedUpBy:(DMMovingSprite *)movingSprite {
+    [super pickedUpBy:movingSprite];
+    [self.delegate rupeePickedUpBy:movingSprite];
+}
+
 @end

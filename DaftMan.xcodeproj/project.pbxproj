@@ -75,6 +75,7 @@
 		C338323B18343FE50082F702 /* DMHeart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHeart.m; sourceTree = "<group>"; };
 		C338323D1834451F0082F702 /* DMItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMItem.h; sourceTree = "<group>"; };
 		C338323E1834451F0082F702 /* DMItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMItem.m; sourceTree = "<group>"; };
+		C338324118352B560082F702 /* DMItemDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMItemDelegate.h; sourceTree = "<group>"; };
 		C38ADA701831BBA8006E960D /* DMTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTile.h; sourceTree = "<group>"; };
 		C38ADA711831BBA8006E960D /* DMTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTile.m; sourceTree = "<group>"; };
 		C38ADA731831BCE5006E960D /* DMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWall.h; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 			children = (
 				C338323D1834451F0082F702 /* DMItem.h */,
 				C338323E1834451F0082F702 /* DMItem.m */,
+				C338324118352B560082F702 /* DMItemDelegate.h */,
 				C338323218343A990082F702 /* DMRupee.h */,
 				C338323318343A990082F702 /* DMRupee.m */,
 				C338323518343BCB0082F702 /* DMStar.h */,

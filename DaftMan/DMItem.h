@@ -9,8 +9,11 @@
 #import <SpriteKit/SpriteKit.h>
 
 #import "DMMovingSprite.h"
+#import "DMItemDelegate.h"
 
 @interface DMItem : SKSpriteNode
+
+@property (nonatomic, assign) id <DMItemDelegate> delegate;
 
 - (void)pickedUpBy:(DMMovingSprite *)movingSprite;
 

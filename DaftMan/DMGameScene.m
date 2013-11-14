@@ -377,4 +377,19 @@
     return correctedPoint;
 }
 
+#pragma mark -
+#pragma mark DMItemDelegate
+
+- (void)rupeePickedUpBy:(DMMovingSprite *)movingSprite {
+    NSLog(@"Rupee picked up by %@", [movingSprite description]);
+}
+
+- (void)starPickedUpBy:(DMMovingSprite *)movingSprite {
+    NSLog(@"Star picked up by %@", [movingSprite description]);
+}
+
+- (void)heartPickedUpBy:(DMMovingSprite *)movingSprite {
+    NSLog(@"Heart picked up by %@", [movingSprite description]);
+}
+
 @end

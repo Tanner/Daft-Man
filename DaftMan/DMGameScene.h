@@ -9,9 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 #import "DMMovingSpriteDelegate.h"
+#import "DMItemDelegate.h"
 #import "DMBro.h"
 
-@interface DMGameScene : SKScene <DMMovingSpriteDelegate>
+@interface DMGameScene : SKScene <DMMovingSpriteDelegate, DMItemDelegate>
 
 @property (nonatomic, assign) BOOL bombPlaced;
 
