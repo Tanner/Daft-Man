@@ -139,6 +139,7 @@
         DMBrick *brick = [[DMBrick alloc] initWithRandomItem];
         
         brick.position = ((SKNode *) [grass objectAtIndex:index]).position;
+        brick.item.delegate = self;
         
         [ground addChild:brick];
     }
