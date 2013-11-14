@@ -8,18 +8,14 @@
 
 #import "DMTile.h"
 
+#import "DMItem.h"
+
 @interface DMBrick : DMTile
 
-typedef enum prizeTypes {
-    RUPEE,
-    STAR,
-    HEART
-} PrizeType;
+@property (nonatomic, retain) DMItem *item;
 
-@property (nonatomic, retain) SKSpriteNode *prize;
-
-- (id)initWithPrize:(SKSpriteNode *)aPrize;
-- (id)initWithRandomPrize;
+- (id)initWithItem:(DMItem *)anItem;
+- (id)initWithRandomItem;
 
 - (void)destroy;
 

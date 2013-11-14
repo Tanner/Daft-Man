@@ -13,6 +13,12 @@
 
 @interface DMItem : SKSpriteNode
 
+typedef enum itemTypes {
+    RUPEE,
+    STAR,
+    HEART
+} ItemType;
+
 @property (nonatomic, assign) id <DMItemDelegate> delegate;
 
 - (void)pickedUpBy:(DMMovingSprite *)movingSprite;

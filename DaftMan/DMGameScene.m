@@ -136,7 +136,7 @@
     for (int i = 0; i < bricksInLevel; i++) {
         int index = arc4random() % ([grass count] + 1);
         
-        DMBrick *brick = [[DMBrick alloc] initWithRandomPrize];
+        DMBrick *brick = [[DMBrick alloc] initWithRandomItem];
         
         brick.position = ((SKNode *) [grass objectAtIndex:index]).position;
         

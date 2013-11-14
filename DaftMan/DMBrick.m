@@ -14,7 +14,7 @@
 
 @implementation DMBrick
 
-@synthesize prize;
+@synthesize item;
 
 - (id)init {
     // TODO: Brick.png is only 30x30
@@ -27,27 +27,27 @@
     return self;
 }
 
-- (id)initWithPrize:(SKSpriteNode *)aPrize {
+- (id)initWithItem:(DMItem *)anItem {
     if (self = [self init]) {
-        prize = aPrize;
+        item = anItem;
     }
     
     return self;
 }
 
-- (id)initWithRandomPrize {
+- (id)initWithRandomItem {
     if (self = [self init]) {
-        PrizeType prizeType = arc4random() % 3;
+        ItemType itemType = arc4random() % 3;
         
-        switch (prizeType) {
+        switch (itemType) {
             case RUPEE:
-                prize = [[DMRupee alloc] init];
+                item = [[DMRupee alloc] init];
                 break;
             case STAR:
-                prize = [[DMStar alloc] init];
+                item = [[DMStar alloc] init];
                 break;
             case HEART:
-                prize = [[DMHeart alloc] init];
+                item = [[DMHeart alloc] init];
                 break;
         }
     }
@@ -56,13 +56,13 @@
 }
 
 - (void)destroy {
-    if (prize) {
+    if (item) {
         SKNode *parent = [self parent];
         SKNode *items = [[parent parent] childNodeWithName:@"//items"];
 
-        prize.position = self.position;
+        item.position = self.position;
         
-        [items addChild:prize];
+        [items addChild:item];
     }
     
     [self removeFromParent];
