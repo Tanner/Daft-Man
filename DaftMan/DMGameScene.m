@@ -111,13 +111,10 @@
 }
 
 - (void)checkCollisions {
-    SKNode *movingSprites = [self childNodeWithName:@"moving-sprites"];
-    SKNode *items = [self childNodeWithName:@"items"];
-    
-    [movingSprites enumerateChildNodesWithName:@"//*" usingBlock:^(SKNode *node, BOOL *stop) {
+    [self enumerateChildNodesWithName:@"//moving-sprites/*" usingBlock:^(SKNode *node, BOOL *stop) {
         DMMovingSprite *movingSprite = (DMMovingSprite *) node;
         
-        [items enumerateChildNodesWithName:@"//*" usingBlock:^(SKNode *node, BOOL *stop) {
+        [self enumerateChildNodesWithName:@"//items/*" usingBlock:^(SKNode *node, BOOL *stop) {
             DMItem *item = (DMItem *) node;
             
             if (CGRectIntersectsRect(movingSprite.frame, item.frame)) {
