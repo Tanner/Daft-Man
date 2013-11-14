@@ -8,6 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "DMMovingSprite.h"
+
 @interface DMItem : SKSpriteNode
+
+- (void)pickedUpBy:(DMMovingSprite *)movingSprite;
 
 @end

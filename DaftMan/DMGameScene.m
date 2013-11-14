@@ -13,6 +13,7 @@
 #import "DMGrass.h"
 #import "DMBomb.h"
 #import "DMFire.h"
+#import "DMItem.h"
 
 @implementation DMGameScene
 
@@ -102,9 +103,28 @@
 }
 
 - (void)update:(CFTimeInterval)currentTime {
+    [self checkCollisions];
+    
     DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
     
     [bro act];
+}
+
+- (void)checkCollisions {
+    SKNode *movingSprites = [self childNodeWithName:@"moving-sprites"];
+    SKNode *items = [self childNodeWithName:@"items"];
+    
+    [movingSprites enumerateChildNodesWithName:@"//*" usingBlock:^(SKNode *node, BOOL *stop) {
+        DMMovingSprite *movingSprite = (DMMovingSprite *) node;
+        
+        [items enumerateChildNodesWithName:@"//*" usingBlock:^(SKNode *node, BOOL *stop) {
+            DMItem *item = (DMItem *) node;
+            
+            if (CGRectIntersectsRect(movingSprite.frame, item.frame)) {
+                [item pickedUpBy:movingSprite];
+            }
+        }];
+    }];
 }
 
 - (void)addBricks {
