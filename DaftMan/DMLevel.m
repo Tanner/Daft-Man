@@ -23,7 +23,7 @@
 
 #define BOMB_DISTANCE 2
 
-#define ADDITIONAL_BRICKS 1
+#define ADDITIONAL_BRICKS 5
 
 @synthesize bombPlaced, numberOfRupees;
 
