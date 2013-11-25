@@ -154,6 +154,8 @@
         
         if (rupeesToAdd > 0) {
             brick = [[DMBrick alloc] initWithRupee];
+            
+            rupeesToAdd--;
         } else {
             brick = [[DMBrick alloc] initWithRandomItem];
         }
