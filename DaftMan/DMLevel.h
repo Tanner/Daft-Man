@@ -14,6 +14,7 @@
 @interface DMLevel : SKNode <DMMovingSpriteDelegate, DMItemDelegate>
 
 @property (nonatomic, assign) BOOL bombPlaced;
+@property (nonatomic, assign) int numberOfRupees;
 
 - (id)init;
 - (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount;

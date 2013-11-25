@@ -25,7 +25,7 @@
 
 #define ADDITIONAL_BRICKS 1
 
-@synthesize bombPlaced;
+@synthesize bombPlaced, numberOfRupees;
 
 - (id)init {
     if (self = [self initNumberOfFoes:3 numberOfRupies:5]) {
@@ -87,6 +87,8 @@
         [self addChild:ground];
         
         [self addBricks:rupeeCount];
+        
+        numberOfRupees = rupeeCount;
         
         SKNode *items = [[SKNode alloc] init];
         items.name = @"items";
@@ -402,7 +404,7 @@
 #pragma mark DMItemDelegate
 
 - (void)rupeePickedUpBy:(DMMovingSprite *)movingSprite {
-    NSLog(@"Rupee picked up by %@", [movingSprite description]);
+    numberOfRupees--;
 }
 
 - (void)starPickedUpBy:(DMMovingSprite *)movingSprite {
