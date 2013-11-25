@@ -41,28 +41,28 @@
 - (void)moveUp {
     [self runAction:upWalkAnimation];
     
-    distanceToMove = CGPointMake(0, 1 * movementMultiplier);
+    distanceToMove = CGPointMake(0, 1);
     direction = UP;
 }
 
 - (void)moveDown {
     [self runAction:downWalkAnimation];
     
-    distanceToMove = CGPointMake(0, -1 * movementMultiplier);
+    distanceToMove = CGPointMake(0, -1);
     direction = DOWN;
 }
 
 - (void)moveLeft {
     [self runAction:leftWalkAnimation];
     
-    distanceToMove = CGPointMake(-1 * movementMultiplier, 0);
+    distanceToMove = CGPointMake(-1, 0);
     direction = LEFT;
 }
 
 - (void)moveRight {
     [self runAction:rightWalkAnimation];
 
-    distanceToMove = CGPointMake(1 * movementMultiplier, 0);
+    distanceToMove = CGPointMake(1, 0);
     direction = RIGHT;
 }
 
@@ -74,7 +74,7 @@
 }
 
 - (void)act {
-    CGPoint newPosition = CGPointMake(self.position.x + distanceToMove.x, self.position.y + distanceToMove.y);
+    CGPoint newPosition = CGPointMake(self.position.x + distanceToMove.x * movementMultiplier, self.position.y + distanceToMove.y * movementMultiplier);
     
     newPosition = [delegate autoCorrectedPoint:newPosition sprite:self];
     
