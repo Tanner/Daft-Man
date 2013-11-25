@@ -23,7 +23,9 @@
 
 #define BOMB_DISTANCE 2
 
-@synthesize bombPlaced, bricksInLevel;
+#define ADDITIONAL_BRICKS 1
+
+@synthesize bombPlaced;
 
 - (id)init {
     if (self = [self initNumberOfFoes:3 numberOfRupies:5]) {
@@ -84,8 +86,7 @@
         
         [self addChild:ground];
         
-        bricksInLevel = 5;
-        [self addBricks];
+        [self addBricks:rupeeCount];
         
         SKNode *items = [[SKNode alloc] init];
         items.name = @"items";
@@ -132,7 +133,7 @@
     }];
 }
 
-- (void)addBricks {
+- (void)addBricks:(int)rupeeCount {
     SKNode *ground = [self childNodeWithName:@"ground"];
     
     __block NSMutableArray *grass = [[NSMutableArray alloc] init];
@@ -141,10 +142,19 @@
         [grass addObject:node];
     }];
     
-    for (int i = 0; i < bricksInLevel; i++) {
+    int bricksToAdd = rupeeCount + arc4random() % ADDITIONAL_BRICKS;
+    int rupeesToAdd = rupeeCount;
+    
+    for (int i = 0; i < bricksToAdd; i++) {
         int index = arc4random() % ([grass count] + 1);
         
-        DMBrick *brick = [[DMBrick alloc] initWithRandomItem];
+        DMBrick *brick;
+        
+        if (rupeesToAdd > 0) {
+            brick = [[DMBrick alloc] initWithRupee];
+        } else {
+            brick = [[DMBrick alloc] initWithRandomItem];
+        }
         
         brick.position = ((SKNode *) [grass objectAtIndex:index]).position;
         brick.item.delegate = self;

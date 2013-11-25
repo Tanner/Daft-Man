@@ -35,6 +35,14 @@
     return self;
 }
 
+- (id)initWithRupee {
+    if (self = [self initWithItem:[[DMRupee alloc] init]]) {
+        
+    }
+    
+    return self;
+}
+
 - (id)initWithRandomItem {
     if (self = [self init]) {
         ItemType itemType = arc4random() % 3;

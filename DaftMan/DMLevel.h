@@ -15,8 +15,6 @@
 
 @property (nonatomic, assign) BOOL bombPlaced;
 
-@property (nonatomic, assign) int bricksInLevel;
-
 - (id)init;
 - (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount;
 

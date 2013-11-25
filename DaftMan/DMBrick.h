@@ -15,6 +15,7 @@
 @property (nonatomic, retain) DMItem *item;
 
 - (id)initWithItem:(DMItem *)anItem;
+- (id)initWithRupee;
 - (id)initWithRandomItem;
 
 - (void)destroy;
