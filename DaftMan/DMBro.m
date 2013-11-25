@@ -11,7 +11,7 @@
 @implementation DMBro
 
 - (id)init {    
-    if (self = [super initWithHealth:3 moveTime:1 atlasName:@"bro"]) {
+    if (self = [super initWithHealth:3 atlasName:@"bro"]) {
         self.name = @"bro";
     }
     

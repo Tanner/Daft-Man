@@ -26,7 +26,7 @@ typedef enum movingSpriteDirection {
 @property (nonatomic, assign) int health;
 @property (nonatomic, assign) int immunity;
 
-@property (nonatomic, assign) NSTimeInterval moveTime;
+@property (nonatomic, assign) double movementMultiplier;
 
 @property (nonatomic, assign) id <DMMovingSpriteDelegate> delegate;
 
@@ -40,7 +40,7 @@ typedef enum movingSpriteDirection {
 @property (nonatomic, retain) SKAction *leftWalkAnimation;
 @property (nonatomic, retain) SKAction *rightWalkAnimation;
 
-- (id)initWithHealth:(int)aHealth moveTime:(NSTimeInterval)aMoveTime atlasName:(NSString *)atlasName;
+- (id)initWithHealth:(int)aHealth atlasName:(NSString *)atlasName;
 
 - (void)moveUp;
 - (void)moveDown;

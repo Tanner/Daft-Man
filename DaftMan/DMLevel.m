@@ -415,8 +415,8 @@
     return NO;
 }
 
-- (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite {
-    NSLog(@"Star picked up by %@", [movingSprite description]);
+- (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite {    
+    movingSprite.movementMultiplier = 2;
     
     return YES;
 }

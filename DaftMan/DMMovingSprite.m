@@ -12,7 +12,7 @@
 
 @synthesize direction, distanceToMove;
 @synthesize health, immunity;
-@synthesize moveTime;
+@synthesize movementMultiplier;
 @synthesize delegate;
 
 @synthesize upWalkTextures, downWalkTextures, leftWalkTextures, rightWalkTextures;
@@ -20,13 +20,14 @@
 
 #define TIME_PER_FRAME (1.0 / 5)
 
-- (id)initWithHealth:(int)aHealth moveTime:(NSTimeInterval)aMoveTime atlasName:(NSString *)atlasName {
+- (id)initWithHealth:(int)aHealth atlasName:(NSString *)atlasName {
     if (self = [super init]) {
         direction = STOP;
         distanceToMove = CGPointMake(0, 0);
 
         health = aHealth;
-        moveTime = aMoveTime;
+        
+        movementMultiplier = 1;
         
         [self loadTexturesFromAtlasNamed:atlasName count:3];
         
@@ -40,28 +41,28 @@
 - (void)moveUp {
     [self runAction:upWalkAnimation];
     
-    distanceToMove = CGPointMake(0, 1);
+    distanceToMove = CGPointMake(0, 1 * movementMultiplier);
     direction = UP;
 }
 
 - (void)moveDown {
     [self runAction:downWalkAnimation];
     
-    distanceToMove = CGPointMake(0, -1);
+    distanceToMove = CGPointMake(0, -1 * movementMultiplier);
     direction = DOWN;
 }
 
 - (void)moveLeft {
     [self runAction:leftWalkAnimation];
     
-    distanceToMove = CGPointMake(-1, 0);
+    distanceToMove = CGPointMake(-1 * movementMultiplier, 0);
     direction = LEFT;
 }
 
 - (void)moveRight {
     [self runAction:rightWalkAnimation];
 
-    distanceToMove = CGPointMake(1, 0);
+    distanceToMove = CGPointMake(1 * movementMultiplier, 0);
     direction = RIGHT;
 }
 
