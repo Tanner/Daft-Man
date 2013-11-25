@@ -412,7 +412,7 @@
 }
 
 - (void)heartPickedUpBy:(DMMovingSprite *)movingSprite {
-    NSLog(@"Heart picked up by %@", [movingSprite description]);
+    movingSprite.health++;
 }
 
 @end
