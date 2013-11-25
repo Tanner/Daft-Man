@@ -404,7 +404,9 @@
 #pragma mark DMItemDelegate
 
 - (void)rupeePickedUpBy:(DMMovingSprite *)movingSprite {
-    numberOfRupees--;
+    if ([movingSprite isKindOfClass:[DMBro class]]) {
+        numberOfRupees--;
+    }
 }
 
 - (void)starPickedUpBy:(DMMovingSprite *)movingSprite {
