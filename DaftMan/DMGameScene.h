@@ -8,14 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-#import "DMMovingSpriteDelegate.h"
-#import "DMItemDelegate.h"
-#import "DMBro.h"
+#import "DMLevel.h"
 
-@interface DMGameScene : SKScene <DMMovingSpriteDelegate, DMItemDelegate>
+@interface DMGameScene : SKScene
 
-@property (nonatomic, assign) BOOL bombPlaced;
-
-@property (nonatomic, assign) int bricksInLevel;
+@property (nonatomic, retain) DMLevel *level;
 
 @end
