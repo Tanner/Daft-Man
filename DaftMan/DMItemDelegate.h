@@ -12,8 +12,8 @@
 
 @protocol DMItemDelegate <NSObject>
 
-- (void)rupeePickedUpBy:(DMMovingSprite *)movingSprite;
-- (void)starPickedUpBy:(DMMovingSprite *)movingSprite;
-- (void)heartPickedUpBy:(DMMovingSprite *)movingSprite;
+- (BOOL)rupeePickedUpBy:(DMMovingSprite *)movingSprite;
+- (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite;
+- (BOOL)heartPickedUpBy:(DMMovingSprite *)movingSprite;
 
 @end

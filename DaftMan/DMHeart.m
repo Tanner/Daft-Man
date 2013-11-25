@@ -18,10 +18,9 @@
 }
 
 - (void)pickedUpBy:(DMMovingSprite *)movingSprite {
-    movingSprite.health++;
-    
-    [super pickedUpBy:movingSprite];
-    [self.delegate heartPickedUpBy:movingSprite];
+    if ([self.delegate heartPickedUpBy:movingSprite]) {
+        [super pickedUpBy:movingSprite];
+    }
 }
 
 @end

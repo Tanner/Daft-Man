@@ -403,18 +403,26 @@
 #pragma mark -
 #pragma mark DMItemDelegate
 
-- (void)rupeePickedUpBy:(DMMovingSprite *)movingSprite {
+- (BOOL)rupeePickedUpBy:(DMMovingSprite *)movingSprite {
     if ([movingSprite isKindOfClass:[DMBro class]]) {
         numberOfRupees--;
+        
+        return YES;
     }
+    
+    return NO;
 }
 
-- (void)starPickedUpBy:(DMMovingSprite *)movingSprite {
+- (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite {
     NSLog(@"Star picked up by %@", [movingSprite description]);
+    
+    return YES;
 }
 
-- (void)heartPickedUpBy:(DMMovingSprite *)movingSprite {
+- (BOOL)heartPickedUpBy:(DMMovingSprite *)movingSprite {
     movingSprite.health++;
+    
+    return YES;
 }
 
 @end

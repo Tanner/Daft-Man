@@ -18,8 +18,9 @@
 }
 
 - (void)pickedUpBy:(DMMovingSprite *)movingSprite {
-    [super pickedUpBy:movingSprite];
-    [self.delegate starPickedUpBy:movingSprite];
+    if ([self.delegate starPickedUpBy:movingSprite]) {
+        [super pickedUpBy:movingSprite];
+    }
 }
 
 @end

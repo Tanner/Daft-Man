@@ -30,8 +30,9 @@
 }
 
 - (void)pickedUpBy:(DMMovingSprite *)movingSprite {
-    [super pickedUpBy:movingSprite];
-    [self.delegate rupeePickedUpBy:movingSprite];
+    if ([self.delegate rupeePickedUpBy:movingSprite]) {
+        [super pickedUpBy:movingSprite];
+    }
 }
 
 @end
