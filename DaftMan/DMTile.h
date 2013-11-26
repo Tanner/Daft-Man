@@ -23,4 +23,6 @@
 - (BOOL)isImpassable;
 - (BOOL)isDestructible;
 
++ (CGPoint)tileCenterForRow:(int)row column:(int)column;
+
 @end

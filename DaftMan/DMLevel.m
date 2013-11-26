@@ -39,78 +39,38 @@
     if (self = [super init]) {
         self.name = @"level";
         
-        CGPoint broStart;
-        
+        // Create all our useful SKNodes
         SKNode *ground = [[SKNode alloc] init];
         ground.name = @"ground";
         
-        NSMutableArray *row = [[NSMutableArray alloc] init];
-        
-        for (int r = 0; r < NUM_TILES_HEIGHT; r++) {
-            DMTile *previousTile = nil;
-            
-            for (int c = 0; c < NUM_TILES_WIDTH; c++) {
-                DMTile *sprite;
-                
-                BOOL borderWall = (r == 0 || c == 0 || r == NUM_TILES_HEIGHT - 1 || c == NUM_TILES_WIDTH - 1);
-                
-                if ((r % 2 == 0 && c % 2 == 0) || borderWall) {
-                    sprite = [[DMWall alloc] init];
-                } else {
-                    sprite = [[DMGrass alloc] init];
-                }
-                
-                if (row && [row count] >= NUM_TILES_WIDTH) {
-                    DMTile *tile = [row objectAtIndex:c];
-                    
-                    sprite.southTile = tile;
-                    tile.northTile = sprite;
-                }
-                
-                if (previousTile) {
-                    sprite.eastTile = previousTile;
-                    previousTile.westTile = sprite;
-                }
-                
-                [sprite setRow:r setColumn:c];
-                
-                if (r == 1 && c == 1) {
-                    broStart = sprite.position;
-                }
-                
-                [ground addChild:sprite];
-                
-                row[c] = sprite;
-                previousTile = sprite;
-            }
-        }
-        
-        [self addChild:ground];
-        
-        [self addBricks:rupeeCount];
-        
-        numberOfRupees = rupeeCount;
-        
         SKNode *items = [[SKNode alloc] init];
         items.name = @"items";
-        
-        [self addChild:items];
         
         SKNode *movingSprites = [[SKNode alloc] init];
         movingSprites.name = @"moving-sprites";
         movingSprites.zPosition = 1;
         
-        DMBro *bro = [[DMBro alloc] init];
-        bro.position = broStart;
-        bro.delegate = self;
+        [self addChild:ground];
+        [self addChild:items];
+        [self addChild:movingSprites];
         
+        numberOfRupees = rupeeCount;
         bombPlaced = NO;
+        
+        // Add ground objects
+        [self addGroundObjects];
+        
+        // Add bro and foes
+        DMBro *bro = [[DMBro alloc] init];
+        bro.position = [DMTile tileCenterForRow:1 column:1];
+        bro.delegate = self;
         
         [movingSprites addChild:bro];
         
-        [self addChild:movingSprites];
-        
         [self addFoes:foeCount];
+        
+        // Add bricks
+        [self addBricks:rupeeCount];        
     }
     
     return self;
@@ -136,6 +96,54 @@
             }
         }];
     }];
+}
+
+- (CGPoint)addGroundObjects {
+    CGPoint broStart;
+    NSMutableArray *row = [[NSMutableArray alloc] init];
+    
+    SKNode *ground = [self childNodeWithName:@"ground"];
+    
+    for (int r = 0; r < NUM_TILES_HEIGHT; r++) {
+        DMTile *previousTile = nil;
+        
+        for (int c = 0; c < NUM_TILES_WIDTH; c++) {
+            DMTile *sprite;
+            
+            BOOL borderWall = (r == 0 || c == 0 || r == NUM_TILES_HEIGHT - 1 || c == NUM_TILES_WIDTH - 1);
+            
+            if ((r % 2 == 0 && c % 2 == 0) || borderWall) {
+                sprite = [[DMWall alloc] init];
+            } else {
+                sprite = [[DMGrass alloc] init];
+            }
+            
+            if (row && [row count] >= NUM_TILES_WIDTH) {
+                DMTile *tile = [row objectAtIndex:c];
+                
+                sprite.southTile = tile;
+                tile.northTile = sprite;
+            }
+            
+            if (previousTile) {
+                sprite.eastTile = previousTile;
+                previousTile.westTile = sprite;
+            }
+            
+            [sprite setRow:r setColumn:c];
+            
+            if (r == 1 && c == 1) {
+                broStart = sprite.position;
+            }
+            
+            [ground addChild:sprite];
+            
+            row[c] = sprite;
+            previousTile = sprite;
+        }
+    }
+    
+    return broStart;
 }
 
 - (void)addBricks:(int)rupeeCount {

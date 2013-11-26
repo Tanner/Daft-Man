@@ -13,14 +13,14 @@
 @synthesize row, column;
 @synthesize northTile, southTile, eastTile, westTile;
 
-#define OFFSET_X -16
-#define OFFSET_Y -16
+#define WIDTH 32
+#define HEIGHT 32
 
 - (void)setRow:(int)aRow setColumn:(int)aColumn {
     column = aColumn;
     row = aRow;
     
-    super.position = CGPointMake(column * super.size.width + super.size.width * 0.5 + OFFSET_X, row * super.size.height + super.size.height * 0.5 + OFFSET_Y);
+    super.position = [DMTile tileCenterForRow:row column:column];
 }
 
 - (BOOL)isImpassable {
@@ -29,6 +29,10 @@
 
 - (BOOL)isDestructible {
     return NO;
+}
+
++ (CGPoint)tileCenterForRow:(int)row column:(int)column {
+    return CGPointMake(column * WIDTH, row * HEIGHT);
 }
 
 @end
