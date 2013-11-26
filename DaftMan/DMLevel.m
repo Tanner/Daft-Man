@@ -430,7 +430,7 @@
 }
 
 - (BOOL)firePickedUpBy:(DMMovingSprite *)movingSprite {
-    movingSprite.health--;
+    [movingSprite hurt];
     
     return NO;
 }

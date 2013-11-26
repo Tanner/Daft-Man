@@ -20,6 +20,9 @@
 
 #define TIME_PER_FRAME (1.0 / 5)
 
+#define BLINK_DURATION  0.25
+#define BLINK_COUNT 4
+
 - (id)initWithHealth:(int)aHealth atlasName:(NSString *)atlasName {
     if (self = [super init]) {
         direction = STOP;
@@ -39,38 +42,57 @@
 }
 
 - (void)moveUp {
-    [self runAction:upWalkAnimation];
+    [self runAction:upWalkAnimation withKey:@"movementAnimation"];
     
     distanceToMove = CGPointMake(0, 1);
     direction = UP;
 }
 
 - (void)moveDown {
-    [self runAction:downWalkAnimation];
+    [self runAction:downWalkAnimation withKey:@"movementAnimation"];
     
     distanceToMove = CGPointMake(0, -1);
     direction = DOWN;
 }
 
 - (void)moveLeft {
-    [self runAction:leftWalkAnimation];
+    [self runAction:leftWalkAnimation withKey:@"movementAnimation"];
     
     distanceToMove = CGPointMake(-1, 0);
     direction = LEFT;
 }
 
 - (void)moveRight {
-    [self runAction:rightWalkAnimation];
+    [self runAction:rightWalkAnimation withKey:@"movementAnimation"];
 
     distanceToMove = CGPointMake(1, 0);
     direction = RIGHT;
 }
 
 - (void)stop {
-    [self removeAllActions];
+    [self removeActionForKey:@"movementAnimation"];
     
     distanceToMove = CGPointMake(0, 0);
     direction = STOP;
+}
+
+- (void)hurt {
+    if ([self actionForKey:@"blink"]) {
+        // Blink is already running so we are "immune"
+        return;
+    }
+    
+    health--;
+    
+    NSArray *blinkActions = @[
+        [SKAction fadeOutWithDuration:BLINK_DURATION / 2],
+        [SKAction fadeInWithDuration:BLINK_DURATION / 2]
+    ];
+    
+    SKAction *blinkSequence = [SKAction sequence:blinkActions];
+    SKAction *blink = [SKAction repeatAction:blinkSequence count:BLINK_COUNT];
+    
+    [self runAction:blink withKey:@"blink"];
 }
 
 - (void)act {

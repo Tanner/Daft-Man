@@ -47,6 +47,8 @@ typedef enum movingSpriteDirection {
 - (void)moveLeft;
 - (void)moveRight;
 - (void)stop;
+- (void)hurt;
+
 - (void)act;
 
 @end
