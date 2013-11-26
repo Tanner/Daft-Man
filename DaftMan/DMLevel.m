@@ -15,6 +15,7 @@
 #import "DMBomb.h"
 #import "DMFire.h"
 #import "DMItem.h"
+#import "DMFoe.h"
 
 @implementation DMLevel
 
@@ -108,6 +109,8 @@
         [movingSprites addChild:bro];
         
         [self addChild:movingSprites];
+        
+        [self addFoes:foeCount];
     }
     
     return self;
@@ -164,6 +167,34 @@
         brick.item.delegate = self;
         
         [ground addChild:brick];
+    }
+}
+
+- (void)addFoes:(int)foeCount {
+    SKNode *movingSprites = [self childNodeWithName:@"moving-sprites"];
+    
+    __block NSMutableArray *grass = [[NSMutableArray alloc] init];
+    
+    [self enumerateChildNodesWithName:@"//ground/grass" usingBlock:^(SKNode *node, BOOL *stop) {
+        [grass addObject:node];
+    }];
+    
+    int foesToAdd = foeCount;
+    
+    for (int i = 0; i < foesToAdd; i++) {
+        int index = arc4random() % ([grass count] + 1);
+        
+        DMFoe *foe;
+        
+        if (foesToAdd > 0) {
+            foe = [[DMFoe alloc] init];
+            
+            foesToAdd--;
+        }
+        
+        foe.position = ((SKNode *) [grass objectAtIndex:index]).position;
+        
+        [movingSprites addChild:foe];
     }
 }
 
