@@ -15,5 +15,6 @@
 - (BOOL)rupeePickedUpBy:(DMMovingSprite *)movingSprite;
 - (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite;
 - (BOOL)heartPickedUpBy:(DMMovingSprite *)movingSprite;
+- (BOOL)firePickedUpBy:(DMMovingSprite *)movingSprite;
 
 @end

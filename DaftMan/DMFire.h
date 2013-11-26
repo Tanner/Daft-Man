@@ -8,7 +8,9 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface DMFire : SKSpriteNode
+#import "DMItem.h"
+
+@interface DMFire : DMItem
 
 - (id)initAtPosition:(CGPoint)point;
 

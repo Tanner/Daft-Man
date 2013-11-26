@@ -42,4 +42,10 @@
     return self;
 }
 
+- (void)pickedUpBy:(DMMovingSprite *)movingSprite {
+    if ([self.delegate firePickedUpBy:movingSprite]) {
+        [super pickedUpBy:movingSprite];
+    }
+}
+
 @end

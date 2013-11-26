@@ -152,6 +152,8 @@
 				C338323618343BCB0082F702 /* DMStar.m */,
 				C338323A18343FE50082F702 /* DMHeart.h */,
 				C338323B18343FE50082F702 /* DMHeart.m */,
+				C338322B183331220082F702 /* DMFire.h */,
+				C338322C183331220082F702 /* DMFire.m */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -179,8 +181,6 @@
 				C3383240183445230082F702 /* Item */,
 				C32F535B1832EC4F00C56076 /* DMBomb.h */,
 				C32F535C1832EC4F00C56076 /* DMBomb.m */,
-				C338322B183331220082F702 /* DMFire.h */,
-				C338322C183331220082F702 /* DMFire.m */,
 			);
 			name = Sprite;
 			sourceTree = "<group>";
