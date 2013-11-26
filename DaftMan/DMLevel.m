@@ -248,8 +248,10 @@
 - (void)addFireToTile:(DMTile *)tile {
     if (tile && [tile isKindOfClass:[DMGrass class]]) {
         DMFire *fire = [[DMFire alloc] initAtPosition:tile.position];
+        fire.delegate = self;
         
-        [self addChild:fire];
+        SKNode *items = [self childNodeWithName:@"//items"];
+        [items addChild:fire];
     }
 }
 
