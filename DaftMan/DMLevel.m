@@ -160,6 +160,21 @@
     
     for (int i = 0; i < bricksToAdd; i++) {
         int index = arc4random() % ([grass count] + 1);
+        CGPoint grassPosition = ((SKNode *) [grass objectAtIndex:index]).position;
+        
+        __block BOOL collidesWithMovingSprite = NO;
+        
+        [self enumerateChildNodesWithName:@"//moving-sprites/*" usingBlock:^(SKNode *node, BOOL *stop) {
+            if (CGPointEqualToPoint(node.position, grassPosition)) {
+                collidesWithMovingSprite = YES;
+                *stop = YES;
+            }
+        }];
+        
+        if (collidesWithMovingSprite) {
+            i--;
+            continue;
+        }
         
         DMBrick *brick;
         
@@ -171,7 +186,7 @@
             brick = [[DMBrick alloc] initWithRandomItem];
         }
         
-        brick.position = ((SKNode *) [grass objectAtIndex:index]).position;
+        brick.position = grassPosition;
         brick.item.delegate = self;
         
         [ground addChild:brick];
