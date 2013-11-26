@@ -202,18 +202,10 @@
         [grass addObject:node];
     }];
     
-    int foesToAdd = foeCount;
-    
-    for (int i = 0; i < foesToAdd; i++) {
+    for (int i = 0; i < foeCount; i++) {
         int index = arc4random() % ([grass count] + 1);
         
-        DMFoe *foe;
-        
-        if (foesToAdd > 0) {
-            foe = [[DMFoe alloc] init];
-            
-            foesToAdd--;
-        }
+        DMFoe *foe = [[DMFoe alloc] init];
         
         foe.position = ((SKNode *) [grass objectAtIndex:index]).position;
         
