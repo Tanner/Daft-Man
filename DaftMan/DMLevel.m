@@ -432,7 +432,7 @@
 - (BOOL)firePickedUpBy:(DMMovingSprite *)movingSprite {
     movingSprite.health--;
     
-    return YES;
+    return NO;
 }
 
 @end
