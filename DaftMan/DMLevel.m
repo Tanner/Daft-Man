@@ -85,12 +85,19 @@
 }
 
 - (void)checkCollisions {
-    [self enumerateChildNodesWithName:@"//moving-sprites/*" usingBlock:^(SKNode *node, BOOL *stop) {
-        DMMovingSprite *movingSprite = (DMMovingSprite *) node;
-        
-        [self enumerateChildNodesWithName:@"//items/*" usingBlock:^(SKNode *node, BOOL *stop) {
-            DMItem *item = (DMItem *) node;
-            
+    SKNode *items = [self childNodeWithName:@"items"];
+    SKNode *movingSprites = [self childNodeWithName:@"moving-sprites"];
+    
+    if ([items.children count] == 0 || [movingSprites.children count] == 0) {
+        return;
+    }
+    
+    [movingSprites.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        DMMovingSprite *movingSprite = (DMMovingSprite *) obj;
+
+        [items.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            DMItem *item = (DMItem *) obj;
+
             if (CGRectIntersectsRect(movingSprite.frame, item.frame)) {
                 [item pickedUpBy:movingSprite];
             }
