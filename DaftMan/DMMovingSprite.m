@@ -100,9 +100,7 @@
     
     newPosition = [delegate autoCorrectedPoint:newPosition sprite:self];
     
-//    if ([delegate canMoveToPoint:newPosition sprite:self]) {
-        self.position = newPosition;
-//    }
+    self.position = newPosition;
 }
 
 - (void)loadTexturesFromAtlasNamed:(NSString *)atlasName count:(int)count {
