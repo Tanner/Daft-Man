@@ -61,13 +61,13 @@
         [self addGroundObjects];
         
         // Add bro and foes
+        [self addFoes:foeCount];
+        
         DMBro *bro = [[DMBro alloc] init];
         bro.position = [DMTile tileCenterForRow:1 column:1];
         bro.delegate = self;
         
         [movingSprites addChild:bro];
-        
-        [self addFoes:foeCount];
         
         // Add bricks
         [self addBricks:rupeeCount];        
