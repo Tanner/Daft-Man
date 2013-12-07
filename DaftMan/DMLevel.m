@@ -215,6 +215,7 @@
         DMFoe *foe = [[DMFoe alloc] init];
         
         foe.position = ((SKNode *) [grass objectAtIndex:index]).position;
+        foe.delegate = self;
         
         [movingSprites addChild:foe];
     }
