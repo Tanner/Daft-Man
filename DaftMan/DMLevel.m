@@ -79,9 +79,11 @@
 - (void)update:(NSTimeInterval)currentTime {
     [self checkCollisions];
     
-    DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
-    
-    [bro act];
+    [self enumerateChildNodesWithName:@"//moving-sprites/*" usingBlock:^(SKNode *node, BOOL *stop) {
+        DMMovingSprite *movingSprite = (DMMovingSprite *) node;
+        
+        [movingSprite act];
+    }];
 }
 
 - (void)checkCollisions {
