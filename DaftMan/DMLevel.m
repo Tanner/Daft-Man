@@ -336,7 +336,7 @@
     CGPoint oldPoint = sprite.position;
     CGPoint correctedPoint = point;
     
-    CGRect spriteFrame = sprite.frame;
+    CGRect spriteFrame = CGRectMake(sprite.position.x - sprite.size.width / 2, sprite.position.y - sprite.size.height / 2, sprite.size.width, sprite.size.height);
     
     __block DMTile *collisionTile = nil;
     
@@ -345,7 +345,7 @@
             DMTile *tile = (DMTile *) node;
             
             if ([tile isImpassable]) {
-                if (CGRectIntersectsRect(tile.frame, sprite.frame)) {
+                if (CGRectIntersectsRect(tile.frame, spriteFrame)) {
                     *stop = YES;
                     
                     collisionTile = tile;
