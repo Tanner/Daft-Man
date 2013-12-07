@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DMTile.h"
+
+@class DMMovingSprite;
+
 @protocol DMMovingSpriteDelegate <NSObject>
 
 - (CGPoint)autoCorrectedPoint:(CGPoint)point sprite:(SKSpriteNode *)sprite;
+- (DMTile *)tileBelow:(DMMovingSprite *)movingSprite;
 
 @end

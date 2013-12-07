@@ -387,6 +387,9 @@
     return correctedPoint;
 }
 
+- (DMTile *)tileBelow:(DMMovingSprite *)movingSprite {
+    return [self tileForPoint:movingSprite.position];
+}
 
 #pragma mark -
 #pragma mark Key Event Handling
