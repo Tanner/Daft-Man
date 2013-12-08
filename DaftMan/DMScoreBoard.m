@@ -13,7 +13,7 @@
 #define PADDING 16
 #define WIDTH (16 * 32)
 
-#define FONT @"Courier"
+#define FONT @"ARCADECLASSIC"
 #define FONT_SIZE 26
 #define FONT_COLOR [NSColor whiteColor];
 
