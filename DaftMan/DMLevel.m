@@ -336,7 +336,7 @@
     CGPoint oldPoint = sprite.position;
     CGPoint correctedPoint = point;
     
-    CGRect spriteFrame = CGRectMake(sprite.position.x - sprite.size.width / 2, sprite.position.y - sprite.size.height / 2, sprite.size.width, sprite.size.height);
+    CGRect spriteFrame = CGRectMake(point.x - sprite.size.width / 2, point.y - sprite.size.height / 2, sprite.size.width, sprite.size.height);
     
     __block DMTile *collisionTile = nil;
     
