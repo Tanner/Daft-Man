@@ -32,6 +32,7 @@
 
 @synthesize bombPlaced;
 @synthesize score, level, timeLeft, numberOfRupees;
+@synthesize lastUpdateTime;
 @synthesize scoreBoard;
 
 - (id)init {
@@ -93,6 +94,12 @@
         
         [movingSprite act];
     }];
+    
+    timeLeft -= (currentTime - lastUpdateTime);
+    
+    [scoreBoard setTime:timeLeft];
+    
+    lastUpdateTime = currentTime;
 }
 
 - (void)checkCollisions {

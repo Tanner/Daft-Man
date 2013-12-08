@@ -22,6 +22,8 @@
 @property (nonatomic, assign) NSTimeInterval timeLeft;
 @property (nonatomic, assign) int numberOfRupees;
 
+@property (nonatomic, assign) NSTimeInterval lastUpdateTime;
+
 @property (nonatomic, retain) DMScoreBoard *scoreBoard;
 
 - (id)init;
