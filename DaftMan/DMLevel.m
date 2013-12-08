@@ -168,7 +168,7 @@
     int rupeesToAdd = rupeeCount;
     
     for (int i = 0; i < bricksToAdd; i++) {
-        int index = arc4random() % ([grass count] + 1);
+        int index = arc4random() % [grass count];
         CGPoint grassPosition = ((SKNode *) [grass objectAtIndex:index]).position;
         
         __block BOOL collidesWithMovingSprite = NO;
