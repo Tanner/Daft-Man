@@ -23,7 +23,7 @@
 - (void)act {
     tile = [self.delegate tileBelow:self];
     
-    if ([self shouldChangeDirection]) {
+    if ([self shouldChangeDirection] && arc4random() % 2 == 0) {
         [self randomizeDirection];
     }
     
