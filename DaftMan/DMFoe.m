@@ -35,25 +35,25 @@
     
     switch (arc4random() % 4) {
         case 0:
-            if (tile.northTile) {
+            if ([tile.northTile isImpassable] == NO) {
                 [self moveUp];
                 retry = NO;
             }
             break;
         case 1:
-            if (tile.southTile) {
+            if ([tile.southTile isImpassable] == NO) {
                 [self moveDown];
                 retry = NO;
             }
             break;
         case 2:
-            if (tile.westTile) {
+            if ([tile.westTile isImpassable] == NO) {
                 [self moveLeft];
                 retry = NO;
             }
             break;
         case 3:
-            if (tile.eastTile) {
+            if ([tile.eastTile isImpassable] == NO) {
                 [self moveRight];
                 retry = NO;
             }
