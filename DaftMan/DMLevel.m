@@ -212,7 +212,7 @@
     }];
     
     for (int i = 0; i < foeCount; i++) {
-        int index = arc4random() % ([grass count] + 1);
+        int index = arc4random() % [grass count];
         
         DMFoe *foe = [[DMFoe alloc] init];
         

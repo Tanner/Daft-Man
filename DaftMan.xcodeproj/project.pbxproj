@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C319175B1854B5E300C64A8D /* DMScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C319175A1854B5E300C64A8D /* DMScoreBoard.m */; };
 		C32F535D1832EC4F00C56076 /* DMBomb.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F535C1832EC4F00C56076 /* DMBomb.m */; };
 		C32F53601832EC9700C56076 /* bomb-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C32F535E1832EC9700C56076 /* bomb-1.png */; };
 		C32F53611832EC9700C56076 /* bomb-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C32F535F1832EC9700C56076 /* bomb-2.png */; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C31917591854B5E300C64A8D /* DMScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMScoreBoard.h; sourceTree = "<group>"; };
+		C319175A1854B5E300C64A8D /* DMScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMScoreBoard.m; sourceTree = "<group>"; };
 		C32F535A1832CBAE00C56076 /* DMMovingSpriteDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMovingSpriteDelegate.h; sourceTree = "<group>"; };
 		C32F535B1832EC4F00C56076 /* DMBomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBomb.h; sourceTree = "<group>"; };
 		C32F535C1832EC4F00C56076 /* DMBomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBomb.m; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				C38ADA83183275A3006E960D /* Sprite */,
+				C31917591854B5E300C64A8D /* DMScoreBoard.h */,
+				C319175A1854B5E300C64A8D /* DMScoreBoard.m */,
 				C338324218353AAE0082F702 /* DMLevel.h */,
 				C338324318353AAE0082F702 /* DMLevel.m */,
 				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
@@ -425,6 +430,7 @@
 				C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */,
 				C38ADA7D183273A2006E960D /* DMBrick.m in Sources */,
 				C38ADA751831BCE5006E960D /* DMWall.m in Sources */,
+				C319175B1854B5E300C64A8D /* DMScoreBoard.m in Sources */,
 				C338324418353AAE0082F702 /* DMLevel.m in Sources */,
 				C338323718343BCB0082F702 /* DMStar.m in Sources */,
 				C3D202ED1831134F00B8C3CA /* DMGameScene.m in Sources */,
