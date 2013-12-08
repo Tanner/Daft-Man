@@ -23,7 +23,7 @@
 
 - (void)setScore:(int)score;
 - (void)setLevel:(int)level;
-- (void)setTime:(int)time;
+- (void)setTime:(NSTimeInterval)time;
 - (void)setRupees:(int)rupees;
 
 @end

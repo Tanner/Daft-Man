@@ -73,8 +73,8 @@
     levelLabel.text = [NSString stringWithFormat:@"Level %d", level];
 }
 
-- (void)setTime:(int)time {
-    timeLabel.text = [NSString stringWithFormat:@"Time %d", time];
+- (void)setTime:(NSTimeInterval)time {
+    timeLabel.text = [NSString stringWithFormat:@"Time %d", (int) time];
 }
 
 - (void)setRupees:(int)rupees {
