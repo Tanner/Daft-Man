@@ -87,6 +87,8 @@
 }
 
 - (void)update:(NSTimeInterval)currentTime {
+    static BOOL firstUpdate = YES;
+    
     [self checkCollisions];
     
     [self enumerateChildNodesWithName:@"//moving-sprites/*" usingBlock:^(SKNode *node, BOOL *stop) {
@@ -95,9 +97,13 @@
         [movingSprite act];
     }];
     
-    timeLeft -= (currentTime - lastUpdateTime);
-    
-    [scoreBoard setTime:timeLeft];
+    if (!firstUpdate) {
+        timeLeft -= currentTime - lastUpdateTime;
+        
+        [scoreBoard setTime:timeLeft];
+    } else {
+        firstUpdate = NO;
+    }
     
     lastUpdateTime = currentTime;
 }
