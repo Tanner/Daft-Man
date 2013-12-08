@@ -395,6 +395,14 @@
     return [self tileForPoint:movingSprite.position];
 }
 
+- (void)died:(DMMovingSprite *)movingSprite {
+    if ([movingSprite isKindOfClass:[DMBro class]]) {
+        // This is something important
+        // I'm not quite what sure what yet to do
+        // But it's all all right
+    }
+}
+
 #pragma mark -
 #pragma mark Key Event Handling
 
