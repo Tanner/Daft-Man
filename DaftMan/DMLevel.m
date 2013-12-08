@@ -29,7 +29,7 @@
 @synthesize bombPlaced, numberOfRupees;
 
 - (id)init {
-    if (self = [self initNumberOfFoes:3 numberOfRupies:5]) {
+    if (self = [self initNumberOfFoes:5 numberOfRupies:10]) {
     }
     
     return self;
