@@ -340,7 +340,11 @@
     
     __block DMTile *collisionTile = nil;
     
-    [self enumerateChildNodesWithName:@"//ground/*" usingBlock:^(SKNode *node, BOOL *stop) {
+    SKNode *ground = [self childNodeWithName:@"ground"];
+    
+    [ground.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        SKNode *node = (SKNode *) obj;
+        
         if ([node isKindOfClass:[DMTile class]]) {
             DMTile *tile = (DMTile *) node;
             
