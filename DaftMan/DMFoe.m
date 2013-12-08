@@ -13,7 +13,7 @@
 }
 
 - (id)init {
-    if (self = [super initWithHealth:3 atlasName:@"foe"]) {
+    if (self = [super initWithHealth:1 atlasName:@"foe"]) {
         self.name = @"foe";
     }
     
