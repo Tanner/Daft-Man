@@ -135,8 +135,8 @@
             }
             
             if (previousTile) {
-                sprite.eastTile = previousTile;
-                previousTile.westTile = sprite;
+                sprite.westTile = previousTile;
+                previousTile.eastTile = sprite;
             }
             
             [sprite setRow:r setColumn:c];
