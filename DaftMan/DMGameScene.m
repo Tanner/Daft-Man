@@ -21,6 +21,8 @@
         
         scoreBoard.position = CGPointMake(0, size.height - SCOREBOARD_HEIGHT);
         
+        level.scoreBoard = scoreBoard;
+        
         [self addChild:level];
         [self addChild:scoreBoard];
     }

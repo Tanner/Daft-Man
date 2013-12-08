@@ -16,17 +16,23 @@
 #import "DMFire.h"
 #import "DMItem.h"
 #import "DMFoe.h"
+#import "DMRupee.h"
 
 @implementation DMLevel
 
 #define NUM_TILES_WIDTH 17
 #define NUM_TILES_HEIGHT 13
 
+#define TIME_TO_WIN 120
+#define HURT_FOE_SCORE_VALUE 5
+
 #define BOMB_DISTANCE 2
 
 #define ADDITIONAL_BRICKS 5
 
-@synthesize bombPlaced, numberOfRupees;
+@synthesize bombPlaced;
+@synthesize score, level, timeLeft, numberOfRupees;
+@synthesize scoreBoard;
 
 - (id)init {
     if (self = [self initNumberOfFoes:5 numberOfRupies:10]) {
@@ -38,6 +44,9 @@
 - (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount {
     if (self = [super init]) {
         self.name = @"level";
+        
+        timeLeft = TIME_TO_WIN;
+        level = 1;
         
         // Create all our useful SKNodes
         SKNode *ground = [[SKNode alloc] init];
@@ -70,7 +79,7 @@
         [movingSprites addChild:bro];
         
         // Add bricks
-        [self addBricks:rupeeCount];        
+        [self addBricks:rupeeCount];
     }
     
     return self;
@@ -106,6 +115,25 @@
         }];
     }];
 }
+
+#pragma mark -
+#pragma mark Scoreboard
+
+- (void)setScoreBoard:(DMScoreBoard *)aScoreBoard {
+    scoreBoard = aScoreBoard;
+    
+    [scoreBoard setScore:score];
+    [scoreBoard setLevel:level];
+    [scoreBoard setTime:timeLeft];
+    [scoreBoard setRupees:numberOfRupees];
+}
+
+- (void)updateScoreBoardScore {
+    [scoreBoard setScore:score];
+}
+
+#pragma mark -
+#pragma mark Node Creation
 
 - (CGPoint)addGroundObjects {
     CGPoint broStart;
@@ -328,7 +356,6 @@
     return tile;
 }
 
-
 #pragma mark -
 #pragma mark DMMovingSpriteDelegate
 
@@ -400,6 +427,11 @@
         // This is something important
         // I'm not quite what sure what yet to do
         // But it's all all right
+    } else {
+        // A foe died! Yay!
+        score += HURT_FOE_SCORE_VALUE;
+        
+        [self updateScoreBoardScore];
     }
 }
 
@@ -481,6 +513,12 @@
 - (BOOL)rupeePickedUpBy:(DMMovingSprite *)movingSprite {
     if ([movingSprite isKindOfClass:[DMBro class]]) {
         numberOfRupees--;
+        
+        [scoreBoard setRupees:numberOfRupees];
+        
+        score += RUPEE_SCORE_VALUE;
+        
+        [self updateScoreBoardScore];
         
         return YES;
     }

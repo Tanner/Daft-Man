@@ -10,6 +10,8 @@
 
 @interface DMRupee : DMItem
 
+#define RUPEE_SCORE_VALUE 20
+
 @property (nonatomic, assign) int value;
 
 - (id)initWithValue:(int)aValue;
