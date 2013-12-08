@@ -84,6 +84,12 @@
     
     health--;
     
+    if (health <= 0) {
+        [self removeFromParent];
+        
+        return;
+    }
+    
     NSArray *blinkActions = @[
         [SKAction fadeOutWithDuration:BLINK_DURATION / 2],
         [SKAction fadeInWithDuration:BLINK_DURATION / 2]
