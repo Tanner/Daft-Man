@@ -86,6 +86,9 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark Gameplay Methods
+
 - (void)update:(NSTimeInterval)currentTime {
     static BOOL firstUpdate = YES;
     
