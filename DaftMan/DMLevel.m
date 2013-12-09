@@ -42,28 +42,29 @@
 @synthesize scoreBoard;
 
 - (id)init {
-    if (self = [self initWithLevel:1]) {
+    if (self = [self initWithLevel:1 score:0]) {
     }
     
     return self;
 }
 
-- (id)initWithLevel:(int)aLevel {
+- (id)initWithLevel:(int)aLevel score:(int)startScore {
     int rupeeCount = BASE_NUMBER_OF_RUPEES + (aLevel - 1) * RUPEES_PER_LEVEL;
     int foeCount = BASE_NUMBER_OF_FOES + (aLevel - 1) * FOES_PER_LEVEL;
     
-    if (self = [self initNumberOfFoes:foeCount numberOfRupies:rupeeCount]) {
+    if (self = [self initNumberOfFoes:foeCount numberOfRupies:rupeeCount score:startScore]) {
         level = aLevel;
     }
     
     return self;
 }
 
-- (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount {
+- (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount score:(int)startScore {
     if (self = [super init]) {
         self.name = @"level";
         
         timeLeft = TIME_TO_WIN;
+        score = startScore;
         
         // Create all our useful SKNodes
         SKNode *ground = [[SKNode alloc] init];
