@@ -74,19 +74,19 @@
 }
 
 - (void)setScore:(int)score {
-    scoreLabel.text = [NSString stringWithFormat:@"Score %d", score];
+    scoreLabel.text = [NSString stringWithFormat:@"Score %.2d", score];
 }
 
 - (void)setLevel:(int)level {
-    levelLabel.text = [NSString stringWithFormat:@"Level %d", level];
+    levelLabel.text = [NSString stringWithFormat:@"Level %.2d", level];
 }
 
 - (void)setTime:(NSTimeInterval)time {
-    timeLabel.text = [NSString stringWithFormat:@"Time %d", (int) time];
+    timeLabel.text = [NSString stringWithFormat:@"Time %.3d", (int) time];
 }
 
 - (void)setRupees:(int)rupees {
-    rupeesLabel.text = [NSString stringWithFormat:@"Rupees %d", rupees];
+    rupeesLabel.text = [NSString stringWithFormat:@"Rupees %.2d", rupees];
 }
 
 - (void)setHearts:(int)hearts {
