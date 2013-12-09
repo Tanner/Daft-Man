@@ -28,6 +28,12 @@
 
 #define BOMB_DISTANCE 2
 
+#define BASE_NUMBER_OF_RUPEES 10
+#define RUPEES_PER_LEVEL 2
+
+#define BASE_NUMBER_OF_FOES 5
+#define FOES_PER_LEVEL 2
+
 #define ADDITIONAL_BRICKS 5
 
 @synthesize bombPlaced;
@@ -36,7 +42,18 @@
 @synthesize scoreBoard;
 
 - (id)init {
-    if (self = [self initNumberOfFoes:5 numberOfRupies:10]) {
+    if (self = [self initWithLevel:1]) {
+    }
+    
+    return self;
+}
+
+- (id)initWithLevel:(int)aLevel {
+    int rupeeCount = BASE_NUMBER_OF_RUPEES + (aLevel - 1) * RUPEES_PER_LEVEL;
+    int foeCount = BASE_NUMBER_OF_FOES + (aLevel - 1) * FOES_PER_LEVEL;
+    
+    if (self = [self initNumberOfFoes:foeCount numberOfRupies:rupeeCount]) {
+        level = aLevel;
     }
     
     return self;
@@ -47,7 +64,6 @@
         self.name = @"level";
         
         timeLeft = TIME_TO_WIN;
-        level = 1;
         
         // Create all our useful SKNodes
         SKNode *ground = [[SKNode alloc] init];
