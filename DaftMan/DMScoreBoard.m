@@ -13,12 +13,14 @@
 #define PADDING 16
 #define WIDTH (16 * 32)
 
+#define HEART_PADDING 2
+
 #define FONT @"ARCADECLASSIC"
 #define FONT_SIZE 26
 #define FONT_COLOR [NSColor whiteColor];
 
 @synthesize scoreLabel, levelLabel, timeLabel, rupeesLabel;
-@synthesize hearts;
+@synthesize heartTexture, heartsNode;
 
 - (id)init {
     if (self = [super init]) {
@@ -51,6 +53,11 @@
         rupeesLabel.fontSize = FONT_SIZE;
         rupeesLabel.fontColor = FONT_COLOR;
         
+        heartTexture = [SKTexture textureWithImageNamed:@"heart-small.png"];
+        
+        heartsNode = [[SKNode alloc] init];
+        heartsNode.position = CGPointMake(PADDING, PADDING);
+        
         [self setScore:0];
         [self setLevel:0];
         [self setTime:0];
@@ -60,6 +67,7 @@
         [self addChild:levelLabel];
         [self addChild:timeLabel];
         [self addChild:rupeesLabel];
+        [self addChild:heartsNode];
     }
     
     return self;
@@ -79,6 +87,23 @@
 
 - (void)setRupees:(int)rupees {
     rupeesLabel.text = [NSString stringWithFormat:@"Rupees %d", rupees];
+}
+
+- (void)setHearts:(int)hearts {
+    [heartsNode removeAllChildren];
+
+    if (hearts <= 0) {
+        return;
+    }
+    
+    for (int i = 0; i < hearts; i++) {
+        SKSpriteNode *heart = [[SKSpriteNode alloc] initWithTexture:heartTexture];
+        
+        heart.position = CGPointMake(i * heartTexture.size.width + i * HEART_PADDING, 0);
+        heart.anchorPoint = CGPointMake(0, 0);
+        
+        [heartsNode addChild:heart];
+    }
 }
 
 @end

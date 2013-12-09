@@ -17,7 +17,8 @@
 @property (nonatomic, retain) SKLabelNode *timeLabel;
 @property (nonatomic, retain) SKLabelNode *rupeesLabel;
 
-@property (nonatomic, retain) SKNode *hearts;
+@property (nonatomic, retain) SKTexture *heartTexture;
+@property (nonatomic, retain) SKNode *heartsNode;
 
 - (id)init;
 
@@ -25,5 +26,6 @@
 - (void)setLevel:(int)level;
 - (void)setTime:(NSTimeInterval)time;
 - (void)setRupees:(int)rupees;
+- (void)setHearts:(int)hearts;
 
 @end

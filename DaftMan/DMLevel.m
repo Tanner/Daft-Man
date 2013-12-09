@@ -135,10 +135,13 @@
 - (void)setScoreBoard:(DMScoreBoard *)aScoreBoard {
     scoreBoard = aScoreBoard;
     
+    DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
+    
     [scoreBoard setScore:score];
     [scoreBoard setLevel:level];
     [scoreBoard setTime:timeLeft];
     [scoreBoard setRupees:numberOfRupees];
+    [scoreBoard setHearts:[bro health]];
 }
 
 - (void)updateScoreBoardScore {
@@ -547,6 +550,12 @@
 
 - (BOOL)heartPickedUpBy:(DMMovingSprite *)movingSprite {
     movingSprite.health++;
+    
+    if ([movingSprite isKindOfClass:[DMBro class]]) {
+        DMBro *bro = (DMBro *) movingSprite;
+        
+        [scoreBoard setHearts:[bro health]];
+    }
     
     return YES;
 }
