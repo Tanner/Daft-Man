@@ -27,6 +27,7 @@
 @property (nonatomic, retain) DMScoreBoard *scoreBoard;
 
 - (id)init;
+- (id)initWithLevel:(int)aLevel;
 - (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount;
 
 - (void)update:(NSTimeInterval)currentTime;
