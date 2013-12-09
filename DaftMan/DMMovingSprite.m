@@ -84,6 +84,8 @@
     
     health--;
     
+    [delegate hurt:self];
+    
     if (health <= 0) {
         [delegate died:self];
         [self removeFromParent];

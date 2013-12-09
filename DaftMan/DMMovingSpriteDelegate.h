@@ -17,6 +17,7 @@
 - (CGPoint)autoCorrectedPoint:(CGPoint)point sprite:(SKSpriteNode *)sprite;
 - (DMTile *)tileBelow:(DMMovingSprite *)movingSprite;
 
+- (void)hurt:(DMMovingSprite *)movingSprite;
 - (void)died:(DMMovingSprite *)movingSprite;
 
 @end

@@ -438,6 +438,14 @@
     return [self tileForPoint:movingSprite.position];
 }
 
+- (void)hurt:(DMMovingSprite *)movingSprite {
+    if ([movingSprite isKindOfClass:[DMBro class]]) {
+        DMBro *bro = (DMBro *) movingSprite;
+        
+        [scoreBoard setHearts:[bro health]];
+    }
+}
+
 - (void)died:(DMMovingSprite *)movingSprite {
     if ([movingSprite isKindOfClass:[DMBro class]]) {
         // This is something important
