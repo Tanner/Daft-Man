@@ -112,20 +112,39 @@
     SKNode *items = [self childNodeWithName:@"items"];
     SKNode *movingSprites = [self childNodeWithName:@"moving-sprites"];
     
-    if ([items.children count] == 0 || [movingSprites.children count] == 0) {
+    BOOL checkItems = [items.children count] > 0;
+    BOOL checkMovingSpriteCollisions = [movingSprites.children count] != 1;
+    
+    if ([movingSprites.children count] == 0) {
         return;
     }
     
     [movingSprites.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         DMMovingSprite *movingSprite = (DMMovingSprite *) obj;
 
-        [items.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            DMItem *item = (DMItem *) obj;
+        if (checkItems) {
+            [items.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                DMItem *item = (DMItem *) obj;
 
-            if (CGRectIntersectsRect(movingSprite.frame, item.frame)) {
-                [item pickedUpBy:movingSprite];
-            }
-        }];
+                if (CGRectIntersectsRect(movingSprite.frame, item.frame)) {
+                    [item pickedUpBy:movingSprite];
+                }
+            }];
+        }
+        
+        if ([movingSprite isKindOfClass:[DMBro class]] && checkMovingSpriteCollisions) {
+            DMBro *bro = (DMBro *) movingSprite;
+            
+            [movingSprites.children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                DMMovingSprite *anotherMovingSprite = (DMMovingSprite *) obj;
+                
+                if (bro != anotherMovingSprite) {
+                    if (CGRectIntersectsRect(bro.frame, anotherMovingSprite.frame)) {
+                        [bro hurt];
+                    }
+                }
+            }];
+        }
     }];
 }
 
