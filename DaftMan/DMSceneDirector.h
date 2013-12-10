@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface DMSceneDirector : NSObject
+#import "DMSceneDirectorDelegate.h"
+
+@interface DMSceneDirector : NSObject <DMSceneDirectorDelegate>
 
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) SKView *view;

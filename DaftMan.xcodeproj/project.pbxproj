@@ -76,7 +76,6 @@
 		C332244718568CD5000F412D /* DMEndScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMEndScene.m; sourceTree = "<group>"; };
 		C332244A1856BB01000F412D /* DMSceneDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSceneDirector.h; sourceTree = "<group>"; };
 		C332244B1856BB01000F412D /* DMSceneDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSceneDirector.m; sourceTree = "<group>"; };
-		C332244D1856BE9F000F412D /* DMGameSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMGameSceneDelegate.h; sourceTree = "<group>"; };
 		C3383227183331040082F702 /* fire-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-1.png"; sourceTree = "<group>"; };
 		C3383228183331040082F702 /* fire-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-2.png"; sourceTree = "<group>"; };
 		C338322B183331220082F702 /* DMFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFire.h; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		C392671118577B1A00399109 /* NSString+DMFontPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DMFontPadding.h"; sourceTree = "<group>"; };
 		C392671218577B1A00399109 /* NSString+DMFontPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DMFontPadding.m"; sourceTree = "<group>"; };
 		C392671C1857968800399109 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		C392671E1857977700399109 /* DMSceneDirectorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSceneDirectorDelegate.h; sourceTree = "<group>"; };
 		C3D202D31831134E00B8C3CA /* DaftMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaftMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D202D61831134E00B8C3CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3D202D81831134E00B8C3CA /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -165,11 +165,11 @@
 		C33224491856A125000F412D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C378DEBB18579D7300D2E5A9 /* Director */,
 				C332244618568CD5000F412D /* DMEndScene.h */,
 				C332244718568CD5000F412D /* DMEndScene.m */,
-				C3D202EC1831134E00B8C3CA /* DMGameScene.m */,
 				C3D202EE1831134F00B8C3CA /* DMGameScene.h */,
-				C332244D1856BE9F000F412D /* DMGameSceneDelegate.h */,
+				C3D202EC1831134E00B8C3CA /* DMGameScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -190,6 +190,16 @@
 				C338322C183331220082F702 /* DMFire.m */,
 			);
 			name = Item;
+			sourceTree = "<group>";
+		};
+		C378DEBB18579D7300D2E5A9 /* Director */ = {
+			isa = PBXGroup;
+			children = (
+				C332244A1856BB01000F412D /* DMSceneDirector.h */,
+				C332244B1856BB01000F412D /* DMSceneDirector.m */,
+				C392671E1857977700399109 /* DMSceneDirectorDelegate.h */,
+			);
+			name = Director;
 			sourceTree = "<group>";
 		};
 		C38ADA6F1831BB7F006E960D /* Tile */ = {
@@ -310,8 +320,6 @@
 			children = (
 				C38ADA83183275A3006E960D /* Sprite */,
 				C33224491856A125000F412D /* Scenes */,
-				C332244A1856BB01000F412D /* DMSceneDirector.h */,
-				C332244B1856BB01000F412D /* DMSceneDirector.m */,
 				C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */,
 				C3D202F11831134F00B8C3CA /* DMAppDelegate.h */,
 				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,

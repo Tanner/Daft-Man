@@ -9,6 +9,7 @@
 #import "DMSceneDirector.h"
 
 #import "DMGameScene.h"
+#import "DMEndScene.h"
 
 @implementation DMSceneDirector
 
@@ -20,13 +21,19 @@
         view = aView;
     }
     
-    SKScene *gameScene = [DMGameScene sceneWithSize:size];
+    DMGameScene *gameScene = [DMGameScene sceneWithSize:size delegate:self];
     
     gameScene.scaleMode = SKSceneScaleModeAspectFit;
     
     [view presentScene:gameScene];
     
     return self;
+}
+
+- (void)levelCompleteForlevel:(int)aLevel score:(int)score time:(NSTimeInterval)time won:(BOOL)won {
+    DMEndScene *endScene = [[DMEndScene alloc] initWithSize:self.size level:aLevel score:score time:time won:won];
+    
+    [view presentScene:endScene];
 }
 
 @end

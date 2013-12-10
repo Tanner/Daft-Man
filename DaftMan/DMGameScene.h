@@ -8,13 +8,17 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-#import "DMGameSceneDelegate.h"
+#import "DMSceneDirectorDelegate.h"
 #import "DMLevel.h"
 #import "DMScoreBoard.h"
 
-@interface DMGameScene : SKScene <DMGameSceneDelegate>
+@interface DMGameScene : SKScene
 
 @property (nonatomic, retain) DMLevel *level;
 @property (nonatomic, retain) DMScoreBoard *scoreBoard;
+
++ (id)sceneWithSize:(CGSize)size delegate:(id <DMSceneDirectorDelegate>)delegate;
+
+- (id)initWithSize:(CGSize)size delegate:(id <DMSceneDirectorDelegate>)delegate;
 
 @end
