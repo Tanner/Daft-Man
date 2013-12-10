@@ -21,7 +21,7 @@
 #define TIME_PER_FRAME (1.0 / 5)
 
 #define BLINK_DURATION  0.25
-#define BLINK_COUNT 4
+#define BLINK_COUNT 8
 
 - (id)initWithHealth:(int)aHealth atlasName:(NSString *)atlasName {
     if (self = [super init]) {
