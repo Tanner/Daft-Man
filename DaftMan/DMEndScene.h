@@ -16,4 +16,6 @@
 @property (nonatomic, retain) SKLabelNode *lineThreeLabel;
 @property (nonatomic, retain) SKLabelNode *lineFourLabel;
 
+- (id)initWithSize:(CGSize)size level:(int)level score:(int)score time:(NSTimeInterval)time won:(BOOL)won;
+
 @end

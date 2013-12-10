@@ -76,6 +76,7 @@
 		C332244718568CD5000F412D /* DMEndScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMEndScene.m; sourceTree = "<group>"; };
 		C332244A1856BB01000F412D /* DMSceneDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSceneDirector.h; sourceTree = "<group>"; };
 		C332244B1856BB01000F412D /* DMSceneDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSceneDirector.m; sourceTree = "<group>"; };
+		C332244D1856BE9F000F412D /* DMGameSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMGameSceneDelegate.h; sourceTree = "<group>"; };
 		C3383227183331040082F702 /* fire-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-1.png"; sourceTree = "<group>"; };
 		C3383228183331040082F702 /* fire-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-2.png"; sourceTree = "<group>"; };
 		C338322B183331220082F702 /* DMFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFire.h; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 				C332244718568CD5000F412D /* DMEndScene.m */,
 				C3D202EC1831134E00B8C3CA /* DMGameScene.m */,
 				C3D202EE1831134F00B8C3CA /* DMGameScene.h */,
+				C332244D1856BE9F000F412D /* DMGameSceneDelegate.h */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
