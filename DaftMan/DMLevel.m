@@ -39,7 +39,7 @@
 @synthesize bombPlaced;
 @synthesize score, level, timeLeft, numberOfRupees;
 @synthesize lastUpdateTime;
-@synthesize scoreBoard;
+@synthesize scoreBoard, delegate;
 
 - (id)init {
     if (self = [self initWithLevel:1 score:0]) {
@@ -487,9 +487,7 @@
 
 - (void)died:(DMMovingSprite *)movingSprite {
     if ([movingSprite isKindOfClass:[DMBro class]]) {
-        // This is something important
-        // I'm not quite what sure what yet to do
-        // But it's all all right
+        [delegate levelCompleteForlevel:level score:score time:timeLeft won:NO];
     } else {
         // A foe died! Yay!
         score += HURT_FOE_SCORE_VALUE;
@@ -582,6 +580,10 @@
         score += RUPEE_SCORE_VALUE;
         
         [self updateScoreBoardScore];
+        
+        if (numberOfRupees <= 0) {
+            [delegate levelCompleteForlevel:level score:score time:timeLeft won:YES];
+        }
         
         return YES;
     }

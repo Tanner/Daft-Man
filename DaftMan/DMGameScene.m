@@ -9,6 +9,7 @@
 #import "DMGameScene.h"
 
 #import "DMLevel.h"
+#import "DMEndScene.h"
 
 @implementation DMGameScene
 
@@ -22,6 +23,7 @@
         scoreBoard.position = CGPointMake(0, size.height - SCOREBOARD_HEIGHT);
         
         level.scoreBoard = scoreBoard;
+        level.delegate = self;
         
         [self addChild:level];
         [self addChild:scoreBoard];
@@ -32,6 +34,12 @@
 
 - (void)update:(CFTimeInterval)currentTime {
     [level update:currentTime];
+}
+
+- (void)levelCompleteForlevel:(int)aLevel score:(int)score time:(NSTimeInterval)time won:(BOOL)won {
+    DMEndScene *endScene = [[DMEndScene alloc] initWithSize:self.size level:aLevel score:score time:time won:won];
+    
+    [self.scene.view presentScene:endScene];
 }
 
 - (void)keyDown:(NSEvent *)theEvent {

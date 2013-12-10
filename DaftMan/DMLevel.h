@@ -12,6 +12,7 @@
 
 #import "DMMovingSpriteDelegate.h"
 #import "DMItemDelegate.h"
+#import "DMGameSceneDelegate.h"
 
 @interface DMLevel : SKNode <DMMovingSpriteDelegate, DMItemDelegate>
 
@@ -25,6 +26,7 @@
 @property (nonatomic, assign) NSTimeInterval lastUpdateTime;
 
 @property (nonatomic, retain) DMScoreBoard *scoreBoard;
+@property (nonatomic, retain) id <DMGameSceneDelegate> delegate;
 
 - (id)init;
 - (id)initWithLevel:(int)aLevel score:(int)startScore;
