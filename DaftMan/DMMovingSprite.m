@@ -23,6 +23,8 @@
 #define BLINK_DURATION  0.25
 #define BLINK_COUNT 8
 
+#define SPEED_UP_DURATION 14
+
 - (id)initWithHealth:(int)aHealth atlasName:(NSString *)atlasName {
     if (self = [super init]) {
         direction = STOP;
@@ -40,6 +42,9 @@
     
     return self;
 }
+
+#pragma mark -
+#pragma mark Movement Methods
 
 - (void)moveUp {
     [self runAction:upWalkAnimation withKey:@"movementAnimation"];
@@ -76,6 +81,27 @@
     direction = STOP;
 }
 
+- (void)speedUp {
+    movementMultiplier = 2.0;
+    
+    [NSTimer scheduledTimerWithTimeInterval:SPEED_UP_DURATION target:self selector:@selector(normalSpeed) userInfo:nil repeats:NO];
+}
+
+- (void)normalSpeed {
+    movementMultiplier = 1.0;
+}
+
+- (void)act {
+    CGPoint newPosition = CGPointMake(self.position.x + distanceToMove.x * movementMultiplier, self.position.y + distanceToMove.y * movementMultiplier);
+    
+    newPosition = [delegate autoCorrectedPoint:newPosition sprite:self];
+    
+    self.position = newPosition;
+}
+
+#pragma mark -
+#pragma mark Health Methods
+
 - (void)hurt {
     if ([self actionForKey:@"blink"]) {
         // Blink is already running so we are "immune"
@@ -104,13 +130,8 @@
     [self runAction:blink withKey:@"blink"];
 }
 
-- (void)act {
-    CGPoint newPosition = CGPointMake(self.position.x + distanceToMove.x * movementMultiplier, self.position.y + distanceToMove.y * movementMultiplier);
-    
-    newPosition = [delegate autoCorrectedPoint:newPosition sprite:self];
-    
-    self.position = newPosition;
-}
+#pragma mark -
+#pragma mark Texture Helpers
 
 - (void)loadTexturesFromAtlasNamed:(NSString *)atlasName count:(int)count {
     SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:atlasName];

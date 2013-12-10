@@ -591,9 +591,9 @@
     return NO;
 }
 
-- (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite {    
-    movingSprite.movementMultiplier = 2;
-    
+- (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite {
+    [movingSprite speedUp];
+
     return YES;
 }
 
