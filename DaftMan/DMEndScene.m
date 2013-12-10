@@ -8,6 +8,8 @@
 
 #import "DMEndScene.h"
 
+#import "NSString+DMFontPadding.h"
+
 @implementation DMEndScene
 
 #define FONT @"ARCADECLASSIC"
@@ -50,15 +52,15 @@
             int bonus = (int) time;
             int totalScore = score + bonus;
             
-            titleLabel.text = [NSString stringWithFormat:@"Completed Level %.2d", level];
-            lineThreeLabel.text = [NSString stringWithFormat:@"Time Bonus %d", bonus];
-            lineFourLabel.text = [NSString stringWithFormat:@"Total %d", totalScore];
+            titleLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Completed Level %.2d", level]];
+            lineThreeLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Time Bonus %d", bonus]];
+            lineFourLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Total %d", totalScore]];
         } else {
-            titleLabel.text = @"Game Over!";
-            lineThreeLabel.text = @"Press Enter";
+            titleLabel.text = [NSString stringByPaddingString:@"Game Over!"];
+            lineThreeLabel.text = [NSString stringByPaddingString:@"Press Enter"];
         }
         
-        scoreLabel.text = [NSString stringWithFormat:@"Score %d", score];
+        scoreLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Score %d", score]];
         
         // Add the labels
         [self addChild:titleLabel];

@@ -37,6 +37,7 @@
 		C38ADA86183277D5006E960D /* DMBro.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA85183277D5006E960D /* DMBro.m */; };
 		C38ADA881832786E006E960D /* bro.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C38ADA871832786E006E960D /* bro.atlas */; };
 		C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA8A183278C6006E960D /* DMMovingSprite.m */; };
+		C392671318577B1A00399109 /* NSString+DMFontPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = C392671218577B1A00399109 /* NSString+DMFontPadding.m */; };
 		C3D202D71831134E00B8C3CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D61831134E00B8C3CA /* Cocoa.framework */; };
 		C3D202D91831134E00B8C3CA /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D81831134E00B8C3CA /* SpriteKit.framework */; };
 		C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3D202E11831134E00B8C3CA /* InfoPlist.strings */; };
@@ -113,6 +114,8 @@
 		C38ADA871832786E006E960D /* bro.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bro.atlas; sourceTree = "<group>"; };
 		C38ADA89183278C6006E960D /* DMMovingSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMovingSprite.h; sourceTree = "<group>"; };
 		C38ADA8A183278C6006E960D /* DMMovingSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMovingSprite.m; sourceTree = "<group>"; };
+		C392671118577B1A00399109 /* NSString+DMFontPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DMFontPadding.h"; sourceTree = "<group>"; };
+		C392671218577B1A00399109 /* NSString+DMFontPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DMFontPadding.m"; sourceTree = "<group>"; };
 		C3D202D31831134E00B8C3CA /* DaftMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaftMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D202D61831134E00B8C3CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3D202D81831134E00B8C3CA /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -284,6 +287,8 @@
 				C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */,
 				C3D202F11831134F00B8C3CA /* DMAppDelegate.h */,
 				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
+				C392671118577B1A00399109 /* NSString+DMFontPadding.h */,
+				C392671218577B1A00399109 /* NSString+DMFontPadding.m */,
 				C38ADA871832786E006E960D /* bro.atlas */,
 				C375F4321844FA2C00C93583 /* foe.atlas */,
 				C32F535E1832EC9700C56076 /* bomb-1.png */,
@@ -457,6 +462,7 @@
 				C375F4361844FA6100C93583 /* DMFoe.m in Sources */,
 				C332244818568CD5000F412D /* DMEndScene.m in Sources */,
 				C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */,
+				C392671318577B1A00399109 /* NSString+DMFontPadding.m in Sources */,
 				C38ADA7D183273A2006E960D /* DMBrick.m in Sources */,
 				C38ADA751831BCE5006E960D /* DMWall.m in Sources */,
 				C319175B1854B5E300C64A8D /* DMScoreBoard.m in Sources */,

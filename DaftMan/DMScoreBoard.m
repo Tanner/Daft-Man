@@ -8,6 +8,8 @@
 
 #import "DMScoreBoard.h"
 
+#import "NSString+DMFontPadding.h"
+
 @implementation DMScoreBoard
 
 #define PADDING 16
@@ -74,19 +76,19 @@
 }
 
 - (void)setScore:(int)score {
-    scoreLabel.text = [NSString stringWithFormat:@"Score %.2d", score];
+    scoreLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Score %.2d", score]];
 }
 
 - (void)setLevel:(int)level {
-    levelLabel.text = [NSString stringWithFormat:@"Level %.2d", level];
+    levelLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Level %.2d", level]];
 }
 
 - (void)setTime:(NSTimeInterval)time {
-    timeLabel.text = [NSString stringWithFormat:@"Time %.3d", (int) time];
+    timeLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Time %.3d", (int) time]];
 }
 
 - (void)setRupees:(int)rupees {
-    rupeesLabel.text = [NSString stringWithFormat:@"Rupees %.2d", rupees];
+    rupeesLabel.text = [NSString stringByPaddingString:[NSString stringWithFormat:@"Rupees %.2d", rupees]];
 }
 
 - (void)setHearts:(int)hearts {
