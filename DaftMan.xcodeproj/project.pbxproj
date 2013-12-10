@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C319175B1854B5E300C64A8D /* DMScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = C319175A1854B5E300C64A8D /* DMScoreBoard.m */; };
-		C319176618551D4700C64A8D /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = C319176518551D4700C64A8D /* Fonts */; };
 		C319176818553FE200C64A8D /* heart-small.png in Resources */ = {isa = PBXBuildFile; fileRef = C319176718553FE200C64A8D /* heart-small.png */; };
 		C32F535D1832EC4F00C56076 /* DMBomb.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F535C1832EC4F00C56076 /* DMBomb.m */; };
 		C32F53601832EC9700C56076 /* bomb-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C32F535E1832EC9700C56076 /* bomb-1.png */; };
@@ -38,6 +37,7 @@
 		C38ADA881832786E006E960D /* bro.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C38ADA871832786E006E960D /* bro.atlas */; };
 		C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA8A183278C6006E960D /* DMMovingSprite.m */; };
 		C392671318577B1A00399109 /* NSString+DMFontPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = C392671218577B1A00399109 /* NSString+DMFontPadding.m */; };
+		C392671A185794F000399109 /* ARCADECLASSIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = C3926719185794F000399109 /* ARCADECLASSIC.TTF */; };
 		C3D202D71831134E00B8C3CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D61831134E00B8C3CA /* Cocoa.framework */; };
 		C3D202D91831134E00B8C3CA /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D81831134E00B8C3CA /* SpriteKit.framework */; };
 		C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3D202E11831134E00B8C3CA /* InfoPlist.strings */; };
@@ -66,7 +66,6 @@
 /* Begin PBXFileReference section */
 		C31917591854B5E300C64A8D /* DMScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMScoreBoard.h; sourceTree = "<group>"; };
 		C319175A1854B5E300C64A8D /* DMScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMScoreBoard.m; sourceTree = "<group>"; };
-		C319176518551D4700C64A8D /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		C319176718553FE200C64A8D /* heart-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-small.png"; sourceTree = "<group>"; };
 		C32F535A1832CBAE00C56076 /* DMMovingSpriteDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMovingSpriteDelegate.h; sourceTree = "<group>"; };
 		C32F535B1832EC4F00C56076 /* DMBomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBomb.h; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		C38ADA8A183278C6006E960D /* DMMovingSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMovingSprite.m; sourceTree = "<group>"; };
 		C392671118577B1A00399109 /* NSString+DMFontPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DMFontPadding.h"; sourceTree = "<group>"; };
 		C392671218577B1A00399109 /* NSString+DMFontPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DMFontPadding.m"; sourceTree = "<group>"; };
+		C3926719185794F000399109 /* ARCADECLASSIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARCADECLASSIC.TTF; sourceTree = "<group>"; };
 		C3D202D31831134E00B8C3CA /* DaftMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaftMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D202D61831134E00B8C3CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3D202D81831134E00B8C3CA /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -215,6 +215,10 @@
 				C3383240183445230082F702 /* Item */,
 				C32F535B1832EC4F00C56076 /* DMBomb.h */,
 				C32F535C1832EC4F00C56076 /* DMBomb.m */,
+				C31917591854B5E300C64A8D /* DMScoreBoard.h */,
+				C319175A1854B5E300C64A8D /* DMScoreBoard.m */,
+				C338324218353AAE0082F702 /* DMLevel.h */,
+				C338324318353AAE0082F702 /* DMLevel.m */,
 			);
 			name = Sprite;
 			sourceTree = "<group>";
@@ -231,6 +235,42 @@
 				C375F4351844FA6100C93583 /* DMFoe.m */,
 			);
 			name = "Moving Sprite";
+			sourceTree = "<group>";
+		};
+		C39267141857947D00399109 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C3926716185794CC00399109 /* Fonts */,
+				C39267151857948300399109 /* Textures */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		C39267151857948300399109 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				C38ADA871832786E006E960D /* bro.atlas */,
+				C375F4321844FA2C00C93583 /* foe.atlas */,
+				C32F535E1832EC9700C56076 /* bomb-1.png */,
+				C32F535F1832EC9700C56076 /* bomb-2.png */,
+				C3383227183331040082F702 /* fire-1.png */,
+				C3383228183331040082F702 /* fire-2.png */,
+				C338322E18343A680082F702 /* star.png */,
+				C338323018343A6E0082F702 /* rupee-yellow.png */,
+				C319176718553FE200C64A8D /* heart-small.png */,
+				C338323818343FD90082F702 /* heart.png */,
+				C38ADA761831BFFE006E960D /* wall.png */,
+				C38ADA7E18327413006E960D /* brick.png */,
+			);
+			name = Textures;
+			sourceTree = "<group>";
+		};
+		C3926716185794CC00399109 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C3926719185794F000399109 /* ARCADECLASSIC.TTF */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		C3D202CA1831134E00B8C3CA = {
@@ -277,10 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				C38ADA83183275A3006E960D /* Sprite */,
-				C31917591854B5E300C64A8D /* DMScoreBoard.h */,
-				C319175A1854B5E300C64A8D /* DMScoreBoard.m */,
-				C338324218353AAE0082F702 /* DMLevel.h */,
-				C338324318353AAE0082F702 /* DMLevel.m */,
 				C33224491856A125000F412D /* Scenes */,
 				C332244A1856BB01000F412D /* DMSceneDirector.h */,
 				C332244B1856BB01000F412D /* DMSceneDirector.m */,
@@ -289,19 +325,7 @@
 				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
 				C392671118577B1A00399109 /* NSString+DMFontPadding.h */,
 				C392671218577B1A00399109 /* NSString+DMFontPadding.m */,
-				C38ADA871832786E006E960D /* bro.atlas */,
-				C375F4321844FA2C00C93583 /* foe.atlas */,
-				C32F535E1832EC9700C56076 /* bomb-1.png */,
-				C32F535F1832EC9700C56076 /* bomb-2.png */,
-				C3383227183331040082F702 /* fire-1.png */,
-				C3383228183331040082F702 /* fire-2.png */,
-				C338322E18343A680082F702 /* star.png */,
-				C338323018343A6E0082F702 /* rupee-yellow.png */,
-				C319176718553FE200C64A8D /* heart-small.png */,
-				C338323818343FD90082F702 /* heart.png */,
-				C38ADA761831BFFE006E960D /* wall.png */,
-				C38ADA7E18327413006E960D /* brick.png */,
-				C319176518551D4700C64A8D /* Fonts */,
+				C39267141857947D00399109 /* Assets */,
 				C3D202F41831134F00B8C3CA /* Images.xcassets */,
 				C3D202DF1831134E00B8C3CA /* Supporting Files */,
 			);
@@ -423,12 +447,12 @@
 				C32F53601832EC9700C56076 /* bomb-1.png in Resources */,
 				C338322F18343A680082F702 /* star.png in Resources */,
 				C3D202E91831134E00B8C3CA /* Credits.rtf in Resources */,
+				C392671A185794F000399109 /* ARCADECLASSIC.TTF in Resources */,
 				C38ADA881832786E006E960D /* bro.atlas in Resources */,
 				C338322A183331040082F702 /* fire-2.png in Resources */,
 				C3383229183331040082F702 /* fire-1.png in Resources */,
 				C375F4331844FA2C00C93583 /* foe.atlas in Resources */,
 				C319176818553FE200C64A8D /* heart-small.png in Resources */,
-				C319176618551D4700C64A8D /* Fonts in Resources */,
 				C3D202EB1831134E00B8C3CA /* MainMenu.xib in Resources */,
 				C38ADA7F18327413006E960D /* brick.png in Resources */,
 			);
