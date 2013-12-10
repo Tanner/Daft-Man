@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "DMSceneDirectorDelegate.h"
+
 @interface DMEndScene : SKScene
 
 @property (nonatomic, retain) SKLabelNode *titleLabel;
@@ -16,6 +18,12 @@
 @property (nonatomic, retain) SKLabelNode *lineThreeLabel;
 @property (nonatomic, retain) SKLabelNode *lineFourLabel;
 
-- (id)initWithSize:(CGSize)size level:(int)level score:(int)score time:(NSTimeInterval)time won:(BOOL)won;
+@property (nonatomic, assign) id <DMSceneDirectorDelegate> delegate;
+
+@property (nonatomic, assign) int level;
+@property (nonatomic, assign) int score;
+@property (nonatomic, assign) BOOL win;
+
+- (id)initWithSize:(CGSize)size level:(int)aLevel score:(int)aScore time:(NSTimeInterval)time won:(BOOL)won;
 
 @end

@@ -19,6 +19,6 @@
 
 + (id)sceneWithSize:(CGSize)size delegate:(id <DMSceneDirectorDelegate>)delegate;
 
-- (id)initWithSize:(CGSize)size delegate:(id <DMSceneDirectorDelegate>)delegate;
+- (id)initWithSize:(CGSize)size level:(int)aLevel startingScore:(int)score delegate:(id <DMSceneDirectorDelegate>)delegate;
 
 @end

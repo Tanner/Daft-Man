@@ -11,5 +11,6 @@
 @protocol DMSceneDirectorDelegate <NSObject>
 
 - (void)levelCompleteForlevel:(int)level score:(int)score time:(NSTimeInterval)time won:(BOOL)won;
+- (void)nextLevel:(int)level startingScore:(int)score;
 
 @end

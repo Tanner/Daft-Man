@@ -20,6 +20,8 @@
 
 @synthesize titleLabel, scoreLabel;
 @synthesize lineThreeLabel, lineFourLabel;
+@synthesize delegate;
+@synthesize win, score, level;
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -41,8 +43,12 @@
     return self;
 }
 
-- (id)initWithSize:(CGSize)size level:(int)level score:(int)score time:(NSTimeInterval)time won:(BOOL)won {
+- (id)initWithSize:(CGSize)size level:(int)aLevel score:(int)aScore time:(NSTimeInterval)time won:(BOOL)won {
     if (self = [self initWithSize:size]) {
+        win = won;
+        score = aScore;
+        level = aLevel;
+        
         // Configure the labels depending on if this is a win (yay) or not...
         if (won) {
             lineFourLabel = [SKLabelNode labelNodeWithFontNamed:FONT];
@@ -104,6 +110,16 @@
     }
     
     return self;
+}
+
+- (void)keyDown:(NSEvent *)theEvent {
+    if (win) {
+        // Proceed to the next level
+        [delegate nextLevel:level + 1 startingScore:score];
+    } else {
+        // Go to the main menu
+        [delegate nextLevel:1 startingScore:0];
+    }
 }
 
 @end
