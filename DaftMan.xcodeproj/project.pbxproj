@@ -14,6 +14,7 @@
 		C32F53601832EC9700C56076 /* bomb-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C32F535E1832EC9700C56076 /* bomb-1.png */; };
 		C32F53611832EC9700C56076 /* bomb-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C32F535F1832EC9700C56076 /* bomb-2.png */; };
 		C332244818568CD5000F412D /* DMEndScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C332244718568CD5000F412D /* DMEndScene.m */; };
+		C332244C1856BB01000F412D /* DMSceneDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = C332244B1856BB01000F412D /* DMSceneDirector.m */; };
 		C3383229183331040082F702 /* fire-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3383227183331040082F702 /* fire-1.png */; };
 		C338322A183331040082F702 /* fire-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C3383228183331040082F702 /* fire-2.png */; };
 		C338322D183331220082F702 /* DMFire.m in Sources */ = {isa = PBXBuildFile; fileRef = C338322C183331220082F702 /* DMFire.m */; };
@@ -73,6 +74,8 @@
 		C32F535F1832EC9700C56076 /* bomb-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-2.png"; sourceTree = "<group>"; };
 		C332244618568CD5000F412D /* DMEndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMEndScene.h; sourceTree = "<group>"; };
 		C332244718568CD5000F412D /* DMEndScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMEndScene.m; sourceTree = "<group>"; };
+		C332244A1856BB01000F412D /* DMSceneDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSceneDirector.h; sourceTree = "<group>"; };
+		C332244B1856BB01000F412D /* DMSceneDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSceneDirector.m; sourceTree = "<group>"; };
 		C3383227183331040082F702 /* fire-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-1.png"; sourceTree = "<group>"; };
 		C3383228183331040082F702 /* fire-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fire-2.png"; sourceTree = "<group>"; };
 		C338322B183331220082F702 /* DMFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFire.h; sourceTree = "<group>"; };
@@ -274,9 +277,11 @@
 				C338324218353AAE0082F702 /* DMLevel.h */,
 				C338324318353AAE0082F702 /* DMLevel.m */,
 				C33224491856A125000F412D /* Scenes */,
-				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
+				C332244A1856BB01000F412D /* DMSceneDirector.h */,
+				C332244B1856BB01000F412D /* DMSceneDirector.m */,
 				C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */,
 				C3D202F11831134F00B8C3CA /* DMAppDelegate.h */,
+				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
 				C38ADA871832786E006E960D /* bro.atlas */,
 				C375F4321844FA2C00C93583 /* foe.atlas */,
 				C32F535E1832EC9700C56076 /* bomb-1.png */,
@@ -456,6 +461,7 @@
 				C338324418353AAE0082F702 /* DMLevel.m in Sources */,
 				C338323718343BCB0082F702 /* DMStar.m in Sources */,
 				C3D202ED1831134F00B8C3CA /* DMGameScene.m in Sources */,
+				C332244C1856BB01000F412D /* DMSceneDirector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

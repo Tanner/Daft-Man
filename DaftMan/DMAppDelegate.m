@@ -7,18 +7,15 @@
 //
 
 #import "DMAppDelegate.h"
-#import "DMGameScene.h"
 
 @implementation DMAppDelegate
 
-@synthesize window = _window;
+@synthesize sceneDirector;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {    
-    SKScene *scene = [DMGameScene sceneWithSize:CGSizeMake(16 * 32, 100 + 12 * 32)];
-
-    scene.scaleMode = SKSceneScaleModeAspectFit;
-
-    [self.skView presentScene:scene];
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    CGSize size = CGSizeMake(16 * 32, 100 + 12 * 32);
+    
+    sceneDirector = [[DMSceneDirector alloc] initWithSize:size view:self.skView];
 
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
