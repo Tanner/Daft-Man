@@ -45,12 +45,10 @@
         ItemType itemType = arc4random() % 3;
         
         switch (itemType) {
-            case RUPEE:
-                item = [[DMRupee alloc] init];
-                break;
             case STAR:
                 item = [[DMStar alloc] init];
                 break;
+            case RUPEE:
             case HEART:
                 item = [[DMHeart alloc] init];
                 break;
