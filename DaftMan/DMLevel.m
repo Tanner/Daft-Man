@@ -268,6 +268,24 @@
             continue;
         }
         
+        // Don't place a brick on a brick
+        NSMutableArray *existingBricks = [[NSMutableArray alloc] init];
+        __block BOOL collidesWithBrick = NO;
+        
+        [existingBricks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            DMBrick *brick = (DMBrick *) obj;
+            
+            if (CGPointEqualToPoint(brick.position, grassPosition)) {
+                *stop = YES;
+                collidesWithBrick = YES;
+            }
+        }];
+        
+        if (collidesWithBrick) {
+            i--;
+            continue;
+        }
+        
         DMBrick *brick;
         
         if (rupeesToAdd > 0) {
@@ -281,6 +299,7 @@
         brick.position = grassPosition;
         brick.item.delegate = self;
         
+        [existingBricks addObject:brick];
         [ground addChild:brick];
     }
 }
