@@ -19,7 +19,7 @@
 #define FONT_COLOR [NSColor whiteColor]
 
 #define EDGE_PADDING 46
-#define PADDING 50
+#define PADDING 45
 
 @synthesize titleLabel, playLabel, copyrightLabel;
 @synthesize delegate;
