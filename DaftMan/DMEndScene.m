@@ -118,7 +118,7 @@
         [delegate nextLevel:level + 1 startingScore:score];
     } else {
         // Go to the main menu
-        [delegate nextLevel:1 startingScore:0];
+        [delegate mainMenu];
     }
 }
 

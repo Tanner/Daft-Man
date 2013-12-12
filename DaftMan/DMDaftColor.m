@@ -12,49 +12,72 @@
 
 #define COLOR_WAIT_DURATION 1.0
 
-+ (SKAction *)action {
-    static dispatch_once_t onceToken;
++ (NSArray *)colors {
+    NSColor *red = [NSColor colorWithRed:0.78 green:0.21 blue:0.21 alpha:1.0];
+    NSColor *green = [NSColor colorWithRed:0.21 green:0.78 blue:0.21 alpha:1.0];
+    NSColor *blue = [NSColor colorWithRed:0.21 green:0.68 blue:0.78 alpha:1.0];
+    NSColor *yellow = [NSColor colorWithRed:0.78 green:0.68 blue:0.21 alpha:1.0];
     
-    static NSColor *red;
-    static NSColor *green;
-    static NSColor *blue;
-    static NSColor *yellow;
+    return @[red, green, blue, yellow];
+}
+
++ (SKAction *)actionForSprite {
+    NSArray *colors = [DMDaftColor colors];
     
-    static SKAction *changeToRed;
-    static SKAction *changeToGreen;
-    static SKAction *changeToBlue;
-    static SKAction *changeToYellow;
+    SKAction *changeToRed = [SKAction colorizeWithColor:colors[0] colorBlendFactor:0 duration:0];
+    SKAction *changeToGreen = [SKAction colorizeWithColor:colors[1] colorBlendFactor:0 duration:0];
+    SKAction *changeToBlue = [SKAction colorizeWithColor:colors[2] colorBlendFactor:0 duration:0];
+    SKAction *changeToYellow = [SKAction colorizeWithColor:colors[3] colorBlendFactor:0 duration:0];
     
-    static SKAction *actionSequence;
+    SKAction *actionSequence = [SKAction sequence:@[
+                                          changeToRed,
+                                          [SKAction waitForDuration:COLOR_WAIT_DURATION],
+                                          changeToGreen,
+                                          [SKAction waitForDuration:COLOR_WAIT_DURATION],
+                                          changeToBlue,
+                                          [SKAction waitForDuration:COLOR_WAIT_DURATION],
+                                          changeToYellow,
+                                          [SKAction waitForDuration:COLOR_WAIT_DURATION]
+                                          ]];
     
-    static SKAction *colorWheel;
+    return [SKAction repeatActionForever:actionSequence];
+}
+
++ (SKAction *)actionForLabel:(SKLabelNode *)label {
+    NSArray *colors = [DMDaftColor colors];
     
-    dispatch_once(&onceToken, ^{
-        red = [NSColor colorWithRed:0.78 green:0.21 blue:0.21 alpha:1.0];
-        green = [NSColor colorWithRed:0.21 green:0.78 blue:0.21 alpha:1.0];
-        blue = [NSColor colorWithRed:0.21 green:0.68 blue:0.78 alpha:1.0];
-        yellow = [NSColor colorWithRed:0.78 green:0.68 blue:0.21 alpha:1.0];
-        
-        changeToRed = [SKAction colorizeWithColor:red colorBlendFactor:0 duration:0];
-        changeToGreen = [SKAction colorizeWithColor:green colorBlendFactor:0 duration:0];
-        changeToBlue = [SKAction colorizeWithColor:blue colorBlendFactor:0 duration:0];
-        changeToYellow = [SKAction colorizeWithColor:yellow colorBlendFactor:0 duration:0];
-        
-        actionSequence = [SKAction sequence:@[
-                                              changeToRed,
-                                              [SKAction waitForDuration:COLOR_WAIT_DURATION],
-                                              changeToGreen,
-                                              [SKAction waitForDuration:COLOR_WAIT_DURATION],
-                                              changeToBlue,
-                                              [SKAction waitForDuration:COLOR_WAIT_DURATION],
-                                              changeToYellow,
-                                              [SKAction waitForDuration:COLOR_WAIT_DURATION]
-                                            ]];
-        
-        colorWheel = [SKAction repeatActionForever:actionSequence];
-    });
+    void (^changeToRed)(void) = ^void (void)
+    {
+        label.fontColor = colors[0];
+    };
     
-    return colorWheel;
+    void (^changeToGreen)(void) = ^void (void)
+    {
+        label.fontColor = colors[1];
+    };
+    
+    void (^changeToBlue)(void) = ^void (void)
+    {
+        label.fontColor = colors[2];
+    };
+    
+    void (^changeToYellow)(void) = ^void (void)
+    {
+        label.fontColor = colors[3];
+    };
+    
+    SKAction *actionSequence = [SKAction sequence:@[
+                                                    [SKAction runBlock:changeToRed],
+                                                    [SKAction waitForDuration:COLOR_WAIT_DURATION],
+                                                    [SKAction runBlock:changeToGreen],
+                                                    [SKAction waitForDuration:COLOR_WAIT_DURATION],
+                                                    [SKAction runBlock:changeToBlue],
+                                                    [SKAction waitForDuration:COLOR_WAIT_DURATION],
+                                                    [SKAction runBlock:changeToYellow],
+                                                    [SKAction waitForDuration:COLOR_WAIT_DURATION]
+                                                    ]];
+    
+    return [SKAction repeatActionForever:actionSequence];
 }
 
 @end

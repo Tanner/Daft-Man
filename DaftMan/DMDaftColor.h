@@ -12,6 +12,7 @@
 
 @interface DMDaftColor : NSObject
 
-+ (SKAction *)action;
++ (SKAction *)actionForSprite;
++ (SKAction *)actionForLabel:(SKLabelNode *)label;
 
 @end

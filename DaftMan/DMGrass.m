@@ -17,7 +17,7 @@
     if (self = [super initWithColor:[NSColor blackColor] size:CGSizeMake(32, 32)]) {
         self.name = @"grass";
         
-        [self runAction:[DMDaftColor action]];
+        [self runAction:[DMDaftColor actionForSprite]];
     }
     
     return self;

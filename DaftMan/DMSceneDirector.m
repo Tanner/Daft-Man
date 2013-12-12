@@ -8,6 +8,7 @@
 
 #import "DMSceneDirector.h"
 
+#import "DMMainMenuScene.h"
 #import "DMGameScene.h"
 #import "DMEndScene.h"
 
@@ -21,9 +22,17 @@
         view = aView;
     }
     
-    [self nextLevel:1 startingScore:0];
+    [self mainMenu];
     
     return self;
+}
+
+- (void)mainMenu {
+    DMMainMenuScene *mainMenuScene = [[DMMainMenuScene alloc] initWithSize:self.size];
+    
+    mainMenuScene.delegate = self;
+    
+    [view presentScene:mainMenuScene];
 }
 
 - (void)levelCompleteForlevel:(int)aLevel score:(int)score time:(NSTimeInterval)time won:(BOOL)won {
