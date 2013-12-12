@@ -38,6 +38,8 @@
 		C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = C38ADA8A183278C6006E960D /* DMMovingSprite.m */; };
 		C392671318577B1A00399109 /* NSString+DMFontPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = C392671218577B1A00399109 /* NSString+DMFontPadding.m */; };
 		C392671D1857968800399109 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = C392671C1857968800399109 /* Fonts */; };
+		C3C27840185A6943005CBADF /* DMMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C2783F185A6943005CBADF /* DMMainMenuScene.m */; };
+		C3C27843185A6D68005CBADF /* DMDaftColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C27842185A6D68005CBADF /* DMDaftColor.m */; };
 		C3D202D71831134E00B8C3CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D61831134E00B8C3CA /* Cocoa.framework */; };
 		C3D202D91831134E00B8C3CA /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D81831134E00B8C3CA /* SpriteKit.framework */; };
 		C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3D202E11831134E00B8C3CA /* InfoPlist.strings */; };
@@ -116,6 +118,10 @@
 		C392671218577B1A00399109 /* NSString+DMFontPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DMFontPadding.m"; sourceTree = "<group>"; };
 		C392671C1857968800399109 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		C392671E1857977700399109 /* DMSceneDirectorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSceneDirectorDelegate.h; sourceTree = "<group>"; };
+		C3C2783E185A6943005CBADF /* DMMainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMainMenuScene.h; sourceTree = "<group>"; };
+		C3C2783F185A6943005CBADF /* DMMainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMainMenuScene.m; sourceTree = "<group>"; };
+		C3C27841185A6D68005CBADF /* DMDaftColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDaftColor.h; sourceTree = "<group>"; };
+		C3C27842185A6D68005CBADF /* DMDaftColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDaftColor.m; sourceTree = "<group>"; };
 		C3D202D31831134E00B8C3CA /* DaftMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaftMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D202D61831134E00B8C3CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3D202D81831134E00B8C3CA /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -166,10 +172,12 @@
 			isa = PBXGroup;
 			children = (
 				C378DEBB18579D7300D2E5A9 /* Director */,
-				C332244618568CD5000F412D /* DMEndScene.h */,
-				C332244718568CD5000F412D /* DMEndScene.m */,
+				C3C2783E185A6943005CBADF /* DMMainMenuScene.h */,
+				C3C2783F185A6943005CBADF /* DMMainMenuScene.m */,
 				C3D202EE1831134F00B8C3CA /* DMGameScene.h */,
 				C3D202EC1831134E00B8C3CA /* DMGameScene.m */,
+				C332244618568CD5000F412D /* DMEndScene.h */,
+				C332244718568CD5000F412D /* DMEndScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -323,6 +331,8 @@
 				C3D202EF1831134F00B8C3CA /* DMAppDelegate.m */,
 				C3D202F11831134F00B8C3CA /* DMAppDelegate.h */,
 				C3D202EA1831134E00B8C3CA /* MainMenu.xib */,
+				C3C27841185A6D68005CBADF /* DMDaftColor.h */,
+				C3C27842185A6D68005CBADF /* DMDaftColor.m */,
 				C392671118577B1A00399109 /* NSString+DMFontPadding.h */,
 				C392671218577B1A00399109 /* NSString+DMFontPadding.m */,
 				C39267141857947D00399109 /* Assets */,
@@ -477,6 +487,7 @@
 				C38ADA86183277D5006E960D /* DMBro.m in Sources */,
 				C3D202F01831134F00B8C3CA /* DMAppDelegate.m in Sources */,
 				C338323C18343FE50082F702 /* DMHeart.m in Sources */,
+				C3C27840185A6943005CBADF /* DMMainMenuScene.m in Sources */,
 				C3D202E51831134E00B8C3CA /* main.m in Sources */,
 				C38ADA721831BBA8006E960D /* DMTile.m in Sources */,
 				C38ADA7A1831C426006E960D /* DMGrass.m in Sources */,
@@ -484,6 +495,7 @@
 				C338322D183331220082F702 /* DMFire.m in Sources */,
 				C338323F1834451F0082F702 /* DMItem.m in Sources */,
 				C375F4361844FA6100C93583 /* DMFoe.m in Sources */,
+				C3C27843185A6D68005CBADF /* DMDaftColor.m in Sources */,
 				C332244818568CD5000F412D /* DMEndScene.m in Sources */,
 				C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */,
 				C392671318577B1A00399109 /* NSString+DMFontPadding.m in Sources */,

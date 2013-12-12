@@ -10,9 +10,4 @@
 
 @interface DMGrass : DMTile
 
-@property (nonatomic, retain) NSColor *red;
-@property (nonatomic, retain) NSColor *green;
-@property (nonatomic, retain) NSColor *blue;
-@property (nonatomic, retain) NSColor *yellow;
-
 @end
