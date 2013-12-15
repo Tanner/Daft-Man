@@ -132,6 +132,10 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
+    if (theEvent.isARepeat) {
+        return;
+    }
+    
     if (win) {
         // Do nothing
     } else {

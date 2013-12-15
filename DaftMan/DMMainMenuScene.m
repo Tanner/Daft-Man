@@ -67,7 +67,9 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-    [delegate nextLevel:1 startingScore:0];
+    if (theEvent.isARepeat == NO) {
+        [delegate nextLevel:1 startingScore:0];
+    }
 }
 
 @end
