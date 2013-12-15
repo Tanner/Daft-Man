@@ -38,7 +38,7 @@
 
 @synthesize bombPlaced;
 @synthesize score, level, timeLeft, numberOfRupees;
-@synthesize lastUpdateTime;
+@synthesize firstUpdate, lastUpdateTime;
 @synthesize scoreBoard, delegate;
 
 - (id)init {
@@ -65,6 +65,8 @@
         
         timeLeft = TIME_TO_WIN;
         score = startScore;
+        
+        firstUpdate = YES;
         
         // Create all our useful SKNodes
         SKNode *ground = [[SKNode alloc] init];
@@ -107,8 +109,6 @@
 #pragma mark Gameplay Methods
 
 - (void)update:(NSTimeInterval)currentTime {
-    static BOOL firstUpdate = YES;
-    
     [self checkCollisions];
     
     [self enumerateChildNodesWithName:@"//moving-sprites/*" usingBlock:^(SKNode *node, BOOL *stop) {
