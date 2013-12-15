@@ -18,10 +18,13 @@
 
 #define PADDING 9
 
+#define TIME_SHOWN 10
+
 @synthesize titleLabel, scoreLabel;
 @synthesize lineThreeLabel, lineFourLabel;
 @synthesize delegate;
 @synthesize win, score, level;
+@synthesize firstUpdate, startTime;
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -38,6 +41,8 @@
         lineThreeLabel = [SKLabelNode labelNodeWithFontNamed:FONT];
         lineThreeLabel.fontSize = FONT_SIZE;
         lineThreeLabel.fontColor = FONT_COLOR;
+        
+        firstUpdate = YES;
     }
     
     return self;
@@ -112,10 +117,23 @@
     return self;
 }
 
+- (void)update:(NSTimeInterval)currentTime {
+    if (!firstUpdate) {
+        NSTimeInterval timeElapsed = currentTime - startTime;
+        
+        if (timeElapsed >= TIME_SHOWN) {
+            [delegate nextLevel:level + 1 startingScore:score];
+        }
+    } else {
+        startTime = currentTime;
+        
+        firstUpdate = NO;
+    }
+}
+
 - (void)keyDown:(NSEvent *)theEvent {
     if (win) {
-        // Proceed to the next level
-        [delegate nextLevel:level + 1 startingScore:score];
+        // Do nothing
     } else {
         // Go to the main menu
         [delegate mainMenu];

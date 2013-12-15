@@ -24,6 +24,9 @@
 @property (nonatomic, assign) int score;
 @property (nonatomic, assign) BOOL win;
 
+@property (nonatomic, assign) BOOL firstUpdate;
+@property (nonatomic, assign) NSTimeInterval startTime;
+
 - (id)initWithSize:(CGSize)size level:(int)aLevel score:(int)aScore time:(NSTimeInterval)time won:(BOOL)won;
 
 @end
