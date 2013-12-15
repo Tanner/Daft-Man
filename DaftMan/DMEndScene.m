@@ -136,9 +136,7 @@
         return;
     }
     
-    if (win) {
-        // Do nothing
-    } else {
+    if (win == NO) {
         // Go to the main menu
         [delegate mainMenu];
     }
