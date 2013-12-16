@@ -25,7 +25,7 @@
         SKAction *fuseSound = [SKAction playSoundFileNamed:@"fuse.wav" waitForCompletion:NO];
         SKAction *boomSound = [SKAction playSoundFileNamed:@"explode.wav" waitForCompletion:NO];
         
-        SKAction *bombing = [SKAction sequence:@[fuseSound, pulsing, boom, boomSound]];
+        SKAction *bombing = [SKAction sequence:@[fuseSound, pulsing, boomSound, boom]];
         
         [self runAction:bombing];
     }
