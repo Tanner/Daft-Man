@@ -600,6 +600,8 @@
         
         [self updateScoreBoardScore];
         
+        [movingSprite runAction:[SKAction playSoundFileNamed:@"rupee-collected.wav" waitForCompletion:NO]];
+        
         if (numberOfRupees <= 0) {
             [delegate levelCompleteForlevel:level score:score time:timeLeft won:YES];
         }
@@ -612,6 +614,10 @@
 
 - (BOOL)starPickedUpBy:(DMMovingSprite *)movingSprite {
     [movingSprite speedUp];
+    
+    if ([movingSprite class] == [DMBro class]) {
+        [movingSprite runAction:[SKAction playSoundFileNamed:@"speed-up.wav" waitForCompletion:NO]];
+    }
 
     return YES;
 }
@@ -623,6 +629,8 @@
         DMBro *bro = (DMBro *) movingSprite;
         
         [scoreBoard setHearts:[bro health]];
+        
+        [movingSprite runAction:[SKAction playSoundFileNamed:@"heart.wav" waitForCompletion:NO]];
     }
     
     return YES;

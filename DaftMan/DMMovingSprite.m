@@ -108,10 +108,10 @@
 #pragma mark -
 #pragma mark Health Methods
 
-- (void)hurt {
+- (BOOL)hurt {
     if ([self actionForKey:@"blink"]) {
         // Blink is already running so we are "immune"
-        return;
+        return NO;
     }
     
     health--;
@@ -122,7 +122,7 @@
         [delegate died:self];
         [self removeFromParent];
         
-        return;
+        return YES;
     }
     
     NSArray *blinkActions = @[
@@ -134,6 +134,8 @@
     SKAction *blink = [SKAction repeatAction:blinkSequence count:BLINK_COUNT];
     
     [self runAction:blink withKey:@"blink"];
+    
+    return YES;
 }
 
 #pragma mark -

@@ -18,4 +18,14 @@
     return self;
 }
 
+- (BOOL)hurt {
+    if ([super hurt]) {
+        [self runAction:[SKAction playSoundFileNamed:@"hurt.wav" waitForCompletion:NO]];
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end

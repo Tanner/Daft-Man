@@ -53,6 +53,13 @@
 		C3D202FD1831134F00B8C3CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D202D61831134E00B8C3CA /* Cocoa.framework */; };
 		C3D203051831134F00B8C3CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3D203031831134F00B8C3CA /* InfoPlist.strings */; };
 		C3D203071831134F00B8C3CA /* DaftManTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D203061831134F00B8C3CA /* DaftManTests.m */; };
+		C3FE5577185F9FAC00AE8A0E /* explode.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5570185F9FAC00AE8A0E /* explode.wav */; };
+		C3FE5578185F9FAC00AE8A0E /* fuse.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5571185F9FAC00AE8A0E /* fuse.wav */; };
+		C3FE5579185F9FAC00AE8A0E /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5572185F9FAC00AE8A0E /* heart.wav */; };
+		C3FE557A185F9FAC00AE8A0E /* hurt.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5573185F9FAC00AE8A0E /* hurt.wav */; };
+		C3FE557B185F9FAC00AE8A0E /* kill.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5574185F9FAC00AE8A0E /* kill.wav */; };
+		C3FE557C185F9FAC00AE8A0E /* rupee-collected.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5575185F9FAC00AE8A0E /* rupee-collected.wav */; };
+		C3FE557D185F9FAC00AE8A0E /* speed-up.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5576185F9FAC00AE8A0E /* speed-up.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +151,13 @@
 		C3D203021831134F00B8C3CA /* DaftManTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DaftManTests-Info.plist"; sourceTree = "<group>"; };
 		C3D203041831134F00B8C3CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3D203061831134F00B8C3CA /* DaftManTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaftManTests.m; sourceTree = "<group>"; };
+		C3FE5570185F9FAC00AE8A0E /* explode.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explode.wav; sourceTree = "<group>"; };
+		C3FE5571185F9FAC00AE8A0E /* fuse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fuse.wav; sourceTree = "<group>"; };
+		C3FE5572185F9FAC00AE8A0E /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
+		C3FE5573185F9FAC00AE8A0E /* hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hurt.wav; sourceTree = "<group>"; };
+		C3FE5574185F9FAC00AE8A0E /* kill.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kill.wav; sourceTree = "<group>"; };
+		C3FE5575185F9FAC00AE8A0E /* rupee-collected.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rupee-collected.wav"; sourceTree = "<group>"; };
+		C3FE5576185F9FAC00AE8A0E /* speed-up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "speed-up.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +274,7 @@
 			children = (
 				C392671C1857968800399109 /* Fonts */,
 				C39267151857948300399109 /* Textures */,
+				C3FE556F185F9F8B00AE8A0E /* Sounds */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -372,6 +387,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C3FE556F185F9F8B00AE8A0E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C3FE5570185F9FAC00AE8A0E /* explode.wav */,
+				C3FE5571185F9FAC00AE8A0E /* fuse.wav */,
+				C3FE5572185F9FAC00AE8A0E /* heart.wav */,
+				C3FE5573185F9FAC00AE8A0E /* hurt.wav */,
+				C3FE5574185F9FAC00AE8A0E /* kill.wav */,
+				C3FE5575185F9FAC00AE8A0E /* rupee-collected.wav */,
+				C3FE5576185F9FAC00AE8A0E /* speed-up.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -451,15 +480,22 @@
 				C3D202F51831134F00B8C3CA /* Images.xcassets in Resources */,
 				C338323118343A6E0082F702 /* rupee-yellow.png in Resources */,
 				C32F53611832EC9700C56076 /* bomb-2.png in Resources */,
+				C3FE557D185F9FAC00AE8A0E /* speed-up.wav in Resources */,
 				C38ADA771831BFFE006E960D /* wall.png in Resources */,
 				C338323918343FD90082F702 /* heart.png in Resources */,
 				C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */,
 				C32F53601832EC9700C56076 /* bomb-1.png in Resources */,
 				C338322F18343A680082F702 /* star.png in Resources */,
+				C3FE5577185F9FAC00AE8A0E /* explode.wav in Resources */,
 				C3D202E91831134E00B8C3CA /* Credits.rtf in Resources */,
+				C3FE5578185F9FAC00AE8A0E /* fuse.wav in Resources */,
 				C38ADA881832786E006E960D /* bro.atlas in Resources */,
 				C338322A183331040082F702 /* fire-2.png in Resources */,
+				C3FE5579185F9FAC00AE8A0E /* heart.wav in Resources */,
 				C3383229183331040082F702 /* fire-1.png in Resources */,
+				C3FE557A185F9FAC00AE8A0E /* hurt.wav in Resources */,
+				C3FE557B185F9FAC00AE8A0E /* kill.wav in Resources */,
+				C3FE557C185F9FAC00AE8A0E /* rupee-collected.wav in Resources */,
 				C375F4331844FA2C00C93583 /* foe.atlas in Resources */,
 				C392671D1857968800399109 /* Fonts in Resources */,
 				C319176818553FE200C64A8D /* heart-small.png in Resources */,

@@ -53,7 +53,7 @@ typedef enum movingSpriteDirection {
 - (void)speedUp;
 - (void)normalSpeed;
 
-- (void)hurt;
+- (BOOL)hurt;
 
 - (void)act:(NSTimeInterval)currentTime;
 
