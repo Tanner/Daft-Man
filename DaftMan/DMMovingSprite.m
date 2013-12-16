@@ -154,10 +154,10 @@
     leftWalkTextures = [self textureGroupFromAtlas:atlas prefix:leftString count:count];
     rightWalkTextures = [self textureGroupFromAtlas:atlas prefix:rightString count:count];
     
-    upWalkAnimation = [SKAction animateWithTextures:self.upWalkTextures timePerFrame:TIME_PER_FRAME];
-    downWalkAnimation = [SKAction animateWithTextures:self.downWalkTextures timePerFrame:TIME_PER_FRAME];
-    leftWalkAnimation = [SKAction animateWithTextures:self.leftWalkTextures timePerFrame:TIME_PER_FRAME];
-    rightWalkAnimation = [SKAction animateWithTextures:self.rightWalkTextures timePerFrame:TIME_PER_FRAME];
+    upWalkAnimation = [SKAction animateWithTextures:self.upWalkTextures timePerFrame:TIME_PER_FRAME resize:YES restore:NO];
+    downWalkAnimation = [SKAction animateWithTextures:self.downWalkTextures timePerFrame:TIME_PER_FRAME resize:YES restore:NO];
+    leftWalkAnimation = [SKAction animateWithTextures:self.leftWalkTextures timePerFrame:TIME_PER_FRAME resize:YES restore:NO];
+    rightWalkAnimation = [SKAction animateWithTextures:self.rightWalkTextures timePerFrame:TIME_PER_FRAME resize:YES restore:NO];
     
     upWalkAnimation = [SKAction repeatActionForever:upWalkAnimation];
     downWalkAnimation = [SKAction repeatActionForever:downWalkAnimation];
