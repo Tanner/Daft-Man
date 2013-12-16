@@ -60,6 +60,10 @@
 		C3FE557B185F9FAC00AE8A0E /* kill.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5574185F9FAC00AE8A0E /* kill.wav */; };
 		C3FE557C185F9FAC00AE8A0E /* rupee-collected.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5575185F9FAC00AE8A0E /* rupee-collected.wav */; };
 		C3FE557D185F9FAC00AE8A0E /* speed-up.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5576185F9FAC00AE8A0E /* speed-up.wav */; };
+		C3FE5583185FA50A00AE8A0E /* aerodynamic.mid in Resources */ = {isa = PBXBuildFile; fileRef = C3FE557F185FA50A00AE8A0E /* aerodynamic.mid */; };
+		C3FE5584185FA50A00AE8A0E /* aroundtheworld.mid in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5580185FA50A00AE8A0E /* aroundtheworld.mid */; };
+		C3FE5585185FA50A00AE8A0E /* dafunk.mid in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5581185FA50A00AE8A0E /* dafunk.mid */; };
+		C3FE5586185FA50A00AE8A0E /* stronger.mid in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5582185FA50A00AE8A0E /* stronger.mid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +162,10 @@
 		C3FE5574185F9FAC00AE8A0E /* kill.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kill.wav; sourceTree = "<group>"; };
 		C3FE5575185F9FAC00AE8A0E /* rupee-collected.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rupee-collected.wav"; sourceTree = "<group>"; };
 		C3FE5576185F9FAC00AE8A0E /* speed-up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "speed-up.wav"; sourceTree = "<group>"; };
+		C3FE557F185FA50A00AE8A0E /* aerodynamic.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = aerodynamic.mid; sourceTree = "<group>"; };
+		C3FE5580185FA50A00AE8A0E /* aroundtheworld.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = aroundtheworld.mid; sourceTree = "<group>"; };
+		C3FE5581185FA50A00AE8A0E /* dafunk.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = dafunk.mid; sourceTree = "<group>"; };
+		C3FE5582185FA50A00AE8A0E /* stronger.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = stronger.mid; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +283,7 @@
 				C392671C1857968800399109 /* Fonts */,
 				C39267151857948300399109 /* Textures */,
 				C3FE556F185F9F8B00AE8A0E /* Sounds */,
+				C3FE557E185FA4F500AE8A0E /* Music */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -401,6 +410,17 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		C3FE557E185FA4F500AE8A0E /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				C3FE557F185FA50A00AE8A0E /* aerodynamic.mid */,
+				C3FE5580185FA50A00AE8A0E /* aroundtheworld.mid */,
+				C3FE5581185FA50A00AE8A0E /* dafunk.mid */,
+				C3FE5582185FA50A00AE8A0E /* stronger.mid */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -484,6 +504,7 @@
 				C38ADA771831BFFE006E960D /* wall.png in Resources */,
 				C338323918343FD90082F702 /* heart.png in Resources */,
 				C3D202E31831134E00B8C3CA /* InfoPlist.strings in Resources */,
+				C3FE5585185FA50A00AE8A0E /* dafunk.mid in Resources */,
 				C32F53601832EC9700C56076 /* bomb-1.png in Resources */,
 				C338322F18343A680082F702 /* star.png in Resources */,
 				C3FE5577185F9FAC00AE8A0E /* explode.wav in Resources */,
@@ -493,11 +514,14 @@
 				C338322A183331040082F702 /* fire-2.png in Resources */,
 				C3FE5579185F9FAC00AE8A0E /* heart.wav in Resources */,
 				C3383229183331040082F702 /* fire-1.png in Resources */,
+				C3FE5583185FA50A00AE8A0E /* aerodynamic.mid in Resources */,
 				C3FE557A185F9FAC00AE8A0E /* hurt.wav in Resources */,
 				C3FE557B185F9FAC00AE8A0E /* kill.wav in Resources */,
 				C3FE557C185F9FAC00AE8A0E /* rupee-collected.wav in Resources */,
+				C3FE5584185FA50A00AE8A0E /* aroundtheworld.mid in Resources */,
 				C375F4331844FA2C00C93583 /* foe.atlas in Resources */,
 				C392671D1857968800399109 /* Fonts in Resources */,
+				C3FE5586185FA50A00AE8A0E /* stronger.mid in Resources */,
 				C319176818553FE200C64A8D /* heart-small.png in Resources */,
 				C3D202EB1831134E00B8C3CA /* MainMenu.xib in Resources */,
 				C38ADA7F18327413006E960D /* brick.png in Resources */,
