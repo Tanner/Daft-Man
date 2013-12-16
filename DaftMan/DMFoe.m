@@ -20,14 +20,14 @@
     return self;
 }
 
-- (void)act {
+- (void)act:(NSTimeInterval)currentTime {
     tile = [self.delegate tileBelow:self];
     
     if ([self shouldChangeDirection] && arc4random() % 2 == 0) {
         [self randomizeDirection];
     }
     
-    [super act];
+    [super act:currentTime];
 }
 
 - (void)randomizeDirection {

@@ -12,7 +12,7 @@
 
 @synthesize direction, distanceToMove;
 @synthesize health, immunity;
-@synthesize movementMultiplier;
+@synthesize movementMultiplier, lastAct, endSpeedUp;
 @synthesize delegate;
 
 @synthesize upWalkTextures, downWalkTextures, leftWalkTextures, rightWalkTextures;
@@ -84,19 +84,25 @@
 - (void)speedUp {
     movementMultiplier = 2.0;
     
-    [NSTimer scheduledTimerWithTimeInterval:SPEED_UP_DURATION target:self selector:@selector(normalSpeed) userInfo:nil repeats:NO];
+    endSpeedUp = lastAct + SPEED_UP_DURATION;
 }
 
 - (void)normalSpeed {
     movementMultiplier = 1.0;
 }
 
-- (void)act {
+- (void)act:(NSTimeInterval)currentTime {
     CGPoint newPosition = CGPointMake(self.position.x + distanceToMove.x * movementMultiplier, self.position.y + distanceToMove.y * movementMultiplier);
     
     newPosition = [delegate autoCorrectedPoint:newPosition sprite:self];
     
     self.position = newPosition;
+    
+    if (movementMultiplier > 1.0 && endSpeedUp <= currentTime) {
+        [self normalSpeed];
+    }
+    
+    lastAct = currentTime;
 }
 
 #pragma mark -

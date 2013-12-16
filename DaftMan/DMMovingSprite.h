@@ -27,6 +27,8 @@ typedef enum movingSpriteDirection {
 @property (nonatomic, assign) int immunity;
 
 @property (nonatomic, assign) double movementMultiplier;
+@property (nonatomic, assign) NSTimeInterval lastAct;
+@property (nonatomic, assign) NSTimeInterval endSpeedUp;
 
 @property (nonatomic, assign) id <DMMovingSpriteDelegate> delegate;
 
@@ -53,6 +55,6 @@ typedef enum movingSpriteDirection {
 
 - (void)hurt;
 
-- (void)act;
+- (void)act:(NSTimeInterval)currentTime;
 
 @end

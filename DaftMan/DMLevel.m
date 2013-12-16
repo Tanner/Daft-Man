@@ -114,7 +114,7 @@
     [self enumerateChildNodesWithName:@"//moving-sprites/*" usingBlock:^(SKNode *node, BOOL *stop) {
         DMMovingSprite *movingSprite = (DMMovingSprite *) node;
         
-        [movingSprite act];
+        [movingSprite act:currentTime];
     }];
     
     if (!firstUpdate) {
