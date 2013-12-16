@@ -67,7 +67,7 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-    if (theEvent.isARepeat == NO) {
+    if (theEvent.isARepeat == NO && [[theEvent charactersIgnoringModifiers] characterAtIndex:0] == NSCarriageReturnCharacter) {
         [delegate nextLevel:1 startingScore:0];
     }
 }
