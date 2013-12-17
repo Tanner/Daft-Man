@@ -126,8 +126,10 @@
     }
     
     NSArray *blinkActions = @[
-        [SKAction fadeOutWithDuration:BLINK_DURATION / 2],
-        [SKAction fadeInWithDuration:BLINK_DURATION / 2]
+        [SKAction fadeOutWithDuration:0],
+        [SKAction waitForDuration:BLINK_DURATION / 2],
+        [SKAction fadeInWithDuration:0],
+        [SKAction waitForDuration:BLINK_DURATION / 2]
     ];
     
     SKAction *blinkSequence = [SKAction sequence:blinkActions];
