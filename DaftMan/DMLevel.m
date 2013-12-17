@@ -137,6 +137,12 @@
         firstUpdate = NO;
     }
     
+    if (timeLeft <= 0) {
+        DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
+
+        [delegate levelCompleteForlevel:level score:score time:timeLeft health:bro.health won:NO];
+    }
+    
     lastUpdateTime = currentTime;
 }
 
