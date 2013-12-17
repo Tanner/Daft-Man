@@ -6,6 +6,14 @@ Ryan's [DaftMan on GitHub](http://github.com/ryanashcraft/DaftMan) is slightly m
 
 ![Gameplay GIF](Gameplay.gif)
 
+### Idea
+The goal of the game is to move the bro around to collect the number of rupees for each level while avoiding fire and the evil foes.
+
+You gain rupees by blowing up the bricks using bombs.
+
+#### Controls
+Arrow keys to move around. Space for bomb dropping.
+
 ## Credit
 I don't claim ownership of any of the resources, i.e. sprites, sounds, or music files, included herein.
 
