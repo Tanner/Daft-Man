@@ -10,6 +10,7 @@
 
 #import "NSString+DMFontPadding.h"
 #import "DMDaftColor.h"
+#import "DMMusicPlayer.h"
 
 @implementation DMMainMenuScene
 
@@ -61,6 +62,11 @@
         copyrightLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
         
         [titleLabel runAction:[DMDaftColor actionForLabel:titleLabel]];
+        
+        NSString *midiFilePath = [[NSBundle mainBundle] pathForResource:@"dafunk" ofType:@"mid"];
+        NSURL *midiFileURL = [NSURL fileURLWithPath:midiFilePath];
+        
+        [[DMMusicPlayer sharedMusicPlayer] playSequence:midiFileURL beatsPerMinute:120];
     }
     
     return self;

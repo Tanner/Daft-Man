@@ -9,6 +9,7 @@
 #import "DMEndScene.h"
 
 #import "NSString+DMFontPadding.h"
+#import "DMMusicPlayer.h"
 
 @implementation DMEndScene
 
@@ -112,6 +113,11 @@
             lineThreeLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
             lineThreeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
         }
+        
+        NSString *midiFilePath = [[NSBundle mainBundle] pathForResource:@"stronger" ofType:@"mid"];
+        NSURL *midiFileURL = [NSURL fileURLWithPath:midiFilePath];
+        
+        [[DMMusicPlayer sharedMusicPlayer] playSequence:midiFileURL beatsPerMinute:0.0];
     }
     
     return self;

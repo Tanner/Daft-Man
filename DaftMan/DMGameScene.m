@@ -9,6 +9,7 @@
 #import "DMGameScene.h"
 
 #import "DMLevel.h"
+#import "DMMusicPlayer.h"
 
 @implementation DMGameScene
 
@@ -30,6 +31,11 @@
         
         [self addChild:level];
         [self addChild:scoreBoard];
+        
+        NSString *midiFilePath = [[NSBundle mainBundle] pathForResource:@"aroundtheworld" ofType:@"mid"];
+        NSURL *midiFileURL = [NSURL fileURLWithPath:midiFilePath];
+        
+        [[DMMusicPlayer sharedMusicPlayer] playSequence:midiFileURL beatsPerMinute:120];
     }
     
     return self;

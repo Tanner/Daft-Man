@@ -64,6 +64,8 @@
 		C3FE5584185FA50A00AE8A0E /* aroundtheworld.mid in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5580185FA50A00AE8A0E /* aroundtheworld.mid */; };
 		C3FE5585185FA50A00AE8A0E /* dafunk.mid in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5581185FA50A00AE8A0E /* dafunk.mid */; };
 		C3FE5586185FA50A00AE8A0E /* stronger.mid in Resources */ = {isa = PBXBuildFile; fileRef = C3FE5582185FA50A00AE8A0E /* stronger.mid */; };
+		C3FE558B185FC24C00AE8A0E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FE558A185FC24C00AE8A0E /* AudioToolbox.framework */; };
+		C3FE5594185FDA3000AE8A0E /* DMMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FE5593185FDA3000AE8A0E /* DMMusicPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,9 @@
 		C3FE5580185FA50A00AE8A0E /* aroundtheworld.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = aroundtheworld.mid; sourceTree = "<group>"; };
 		C3FE5581185FA50A00AE8A0E /* dafunk.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = dafunk.mid; sourceTree = "<group>"; };
 		C3FE5582185FA50A00AE8A0E /* stronger.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = stronger.mid; sourceTree = "<group>"; };
+		C3FE558A185FC24C00AE8A0E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C3FE5592185FDA3000AE8A0E /* DMMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMusicPlayer.h; sourceTree = "<group>"; };
+		C3FE5593185FDA3000AE8A0E /* DMMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMusicPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3FE558B185FC24C00AE8A0E /* AudioToolbox.framework in Frameworks */,
 				C3D202D91831134E00B8C3CA /* SpriteKit.framework in Frameworks */,
 				C3D202D71831134E00B8C3CA /* Cocoa.framework in Frameworks */,
 			);
@@ -329,6 +335,7 @@
 		C3D202D51831134E00B8C3CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3FE558A185FC24C00AE8A0E /* AudioToolbox.framework */,
 				C3D202D61831134E00B8C3CA /* Cocoa.framework */,
 				C3D202D81831134E00B8C3CA /* SpriteKit.framework */,
 				C3D202FB1831134F00B8C3CA /* XCTest.framework */,
@@ -359,6 +366,8 @@
 				C3C27842185A6D68005CBADF /* DMDaftColor.m */,
 				C392671118577B1A00399109 /* NSString+DMFontPadding.h */,
 				C392671218577B1A00399109 /* NSString+DMFontPadding.m */,
+				C3FE5592185FDA3000AE8A0E /* DMMusicPlayer.h */,
+				C3FE5593185FDA3000AE8A0E /* DMMusicPlayer.m */,
 				C39267141857947D00399109 /* Assets */,
 				C3D202F41831134F00B8C3CA /* Images.xcassets */,
 				C3D202DF1831134E00B8C3CA /* Supporting Files */,
@@ -560,6 +569,7 @@
 				C38ADA8B183278C6006E960D /* DMMovingSprite.m in Sources */,
 				C392671318577B1A00399109 /* NSString+DMFontPadding.m in Sources */,
 				C38ADA7D183273A2006E960D /* DMBrick.m in Sources */,
+				C3FE5594185FDA3000AE8A0E /* DMMusicPlayer.m in Sources */,
 				C38ADA751831BCE5006E960D /* DMWall.m in Sources */,
 				C319175B1854B5E300C64A8D /* DMScoreBoard.m in Sources */,
 				C338324418353AAE0082F702 /* DMLevel.m in Sources */,
