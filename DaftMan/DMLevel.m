@@ -202,8 +202,7 @@
 #pragma mark -
 #pragma mark Node Creation
 
-- (CGPoint)addGroundObjects {
-    CGPoint broStart;
+- (void)addGroundObjects {
     NSMutableArray *row = [[NSMutableArray alloc] init];
     
     SKNode *ground = [self childNodeWithName:@"ground"];
@@ -236,18 +235,12 @@
             
             [sprite setRow:r setColumn:c];
             
-            if (r == NUM_TILES_HEIGHT - 1 && c == NUM_TILES_WIDTH - 1) {
-                broStart = sprite.position;
-            }
-            
             [ground addChild:sprite];
             
             row[c] = sprite;
             previousTile = sprite;
         }
     }
-    
-    return broStart;
 }
 
 - (void)addBricks:(int)rupeeCount {
