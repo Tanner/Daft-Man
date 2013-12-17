@@ -105,7 +105,7 @@
         [self addFoes:foeCount];
         
         DMBro *bro = [[DMBro alloc] init];
-        bro.position = [DMTile tileCenterForRow:1 column:1];
+        bro.position = [DMTile tileCenterForRow:NUM_TILES_HEIGHT - 2 column:1];
         bro.delegate = self;
         
         [movingSprites addChild:bro];
@@ -236,7 +236,7 @@
             
             [sprite setRow:r setColumn:c];
             
-            if (r == 1 && c == 1) {
+            if (r == NUM_TILES_HEIGHT - 1 && c == NUM_TILES_WIDTH - 1) {
                 broStart = sprite.position;
             }
             
