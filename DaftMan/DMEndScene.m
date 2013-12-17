@@ -124,7 +124,7 @@
 }
 
 - (void)update:(NSTimeInterval)currentTime {
-    if (!firstUpdate) {
+    if (!firstUpdate && win) {
         NSTimeInterval timeElapsed = currentTime - startTime;
         
         if (timeElapsed >= TIME_SHOWN) {
