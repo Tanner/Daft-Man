@@ -419,6 +419,7 @@
     if (tile && [tile isKindOfClass:[DMGrass class]]) {
         DMFire *fire = [[DMFire alloc] initAtPosition:tile.position];
         fire.delegate = self;
+        fire.zPosition = 1.0;
         
         SKNode *items = [self childNodeWithName:@"//items"];
         [items addChild:fire];
