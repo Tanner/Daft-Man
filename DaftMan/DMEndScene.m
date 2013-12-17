@@ -149,7 +149,7 @@
         return;
     }
     
-    if (win == NO) {
+    if (win == NO && [[theEvent charactersIgnoringModifiers] characterAtIndex:0] == NSCarriageReturnCharacter) {
         // Go to the main menu
         [delegate mainMenu];
     }
