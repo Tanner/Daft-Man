@@ -15,14 +15,10 @@
 
 @synthesize level, scoreBoard;
 
-+ (id)sceneWithSize:(CGSize)size delegate:(id <DMSceneDirectorDelegate>)delegate {
-    return [[DMGameScene alloc] initWithSize:size level:0 startingScore:0 delegate:delegate];
-}
-
-- (id)initWithSize:(CGSize)size level:(int)aLevel startingScore:(int)score delegate:(id <DMSceneDirectorDelegate>)delegate {
+- (id)initWithSize:(CGSize)size level:(int)aLevel startingScore:(int)score startingHealth:(int)health delegate:(id <DMSceneDirectorDelegate>)delegate {
     if (self = [super initWithSize:size]) {        
         scoreBoard = [[DMScoreBoard alloc] init];
-        level = [[DMLevel alloc] initWithLevel:aLevel score:score];
+        level = [[DMLevel alloc] initWithLevel:aLevel score:score broHealth:health];
         
         scoreBoard.position = CGPointMake(0, size.height - SCOREBOARD_HEIGHT);
         

@@ -59,6 +59,18 @@
     return self;
 }
 
+- (id)initWithLevel:(int)aLevel score:(int)startScore broHealth:(int)health {
+    if (self = [self initWithLevel:aLevel score:startScore]) {
+        if (health > 0) {
+            DMBro *bro = (DMBro *) [self childNodeWithName:@"//bro"];
+
+            bro.health = health;
+        }
+    }
+    
+    return self;
+}
+
 - (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount score:(int)startScore {
     if (self = [super init]) {
         self.name = @"level";
@@ -506,7 +518,9 @@
 
 - (void)died:(DMMovingSprite *)movingSprite {
     if ([movingSprite isKindOfClass:[DMBro class]]) {
-        [delegate levelCompleteForlevel:level score:score time:timeLeft won:NO];
+        DMBro *bro = (DMBro *) movingSprite;
+        
+        [delegate levelCompleteForlevel:level score:score time:timeLeft health:bro.health won:NO];
     } else {
         // A foe died! Yay!
         score += HURT_FOE_SCORE_VALUE;
@@ -603,7 +617,9 @@
         [movingSprite runAction:[SKAction playSoundFileNamed:@"rupee-collected.wav" waitForCompletion:NO]];
         
         if (numberOfRupees <= 0) {
-            [delegate levelCompleteForlevel:level score:score time:timeLeft won:YES];
+            DMBro *bro = (DMBro *) movingSprite;
+            
+            [delegate levelCompleteForlevel:level score:score time:timeLeft health:bro.health won:YES];
         }
         
         return YES;

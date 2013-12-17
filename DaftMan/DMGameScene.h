@@ -17,8 +17,6 @@
 @property (nonatomic, retain) DMLevel *level;
 @property (nonatomic, retain) DMScoreBoard *scoreBoard;
 
-+ (id)sceneWithSize:(CGSize)size delegate:(id <DMSceneDirectorDelegate>)delegate;
-
-- (id)initWithSize:(CGSize)size level:(int)aLevel startingScore:(int)score delegate:(id <DMSceneDirectorDelegate>)delegate;
+- (id)initWithSize:(CGSize)size level:(int)aLevel startingScore:(int)score startingHealth:(int)health delegate:(id <DMSceneDirectorDelegate>)delegate;
 
 @end

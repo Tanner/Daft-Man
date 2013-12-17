@@ -24,7 +24,7 @@
 @synthesize titleLabel, scoreLabel;
 @synthesize lineThreeLabel, lineFourLabel;
 @synthesize delegate;
-@synthesize win, score, level;
+@synthesize win, health, score, level;
 @synthesize firstUpdate, startTime;
 
 - (id)initWithSize:(CGSize)size {
@@ -49,10 +49,11 @@
     return self;
 }
 
-- (id)initWithSize:(CGSize)size level:(int)aLevel score:(int)aScore time:(NSTimeInterval)time won:(BOOL)won {
+- (id)initWithSize:(CGSize)size level:(int)aLevel score:(int)aScore time:(NSTimeInterval)time health:(int)aHealth won:(BOOL)won {
     if (self = [self initWithSize:size]) {
         win = won;
         score = aScore;
+        health = aHealth;
         level = aLevel;
         
         // Configure the labels depending on if this is a win (yay) or not...
@@ -128,7 +129,7 @@
         NSTimeInterval timeElapsed = currentTime - startTime;
         
         if (timeElapsed >= TIME_SHOWN) {
-            [delegate nextLevel:level + 1 startingScore:score];
+            [delegate nextLevel:level + 1 startingScore:score startingHealth:health];
         }
     } else {
         startTime = currentTime;

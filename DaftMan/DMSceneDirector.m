@@ -35,8 +35,8 @@
     [view presentScene:mainMenuScene];
 }
 
-- (void)levelCompleteForlevel:(int)aLevel score:(int)score time:(NSTimeInterval)time won:(BOOL)won {
-    DMEndScene *endScene = [[DMEndScene alloc] initWithSize:self.size level:aLevel score:score time:time won:won];
+- (void)levelCompleteForlevel:(int)aLevel score:(int)score time:(NSTimeInterval)time health:(int)health won:(BOOL)won {
+    DMEndScene *endScene = [[DMEndScene alloc] initWithSize:self.size level:aLevel score:score time:time health:health won:won];
     
     endScene.delegate = self;
     
@@ -44,7 +44,13 @@
 }
 
 - (void)nextLevel:(int)level startingScore:(int)score {
-    DMGameScene *gameScene = [[DMGameScene alloc] initWithSize:size level:level startingScore:score delegate:self];
+    DMGameScene *gameScene = [[DMGameScene alloc] initWithSize:size level:level startingScore:score startingHealth:0 delegate:self];
+    
+    [view presentScene:gameScene];
+}
+
+- (void)nextLevel:(int)level startingScore:(int)score startingHealth:(int)health {
+    DMGameScene *gameScene = [[DMGameScene alloc] initWithSize:size level:level startingScore:score startingHealth:health delegate:self];
 
     [view presentScene:gameScene];
 }

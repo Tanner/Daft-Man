@@ -31,6 +31,7 @@
 
 - (id)init;
 - (id)initWithLevel:(int)aLevel score:(int)startScore;
+- (id)initWithLevel:(int)aLevel score:(int)startScore broHealth:(int)health;
 - (id)initNumberOfFoes:(int)foeCount numberOfRupies:(int)rupeeCount score:(int)startScore;
 
 - (void)update:(NSTimeInterval)currentTime;
