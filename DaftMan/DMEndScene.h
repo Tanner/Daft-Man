@@ -27,6 +27,7 @@
 
 @property (nonatomic, assign) BOOL firstUpdate;
 @property (nonatomic, assign) NSTimeInterval startTime;
+@property (nonatomic, assign) BOOL allowKeyPresses;
 
 - (id)initWithSize:(CGSize)size level:(int)aLevel score:(int)aScore time:(NSTimeInterval)time health:(int)health won:(BOOL)won;
 

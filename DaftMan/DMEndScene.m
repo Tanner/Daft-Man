@@ -25,7 +25,7 @@
 @synthesize lineThreeLabel, lineFourLabel;
 @synthesize delegate;
 @synthesize win, health, score, level;
-@synthesize firstUpdate, startTime;
+@synthesize firstUpdate, startTime, allowKeyPresses;
 
 - (id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -55,6 +55,8 @@
         score = aScore;
         health = aHealth;
         level = aLevel;
+        
+        allowKeyPresses = NO;
         
         // Configure the labels depending on if this is a win (yay) or not...
         if (won) {
@@ -125,11 +127,15 @@
 }
 
 - (void)update:(NSTimeInterval)currentTime {
-    if (!firstUpdate && win) {
+    if (!firstUpdate) {
         NSTimeInterval timeElapsed = currentTime - startTime;
         
         if (timeElapsed >= TIME_SHOWN) {
-            [delegate nextLevel:level + 1 startingScore:score startingHealth:health];
+            allowKeyPresses = YES;
+            
+            if (win) {
+                [delegate nextLevel:level + 1 startingScore:score startingHealth:health];
+            }
         }
     } else {
         startTime = currentTime;
@@ -139,7 +145,7 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-    if (theEvent.isARepeat) {
+    if (theEvent.isARepeat || !allowKeyPresses) {
         return;
     }
     
