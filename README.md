@@ -1,4 +1,4 @@
-Daft-Man
+DaftMan
 ========
 A fork of Ryan Ashcraft's DaftMan rewritten in Objective-C.
 
