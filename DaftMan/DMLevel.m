@@ -476,7 +476,7 @@
     
     CGRect intersectRect = CGRectIntersection(spriteFrame, tileFrame);
     
-    int maxIntersect = 5;
+    int maxIntersect = 15;
     
     if (correctedPoint.x != oldPoint.x) {
         if (intersectRect.size.height > maxIntersect) {
